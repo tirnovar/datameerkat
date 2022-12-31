@@ -47,7 +47,7 @@ blog:
 tag:
   enable: true
   tag__title: Recommended
-  tag__name: Motivation
+  tag__name: DAX
 
 
 #-------------------------------
