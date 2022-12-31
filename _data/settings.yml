@@ -21,18 +21,18 @@ menu__settings:
       url: '/'
     - title: 'About'
       url: '/about/'
-    - title: 'Pages'
-      submenu:
-      - title: 'Authors'
-        url: '/authors/'
-    - title: 'Contact'
-      url: '/contact/'
+#    - title: 'Pages'
+#      submenu:
+#      - title: 'Authors'
+#        url: '/authors/'
+#    - title: 'Contact'
+#      url: '/contact/'
 
 
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: HERO SETTINGS !!!!! CHANGE IT
+  hero__title: See data and reporting from every angle
 
 
 #-------------------------------
@@ -72,10 +72,10 @@ footer__menu__settings:
       url: '/'
     - title: 'About'
       url: '/about/'
-    - title: 'Contact'
-      url: '/contact/'
-    - title: 'Authors'
-      url: '/authors/'
+#    - title: 'Contact'
+#      url: '/contact/'
+#    - title: 'Authors'
+#      url: '/authors/'
     - title: 'Elements'
       url: '/elements/'
 
@@ -84,7 +84,7 @@ footer__menu__settings:
 social:
 - {icon: "ion-logo-twitter", color: "#55acee", name: Twitter, link: "https://twitter.com/tpnRel1"}
 - {icon: "ion-logo-linkedin", color: "#0B66C2",name: LinkedIn,link: "https://www.linkedin.com/in/%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l-464084152/"}
-- {icon: "ion-logo-link", color: "#615FF9", name: Mastodon, link: "https://techhub.social/@StepanResl"}
+- {icon: "ion-link", color: "#615FF9", name: Mastodon, link: "https://techhub.social/@StepanResl"}
 - {icon: "ion-logo-github", color: "#161B22", name: GitHub, link: "https://github.com/tirnovar"}
 
 # Example of adding a new link to the footer - {icon: "ion-logo-youtube", color: "#ff0000", name: Youtube, link: "https://youtube.com"}
