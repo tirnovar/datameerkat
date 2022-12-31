@@ -10,7 +10,7 @@ description: Blog not just about Power BI
 author:
   author__name: Štěpán Rešl
   author__bio: Don't say something cannot be done, or someone who doesn't know will come and do it. In Power BI this works twice.
-  author__avatar: /images/01-1.jpg
+  author__avatar: /images/steve_profile.jpg
 
 
 #-------------------------------
@@ -38,8 +38,8 @@ hero:
 #-------------------------------
 # Blog Settings
 blog:
-  blog__title: Blog & Resources
-  blog__description: Find out how to set up a successful blog or how to make yours even better!
+  blog__title: Posts
+  blog__description: Everything that has already been written
 
 
 #-------------------------------
