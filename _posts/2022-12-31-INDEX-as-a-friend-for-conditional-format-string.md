@@ -4,7 +4,7 @@ title: INDEX as a friend for Conditional Format Strings
 description: INDEX + Calculation Groups + Custom Format String Expression = Quick dynamic answers
 date: 2022-12-29 10:00:0 +0100
 author: Štěpán
-image: '/images/covers/INDEX-as-a-friend-for-conditional-format-string.jpg'
+image: '/images/covers/INDEX-as-a-friend-for-conditional-format-string.png'
 image_caption: ''
 tags: [DAX, Calculation Groups, Format String, Conditional Formatting, INDEX]
 featured: false

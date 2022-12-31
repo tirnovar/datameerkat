@@ -84,8 +84,8 @@ footer__menu__settings:
 social:
 - {icon: "ion-logo-twitter", color: "#55acee", name: Twitter, link: "https://twitter.com/tpnRel1"}
 - {icon: "ion-logo-linkedin", color: "#0B66C2",name: LinkedIn,link: "https://www.linkedin.com/in/%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l-464084152/"}
-- {icon: "ion-link", color: "#615FF9", name: Mastodon, link: "https://techhub.social/@StepanResl"}
 - {icon: "ion-logo-github", color: "#161B22", name: GitHub, link: "https://github.com/tirnovar"}
+- {icon: "ion-link", color: "#615FF9", name: Mastodon, link: "https://techhub.social/@StepanResl"}
 
 # Example of adding a new link to the footer - {icon: "ion-logo-youtube", color: "#ff0000", name: Youtube, link: "https://youtube.com"}
 # Other icons can be found at https://ionicons.com/v4/
