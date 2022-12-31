@@ -1,15 +1,15 @@
 #-------------------------------
 # Site Settings
-title: Dann
+title: Data Meerkat
 logo: # You can add own logo. For example "/images/logo.png".
-description: Multipurpose Jekyll Blog Theme
+description: Blog not just about Power BI
 
 
 #-------------------------------
 # Author Global Settings
 author:
-  author__name: Dann Kanigan
-  author__bio: Hi there! I’m Dann Kanigan, a Filmmaker and Content Creator based in Toronto, Ontario, Canada. This blog is about learning, life, and inspiring you to take one step forward.
+  author__name: Štěpán Rešl
+  author__bio: Don't say something cannot be done, or someone who doesn't know will come and do it. In Power BI this works twice.
   author__avatar: /images/01-1.jpg
 
 
@@ -25,8 +25,6 @@ menu__settings:
       submenu:
       - url: '/authors/'
         title: 'Authors'
-      - url: '/elements/'
-        title: 'Elements'
     - title: 'Contact'
       url: '/contact/'
 
@@ -34,7 +32,7 @@ menu__settings:
 #-------------------------------
 # Hero Settings
 hero:
-  hero__title: Hi there! I’m Dann Kanigan, a Filmmaker and Content Creator based in Toronto, Ontario, Canada. This blog is about learning, life, and inspiring you to take one step forward.
+  hero__title: HERO SETTINGS !!!!! CHANGE IT
 
 
 #-------------------------------
@@ -56,7 +54,7 @@ tag:
 # Newsletter Settings
 mailchimp:
   enable: true
-  mailchimp__identifier: frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3 # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
+  mailchimp__identifier: identifier !! NEEDS TO BE CHANGED # Add your MailChimp form identifier. For example - frnla.us6.list-manage.com/subscribe/post?u=6314d69a3f315af7ce3fb00a0&amp;id=3038727cc3
   mailchimp__title: Get interesting news
   mailchimp__description: Subscribe to our newsletter and we’ll send you the emails of latest posts.
   mailchimp__input__text: Your Email Address...
@@ -84,20 +82,17 @@ footer__menu__settings:
 
 # Social Links
 social:
-- {icon: "ion-logo-twitter", color: "#55acee", name: Twitter, link: "https://twitter.com"}
-- {icon: "ion-logo-facebook", color: "#3b5999", name: Facebook, link: "https://facebook.com"}
-- {icon: "ion-logo-pinterest", color: "#bd081c", name: Pinterest, link: "https://pinterest.com"}
-- {icon: "ion-logo-dribbble", color: "#ea4c89", name: Dribbble, link: "https://dribbble.com"}
-- {icon: "ion-logo-instagram", color: "#e4405f", name: Instagram, link: "https://instagram.com"}
+- {icon: "ion-logo-twitter", color: "#55acee", name: Twitter, link: "https://twitter.com/tpnRel1"}
+- {icon: "ion-logo-linkedin", color: "##0B66C2",name: LinkedIn,link: "https://www.linkedin.com/in/%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l-464084152/"}
+- {icon: "ion-logo-mastodon", color: "#615FF9", name: Mastodon - Techhub, link: "https://techhub.social/@StepanResl"}
 
 # Example of adding a new link to the footer - {icon: "ion-logo-youtube", color: "#ff0000", name: Youtube, link: "https://youtube.com"}
 # Other icons can be found at https://ionicons.com/v4/
 
-
 #-------------------------------
 # Contact Settings
 contact:
-  email: your@email.com # Add your email for contant form
+  email: reslstepan@outlook.cz # Add your email for contant form
 
 # NOTE
 # Dann theme comes with a contact form built-in. You can use this form with Formspree (https://formspree.io/) service and get up to 50 submissions for free. Also, you can easily switch to another service if you want.
@@ -107,7 +102,7 @@ contact:
 # Comment Section (Disqus)
 disqus:
   enable: true
-  disqus__identifier: anvod-studio-test # Add your shortname for Disqus Comment. For example anvod-studio-test
+  disqus__identifier: Štěpán the Meerkat # Add your shortname for Disqus Comment. For example anvod-studio-test
 
 
 #-------------------------------
