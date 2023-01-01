@@ -7,7 +7,7 @@ author: Štěpán
 image: '/images/covers/restrict-power-bi-integration-button-microsoft-lists.png'
 image_caption: ''
 tags: [integration, service, admin, sharepoint]
-featured: true
+featured: false
 ---
 Months ago, we got the integration between the Power BI and the Sharepoint lists, respectively, between Microsoft Lists. [(Integration Setup in Power BI Admin Portal)](https://learn.microsoft.com/en-us/power-bi/admin/service-admin-portal-integration#integration-with-sharepoint-and-microsoft-lists?id=DP-MVP-5003801)
 

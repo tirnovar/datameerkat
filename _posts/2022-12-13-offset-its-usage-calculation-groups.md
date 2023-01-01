@@ -7,7 +7,7 @@ author: Štěpán
 image: '/images/covers/offset-its-usage-calculation-groups.png'
 image_caption: ''
 tags: [dax, calculation groups, format string, conditional formatting, offset]
-featured: true
+featured: false
 ---
 The DAX OFFSET function has been talked about for a while now. The main entry point to this function for almost everyone was the article by [Marc Lelijveld](https://www.linkedin.com/in/marclelijveld/) - [How to OFFSET in DAX would make your life easier](https://data-marc.com/2022/09/21/how-offset-in-dax-will-make-your-life-easier/). He describes all the essential info about it in his article. And today, it was officially released as a part of the latest update! https://powerbi.microsoft.com/en-us/blog/power-bi-december-2022-feature-summary/
 
