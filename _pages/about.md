@@ -6,7 +6,7 @@ permalink: /about/
 image: '/images/profile/steve_full.jpg'
 ---
 
-> Moto: Don't say something cannot be done, or someone who doesn't know will come and do it.
+> Don't say something cannot be done, or someone who doesn't know will come and do it.
 
 
 [![MVP Badge]({{site.baseurl}}/images/infographic/mvp.jpg){:loading="lazy"}](https://mvp.microsoft.com/en-us/PublicProfile/5003801)
