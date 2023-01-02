@@ -6,7 +6,7 @@ date: 2022-05-18 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/field-parameters-cooperation-calculation-groups.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [dax, calculation groups, field parameters, conditional formatting] # tag names should be lowercase
+tags: [dax, calculation_groups, field_parameters, conditional_formatting] # tag names should be lowercase
 featured: true # set to true to show on homepage
 ---
 In [May 2022 Desktop update](https://powerbi.microsoft.com/en-us/blog/power-bi-may-2022-feature-summary/), we recieved the Field parameters function into Power BI. This function lets us change dimensions in visuals with a simple click on the slicer. It makes Power BI even more clicky, clicky, draggy, and droppy (How once [Christian Wade](https://twitter.com/i/status/1326953364446457856) said).

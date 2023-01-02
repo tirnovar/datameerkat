@@ -6,7 +6,7 @@ date: 2022-09-30 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/conditional-formatting-calculation-groups.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [dax, calculation groups, format string, conditional formatting] # tag names should be lowercase
+tags: [dax, calculation_groups, format_string, conditional_formatting] # tag names should be lowercase
 featured: false
 ---
 Many visuals in Power BI support Conditional Formatting through an **FX button** where I can set it up—for example, using measures, as I showed in the previous article [Conditional Formatting based on Field Parameters]({{site.baseurl}}/conditional-formatting-based-field-parameters). So far, we have only talked about the definition of colors. However, conditional formatting isn't always just about them. There's a lot more that can be conditionally formatted. For example, the format in which individual columns or measures output is displayed. We can adjust such a format directly in Power BI using the Format String definition or a predefined one. But when it comes to the fact that we need to change it dynamically, we usually have two options. Either reach for the **FORMAT()** function or reach for Calculation Groups.

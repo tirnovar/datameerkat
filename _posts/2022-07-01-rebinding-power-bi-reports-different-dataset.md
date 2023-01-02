@@ -6,7 +6,7 @@ date: 2022-07-01 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/rebinding-power-bi-reports-different-dataset.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [admin, service, rest api, powershell] # tag names should be lowercase
+tags: [admin, service, rest_api, powershell] # tag names should be lowercase
 featured: false # set to true to show on homepage
 ---
 An unpleasant dream that may come true. That is how I would describe a scenario I want to share with you. Imagine that you have prepared a Power BI dataset, have built a report on top of it, and published it all to a shared workspace. This is still common. But imagine a new colleague comes along who is just starting in Power BI and doesn't yet fully understand what datasets, reports, or applications mean. He wants to make his report from your dataset. So instead of using the "Create Report" function from your shared dataset, he downloads it, creates a report according to his needs in Power BI Desktop, and publishes it back to Power BI Service with a different name so that he does not overwrite yours. Then he finally finds out that new reports can be built from existing datasets and builds another one. So now you have two identical datasets and three reports.

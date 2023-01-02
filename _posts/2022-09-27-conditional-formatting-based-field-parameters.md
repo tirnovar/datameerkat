@@ -6,7 +6,7 @@ date: 2022-09-27 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/conditional-formatting-based-field-parameters.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [dax, field parameters, format string, conditional formatting] # tag names should be lowercase
+tags: [dax, field_parameters, format_string, conditional_formatting] # tag names should be lowercase
 featured: false # set to true to show on homepage
 ---
 Conditional formatting is one of the basic building blocks in preparing Power BI Reports. Especially if we want to reduce the time for users to get the answers they came to the report for. But how about conditional formatting when we use field parameters in our model?

@@ -6,7 +6,7 @@ date: 2022-11-06 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/multi-color-gradient-dax-power-bi.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [dax, calculation groups, conditional formatting, color] # tag names should be lowercase
+tags: [dax, calculation_groups, conditional_formatting, color] # tag names should be lowercase
 featured: true # set to true to show on homepage
 ---
 Almost a year ago, I asked on **Twitter** what color format you use in **Power BI**. The results from that question weren't all that surprising.
