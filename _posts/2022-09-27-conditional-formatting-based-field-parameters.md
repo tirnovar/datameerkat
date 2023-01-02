@@ -11,7 +11,7 @@ featured: false # set to true to show on homepage
 ---
 Conditional formatting is one of the basic building blocks in preparing Power BI Reports. Especially if we want to reduce the time for users to get the answers they came to the report for. But how about conditional formatting when we use field parameters in our model?
 
-*This article follows from the previous article: [Field parameters in cooperation with Calculation groups](https://www.linkedin.com/pulse/field-parameters-cooperation-calculation-groups-%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l/?lipi=urn%3Ali%3Apage%3Ad_flagship3_pulse_read%3BjYDeGWG1Rj%2Bt4DQw6sVpLA%3D%3D) – I use the same dataset in this article.*
+*This article follows from the previous article: [Field parameters in cooperation with Calculation groups]({{site.baseurl}}/field-parameters-cooperation-calculation-groups) – I use the same dataset in this article.*
 
 ## Conditional Formatting with Field Parameters
 Field parameters are tricky in how they are executed. I can either deal with their output or input from a formatting perspective. It sounds rather abstract, but practically it means that I can either look directly into the "return" table of the field parameter or up to the table that is the resulting composition.

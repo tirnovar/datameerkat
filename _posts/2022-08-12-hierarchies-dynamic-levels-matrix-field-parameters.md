@@ -9,7 +9,7 @@ image_caption: '' # optional
 tags: [dax, field parameters, hierarchies, conditional formatting] # tag names should be lowercase
 featured: true # set to true to show on homepage
 ---
-In a previous article about Field parameters, I spoke about using them in cooperation with Calculation groups ([LINK](https://www.linkedin.com/pulse/field-parameters-cooperation-calculation-groups-%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l/)). I used them to get specific measures for selected dimensions from the dimensions field. After this test, I have come up with one more challenge for field parameters that we need to deal with from time to time. What challenge? Hierarchies with dynamic levels.
+In a previous article about Field parameters, I spoke about using them in cooperation with Calculation groups ([LINK]({{site.baseurl}}/field-parameters-cooperation-calculation-groups)). I used them to get specific measures for selected dimensions from the dimensions field. After this test, I have come up with one more challenge for field parameters that we need to deal with from time to time. What challenge? Hierarchies with dynamic levels.
 
 But what are hierarchies, and how to deal with **Parent-Child** hierarchies in Power BI? I want to recommend you to read about it here in an article from [Nikola Ilic](https://www.linkedin.com/in/nikola-ilic-data-mozart/): [Finding the right PATH - Understanding parent-child hierarchies in Power BI! - Data Mozart (data-mozart.com)](https://data-mozart.com/finding-the-right-path-understanding-parent-child-hierarchies-in-power-bi/)
 

@@ -182,4 +182,4 @@ And that is one of the many potent qualities that CGs have.
 
 Suppose you are interested in more detail about them. In that case, I recommend you check out [Bernat Agulló Roselló](https://www.linkedin.com/in/bernatagullo/) ([BLOG | Esbrina (esbrina-ba.com)](https://www.esbrina-ba.com/blog)), who has fallen completely under their spell and is truly an expert on their scripting and capabilities.
 
-Or to one of my previous articles about the possibilities of Field Parameters in cooperation with Calculation Groups. [Field parameters in cooperation with Calculation groups](https://www.linkedin.com/pulse/field-parameters-cooperation-calculation-groups-%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l/)
+Or to one of my previous articles about the possibilities of Field Parameters in cooperation with Calculation Groups. [Field parameters in cooperation with Calculation groups]({{site.baseurl}}/field-parameters-cooperation-calculation-groups)
