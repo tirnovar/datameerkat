@@ -72,6 +72,8 @@ footer__menu__settings:
       url: '/'
 #    - title: 'About'
 #      url: '/about/'
+    - title: 'DAX articles'
+      url: '/tags/?tag=dax'
     - title: 'Power BI Cheatsheets'
       url: 'https://www.kratosbi.com/data-cheat-sheets'
 #    - title: 'Contact'
