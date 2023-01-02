@@ -70,8 +70,8 @@ footer__menu__settings:
   menu__items:
     - title: 'Home'
       url: '/'
-    - title: 'About'
-      url: '/about/'
+#    - title: 'About'
+#      url: '/about/'
     - title: 'Power BI Cheatsheets'
       url: 'https://www.kratosbi.com/data-cheat-sheets'
 #    - title: 'Contact'
