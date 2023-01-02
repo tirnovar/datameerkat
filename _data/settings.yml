@@ -1,7 +1,7 @@
 #-------------------------------
 # Site Settings
 title: Data Meerkat
-logo: # You can add own logo. For example "/images/logo.png".
+logo: "images/logo.png"
 description: Blog not just about Power BI
 
 
