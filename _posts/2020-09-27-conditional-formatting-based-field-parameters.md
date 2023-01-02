@@ -1,7 +1,7 @@
 ---
 layout: post # type of content
 title: Conditional Formatting based on Field Parameters # title of the post
-description: INDEX + Calculation Groups + Custom Format String Expression = Quick dynamic answers # will be shown as a description in the post list
+description: Conditional formatting. It can sometimes seem like magic, what a few colors that appear at the right moment can do. Of course, the same applies to text, labels, and the like. However, with the advent of field parameters, it became necessary to look at the issue of conditional formatting from different perspectives. For example, how to prepare it for a particular scenario, should the user have the option of single-selection or multi-selection within the parameter, and whether we help anything with the formatting?  # will be shown as a description in the post list
 date: 2020-09-27 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/conditional-formatting-based-field-parameters.png' # required to store image in /images/covers
