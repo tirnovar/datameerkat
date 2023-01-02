@@ -50,6 +50,11 @@
         color: var(--link-color);
       }
     }
+
+    .logo__image {
+      background-image: url("../images/logo.svg");
+      max-height: 50px;
+    }
   }
 
   .header__inner {
@@ -101,6 +106,7 @@
 }
 
 .logo__image {
+  background-color: url("../images/logo-black.svg");
   max-height: 50px;
 }
 
