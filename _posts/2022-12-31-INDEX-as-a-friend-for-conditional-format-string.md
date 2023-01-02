@@ -6,7 +6,7 @@ date: 2022-12-29 10:00:0 +0100
 author: Štěpán
 image: '/images/covers/INDEX-as-a-friend-for-conditional-format-string.png'
 image_caption: ''
-tags: [dax, calculation groups, format string, conditional formatting, index]
+tags: [dax, calculation_groups, format_string, conditional_formatting, index]
 featured: true
 ---
 Among the new DAX functions is the **INDEX** function. I was skeptical about this. Because in comparison to the other added functions, there is not really a dynamic position concerning the position currently being evaluated. It looks at the input table as a stable view, where it can move using the **1...X** or **-1...X** coordinates.
