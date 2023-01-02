@@ -53,6 +53,7 @@
 
     .logo__image {
       background-image: url("../images/logo.svg");
+      background-repeat: no-repeat;
       max-height: 50px;
     }
   }
@@ -107,6 +108,7 @@
 
 .logo__image {
   background-color: url("../images/logo-black.svg");
+  background-repeat: no-repeat;
   max-height: 50px;
 }
 
