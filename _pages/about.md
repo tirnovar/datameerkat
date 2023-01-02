@@ -12,6 +12,7 @@ I am a data lover, especially in the ecosystem of Microsoft tools. I primarily f
 > Don't say something cannot be done, or someone who doesn't know will come and do it.
 
 I am one of the founders of a company called DataBrothers, and I am currently in the position of Lead Technical Consultant. Where we help companies with Power BI and train all kinds of users and developers around the world.
+
 [![DataBrothers](https://www.databrothers.cz/wp-content/uploads/2022/02/data-brothers-logo-cerne-3.svg){:loading="lazy" .smallerImage}](https://www.databrothers.cz/en/make-your-data-shine/)
 
 I am also a member of the [Czech and Slovak Power Platform User Group (#czskppug)](https://www.meetup.com/czskppug/), where I am responsible for the organization of the group meetups and the organization of the annual [Power Platform Conference in Prague](https://www.powerconference.cz/).
