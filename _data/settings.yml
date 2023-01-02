@@ -46,7 +46,7 @@ blog:
 # Recommended Tag Settings
 tag:
   enable: true
-  tag__title: Recommended
+  tag__title: Recommended TAG - DAX
   tag__name: DAX
 
 
