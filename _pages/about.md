@@ -11,7 +11,7 @@ I am a data lover, especially in the ecosystem of Microsoft tools. I primarily f
 
 > Don't say something cannot be done, or someone who doesn't know will come and do it.
 
-I am one of the founders of a company called DataBrothers, and I am currently in the position of Lead Technical Consultant. Where we help companies with Power BI and train all kinds of users and developers around the world.
+I am one of the founders of a company called DataBrothers, and I am currently in the position of Lead Technical Consultant. Where we help companies with Power BI and train all kinds of users and developers around the world. Even end-users! For them we have prepared [reporTee](https://reportee.cz/en/).
 
 [![DataBrothers](https://www.databrothers.cz/wp-content/uploads/2022/02/data-brothers-logo-cerne-3.svg){:loading="lazy" .smallerImage}](https://www.databrothers.cz/en/make-your-data-shine/)
 

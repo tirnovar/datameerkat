@@ -74,6 +74,8 @@ footer__menu__settings:
 #      url: '/about/'
     - title: 'DAX articles'
       url: '/tags/?tag=dax'
+    - title: 'Power BI Learning Point'
+      url: https://bit.ly/pbilearningpoint
     - title: 'Power BI Cheatsheets'
       url: 'https://www.kratosbi.com/data-cheat-sheets'
 #    - title: 'Contact'
