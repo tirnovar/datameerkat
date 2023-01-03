@@ -60,7 +60,7 @@
     <div class="row">
       {% if site.tags.size >= 1 %}
       <div class="search-tags">
-        <h3 class="search-suggestion__title">Popular topics</h3>
+        <h3 class="section__title">All tags for a quick search</h3>
         {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
         {% assign tag_words = site_tags | split:',' | sort %}
         <div class="search-tags__inner">
