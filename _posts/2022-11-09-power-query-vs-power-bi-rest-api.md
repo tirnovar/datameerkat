@@ -25,7 +25,7 @@ I presented this topic to the Iowa User Group, and the entire recording can be v
 
 **Get Token:**
 
-~~~~ powerquery
+~~~~ pq
     let
         output =
             (AzureADTenantID as text, AzureApplicationClientSecret as text, AzureApplicationClientID as text) as text =>
@@ -83,7 +83,7 @@ I presented this topic to the Iowa User Group, and the entire recording can be v
 
 **Datasets from selected Group:**
 
-~~~~ powerquery
+~~~~ pq
     let
         output = (generatedToken as text, groupId as text) =>
             let
@@ -108,7 +108,7 @@ I presented this topic to the Iowa User Group, and the entire recording can be v
 
 **Datasets from selected Group - Table generation:**
 
-~~~~ powerquery
+~~~~ pq
     let
         source = datasetsOfGroup(token,"XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")[value],
         tblGenerator =
