@@ -29,3 +29,6 @@ featured: true # set to true to show on homepage
 
 # LINK
 [Link Text](https://www.link.com)
+
+# Buttons
+<kdb>P</kdb>
