@@ -9,14 +9,14 @@ image: '/images/profile/steve_full.jpg'
 
 I am a data lover, especially in the ecosystem of Microsoft tools. I primarily focus on Power BI, Azure Synapse and Azure SQL. In general, I follow a very simple motto.
 
-> Don't say something cannot be done, or someone who doesn't know will come and do it.
+> Don´t say it cannot be done, or someone who doesn´t know it will come and do it.
 
-I am one of the founders of a company called DataBrothers, and I am currently in the position of Lead Technical Consultant. Where we help companies with Power BI and train all kinds of users and developers around the world. Even end-users! For them we have prepared [reporTee](https://reportee.cz/en/).
+I am a co-founder and a Lead Technical Consultant at DataBrothers. We are Power BI experts and consultants with a focus on data analysis, reporting, and training in Power BI. We work with our clients across the globe on developing custom solutions and training their users on all levels (from business to development). We also developed a self-learning application [ReporTee](https://reportee.cz/en/) for end-users.
 
 [![DataBrothers](https://www.databrothers.cz/wp-content/uploads/2022/02/data-brothers-logo-cerne-3.svg){:loading="lazy" .smallerImage}](https://www.databrothers.cz/en/make-your-data-shine/)
 
-I am also a member of the [Czech and Slovak Power Platform User Group (#czskppug)](https://www.meetup.com/czskppug/), where I am responsible for the organization of the group meetups and the organization of the annual [Power Platform Conference in Prague](https://www.powerconference.cz/).
+I engage in a lot of community work and activities and organize meetups of the [Czech and Slovak Power Platform User Group (#czskppug)](https://www.meetup.com/czskppug/) or the annual [Power Platform Conference](https://www.powerconference.cz/) we started last year.
 
-I am delighted to go outside the borders of the Czech Republic to conferences, both from the point of view of a participant and from the point of view of a speaker. You can usually find out where I will be participating from my [sessionize account](https://sessionize.com/stepan-resl/).
+I also love the adventures of attending conferences abroad both as a speaker and a participant. You can see my planned „gigs“ on my [sessionize account](https://sessionize.com/stepan-resl/).
 
-Also, in addition to articles here and on LinkedIn, I contribute to various Open-Source projects on GitHub and create my own. Among such smaller projects are the [Power BI REST API custom Power BI connector](https://github.com/tirnovar/Power-BI-Admin-REST-API-Connector) or [collection of Power Query functions to download data from that API](https://github.com/tirnovar/Power_BI_REST_API_PQ) and my personal collection of [custom Power Query functions](https://github.com/tirnovar/m-custom-functions).
+In addition to sharing articles on this new site and [LinkedIn](https://www.linkedin.com/in/%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l-464084152/), I contribute to various Open-Source projects on GitHub and create my own such as the [Power BI REST API custom Power BI connector](https://github.com/tirnovar/Power-BI-Admin-REST-API-Connector), [collection of Power Query functions to download data from that API](https://github.com/tirnovar/Power_BI_REST_API_PQ), and my personal collection of [custom Power Query functions](https://github.com/tirnovar/m-custom-functions).
