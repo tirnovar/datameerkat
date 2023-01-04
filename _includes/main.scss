@@ -2,13 +2,6 @@
 [MAIN STYLESHEET]
 -------------------------------------------------------------------*/
 
-/* >>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
-:: Template name: Dann
-:: Dann is a multi-purpose, creative, and modern theme for Jekyll. The main features of the theme are full compatibility with Github Pages, featured post slider, video post support, multiple authors support, and high performance. This theme is perfectly suitable for blogging and personal website.
-:: Template Author: Anvod Studio (Artem Sheludko)
-:: Version: 1.0
-<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< */
-
 /* >>>>>>>>>>>>>>>>>>>>>>>>>>>
 :: 1-Tools and Libs
     1.1-Normalize
@@ -117,3 +110,5 @@
 ======================= */
 /* >>>>>>>>>>>>>> :: 5 Custom <<<<<<<<<<<<<<< */
 @import '5-custom/codebox';
+@import '5-custom/keypress';
+@import '5-custom/cimage';
