@@ -2,7 +2,7 @@
 layout: post # type of content
 title: INDEX as a friend for Conditional Format Strings # title of the post
 description: INDEX + Calculation Groups + Custom Format String Expression = Quick dynamic answers # will be shown as a description in the post list
-date: YYYY-MM-DD hh:mm:ss +0100 # date of the post
+date: YYYY-MM-DD 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/INDEX-as-a-friend-for-conditional-format-string.png' # required to store image in /images/covers
 image_caption: '' # optional
