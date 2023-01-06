@@ -187,6 +187,4 @@ I will not be avoiding the INDEX function because, from my point of view, it is 
 Great articles about these new functions:
 * [Introducing DAX Window Functions (Part 1) – pbidax (wordpress.com)](https://pbidax.wordpress.com/2022/12/15/introducing-dax-window-functions-part-1/)
 * [INTRODUCING DAX WINDOW FUNCTIONS (PART 2) – pbidax (wordpress.com)](https://pbidax.wordpress.com/2022/12/23/introducing-dax-window-functions-part-2/)
-* [Unlock an ample new world by seeing through a window - Mincing Data - Gain Insight from Data (minceddata.info)](https://www.minceddata.info/2022/12/14/unlock-an-ample-new-world-by-seeing-through-a-window/)
-* [Looking through the WINDOW - Calculating customer lifetime value with new DAX functions! - Data Mozart (data-mozart.com)](https://data-mozart.com/looking-through-the-window-calculating-customer-lifetime-value-with-new-dax-functions/)
 * [How OFFSET in DAX will make your life easier – Data – Marc (data-marc.com)](https://data-marc.com/2022/09/21/how-offset-in-dax-will-make-your-life-easier/)
