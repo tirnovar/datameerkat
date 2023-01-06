@@ -14,7 +14,7 @@ It is a function that can create a moving "window" above the input table and app
 Overall, the syntax can be confusing at first glance, so I'd rather spend some time on it:
 
 
-<div class="codebox">WINDOW ( from\[, from_type], to\[, to_type]\[, \<relation>]\[, \<orderBy>]\[, \<blanks>]\[, \<partitionBy>] )</div><br>
+<div class="codebox">WINDOW ( from\[, from_type], to\[, to_type]\[, <\relation>]\[, <\orderBy>]\[, <\blanks>]\[, <\partitionBy>] )</div><br>
 
 [Official documentation for WINDOWS function](https://learn.microsoft.com/en-us/dax/window-function-dax?id=DP-MVP-5003801)
 
