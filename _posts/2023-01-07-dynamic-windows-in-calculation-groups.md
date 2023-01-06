@@ -2,11 +2,11 @@
 layout: post # type of content
 title: Dynamic windows in calculation groups # title of the post
 description: The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups. # will be shown as a description in the post list
-date: 2023-01-07 10:00:00 +0100 # date of the post
+date: 2023-01-06 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/dynamic-windows-in-calculation-groups.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [dax, calculation groups, window] # tag names should be lowercase
+tags: [dax, calculation_groups, field_parameters, window] # tag names should be lowercase
 featured: true # set to true to show on homepage
 ---
 It is a function that can create a moving "window" above the input table and apply it to the computing context. That **"window"** is defined quite similarly, as it was in the case of the **INDEX** function. Or that the numerical representation of the position **(0)1...X or X...-1(0)** is used. But there is one fundamental difference. **INDEX** requires only one such representative, **but the WINDOW function requires two.**
