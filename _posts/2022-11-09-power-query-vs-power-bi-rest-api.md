@@ -9,7 +9,7 @@ image_caption: '' # optional
 tags: [power_query, rest_api, admin, azure] # tag names should be lowercase
 featured: false # set to true to show on homepage
 ---
-I presented this topic to the Iowa User Group, and the entire recording can be viewed here:
+I presented this topic to the [Iowa Power BI User Group](https://www.pbiusergroup.com/communities/community-home?CommunityKey=e6e66122-e621-4bba-8adb-17fb68b9c419) (Their [Meetup](https://www.meetup.com/IowaPowerBI/)), and the entire recording can be viewed here:
 
 <p><iframe src="https://www.youtube.com/embed/RfsVPeot-r8" loading="lazy" frameborder="0" allowfullscreen></iframe></p>
 
