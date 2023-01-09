@@ -4,7 +4,7 @@ title: Date dimensions in Power Query # title of the post
 description: The data dimension is one of the most fundamental dimensions needed in reporting. That is because we are primarily interested in results from the point of view of the passage of time. # will be shown as a description in the post list
 date: 2023-01-09 10:00:00 +0100 # date of the post
 author: Štěpán # author name
-image: '/images/date-dimensions-in-power-query.png' # required to store image in /images/covers
+image: '/images/covers/date-dimensions-in-power-query.png' # required to store image in /images/covers
 image_caption: '' # optional
 tags: [m, power_query, date, dimension] # tag names should be lowercase
 featured: true # set to true to show on homepage
