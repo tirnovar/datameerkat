@@ -90,7 +90,7 @@ That's not what I am looking for. I am looking for any solution that would also 
 ## Field Parameters vs. Hierarchies
 First things first. If we use field parameters in a slicer with a single selection for values and a matrix, it will switch between dimensions in rows. With multi-select, we can even define if there should be some hierarchy on row level and which dimension will be used as the top-level one *(by selecting it in order)*.
 
-Next, a critical point to keep in mind when trying to do some **DAX Tweaks** with field parameters is that they are executed **BEFORE** other values in a model. [Gilbert Quevauvilliers](https://www.linkedin.com/in/fourmoo/) has described that in his article: [How Power BI Field Parameters works under the hoods - FourMoo | Power BI | Data Analytics](https://www.fourmoo.com/2022/06/01/how-power-bi-field-parameters-works-under-the-hoods/).
+Next, a critical point to keep in mind when trying to do some **DAX Tweaks** with field parameters is that they are executed **BEFORE** other values in a model. [Gilbert Quevauvilliers](https://www.linkedin.com/in/fourmoo/) has described that in his article: [How Power BI Field Parameters works under the hoods - FourMoo](https://www.fourmoo.com/2022/06/01/how-power-bi-field-parameters-works-under-the-hoods/).
 
 I have created my field parameter from the slightly similar table I used at the beginning of this article. The main difference is that if the value in *„Cat1“* doesn't have any children, then *„Cat2“* takes value from the column *„Cat1“*.
 
@@ -99,7 +99,7 @@ I have created my field parameter from the slightly similar table I used at the 
 
 **Prepared field parameter:**
 
-<div class="codebox">fieldOfDynamicHierarchy&nbsp;=<br>{<br><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Cat1"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'hierarchyTable'[Cat1]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Cat2"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'hierarchyTable'[Cat2]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br>}<br></div>
+<div class="codebox">fieldOfDynamicHierarchy&nbsp;=<br>{<br><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Cat1"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'hierarchyTable'[Cat1]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Cat2"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'hierarchyTable'[Cat2]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br>}</div><br>
 
 **Field parameter in matrix with values:**
 
@@ -178,7 +178,7 @@ After inserting it into the filter and applying it, the table did not change at 
 
 As you can see, now, when selecting the *"D"* value, the **"+/-" button is no longer displayed at all**, but it is for the *"B"* value. Of course, it would also be possible to combine it with the **previous measures** so that even in this case, under the value "D," we do not show the sub-category "D" in the display of all values.
 
-[Without any selection]({{site.baseurl}}/images/posts/Hierarchies with dynamic levels in Matrix by Field Parameters/nonSelectedParameter.png){:loading="lazy"}
+![Without any selection]({{site.baseurl}}/images/posts/Hierarchies with dynamic levels in Matrix by Field Parameters/nonSelectedParameter.png){:loading="lazy"}
 *Without any selection*
 
 ## Summary 
