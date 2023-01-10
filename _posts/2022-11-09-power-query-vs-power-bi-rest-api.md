@@ -35,3 +35,18 @@ I presented this topic to the [Iowa Power BI User Group](https://www.pbiusergrou
 **Datasets from selected Group - Table generation:**
 
 <script src="https://gist.github.com/tirnovar/d11bc103e5151e5827769e8942e45818.js"></script>
+<br>
+
+~~~~ powerquery
+let
+  source = datasetsOfGroup(token, "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")[value],
+  tblGenerator = #table(
+    type table [id = text, name = text, isRefreshable = logical, createdDateTime = datetime],
+    List.Transform(
+      source,
+      {_[id]?, _[name]?, _[isRefreshable]?, DateTime.From(_[createdDateTime]?)}
+    )
+  )
+in
+  tblGenerator
+~~~~
