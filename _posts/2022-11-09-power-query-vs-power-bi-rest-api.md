@@ -37,7 +37,7 @@ I presented this topic to the [Iowa Power BI User Group](https://www.pbiusergrou
 <script src="https://gist.github.com/tirnovar/d11bc103e5151e5827769e8942e45818.js"></script>
 <br>
 
-~~~~ powerquery
+~~~~ pq
 let
   source = datasetsOfGroup(token, "XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX")[value],
   tblGenerator = #table(
