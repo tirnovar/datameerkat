@@ -183,7 +183,7 @@ This expression can be used as a single-step query that creates the data dimensi
 
 Again, one small warning, as with the fourth attribute for Table.AddColumn. So even here, the values are not retyped, and the UI cannot recognize that the column's content needs to understand the data type. Or, even in this variant, Power Query trusts us that we have arranged for the result to be in the correct type.
 
-## Speed comparison + Summary
+## Speed comparison \+ Summary
 It would be worth discovering how these procedures fare in terms of speed. So let's use the Diagnosis within the Power Query -> Tools tab. And measure the speed of individual resulting tables.
 
 ![Speed Summary]({{site.baseurl}}/images/posts/Date dimensions in Power Query/speedSummary.png){:loading="lazy"}
