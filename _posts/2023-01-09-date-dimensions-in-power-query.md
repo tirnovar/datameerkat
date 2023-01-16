@@ -187,7 +187,7 @@ Again, one small warning, as with the fourth attribute for Table.AddColumn. So e
 It would be worth discovering how these procedures fare in terms of speed. So let's use the Diagnosis within the Power Query -> Tools tab. And measure the speed of individual resulting tables.
 
 ![Speed Summary]({{site.baseurl}}/images/posts/Date dimensions in Power Query/speedSummary.png){:loading="lazy"}
-*Speed Summary*
+*Exclusive duration of tested Queries - Speed Summary*
 
 From the measurement results, the resulting #table variant is noticeably more advantageous than the other variants from the point of view of speed. At the same time, the option where we create columns at once using a record is faster than the method where we create individual columns step by step. All the variants have the same columns and values and perform the same calculations.
 
