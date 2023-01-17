@@ -162,15 +162,15 @@ The procedure will be similar to when we defined that record for the new column.
 
 Now we have an actual list of lists. And the values in individual Lists are always in the same order. So we can have them spread out on a table.
 
-We can either save the procedure prepared in this way in a separate step and then call it into the #table or insert it directly into the #table.
+We can either save the procedure prepared in this way in a separate step and then call it into the **#table** or insert it directly into the **#table**.
 
 But before we do that, a few more words about the fact that we have created rows but no columns. If we wanted to create columns without a data type, we could pass the individual names within the List, but if we want to give it the data type as well, we have to do it a little differently:
 
 <script src="https://gist.github.com/tirnovar/59a37e2bdd84a225002d5eab2b09da8d.js"></script>
 
-The column definitions must be in the same order as they are defined within the "List.Transform" output! You can also evaluate this entry in Power Query. The result will be that the value "table" will be returned to you, and the query icon will be a table icon with a question mark. But no data anywhere.
+The column definitions must be in the same order as they are defined within the "**List.Transform**" output! You can also evaluate this entry in Power Query. The result will be that the value "table" will be returned to you, and the query icon will be a table icon with a question mark. But no data anywhere.
 
-The miracle will happen after we connect these two parts, i.e., the columns and rows within the #table.
+The miracle will happen after we connect these two parts, i.e., the columns and rows within the **#table**.
 
 <script src="https://gist.github.com/tirnovar/80fce696163f9eaf17d2d7ecae9a6472.js"></script>
 
@@ -179,11 +179,11 @@ Because this code will make, the table materializes as we need.
 ![DateKey Table]({{site.baseurl}}/images/posts/Date dimensions in Power Query/dateKeyTable.png){:loading="lazy"}
 *DateKey Table*
 
-This expression can be used as a single-step query that creates the data dimension entirely. At the same time, we can easily add additional columns thanks to the extension of record types and the "List.Transform" function. At the same time, when going through that transformation, we can also use inner "Let .. in expressions."
+This expression can be used as a single-step query that creates the data dimension entirely. At the same time, we can easily add additional columns thanks to the extension of record types and the "**List.Transform**" function. At the same time, when going through that transformation, we can also use inner **"Let .. in expressions.**"
 
-Again, one small warning, as with the fourth attribute for Table.AddColumn. So even here, the values are not retyped, and the UI cannot recognize that the column's content needs to understand the data type. Or, even in this variant, Power Query trusts us that we have arranged for the result to be in the correct type.
+Again, one small warning, as with the fourth attribute for **Table.AddColumn**. So even here, the values are not retyped, and the UI cannot recognize that the column's content needs to understand the data type. Or, even in this variant, Power Query trusts us that we have arranged for the result to be in the correct type.
 
-## Speed comparison and Summary
+## Speed comparison and Summary
 
 It would be worth discovering how these procedures fare in terms of speed. So let's use the Diagnosis within the Power Query -> Tools tab. And measure the speed of individual resulting tables.
 
