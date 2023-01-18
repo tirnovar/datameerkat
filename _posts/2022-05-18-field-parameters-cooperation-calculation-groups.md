@@ -131,7 +131,7 @@ This "Kpi "column contains KPIs I would like to show for my dimensions. But not 
 * YTD
 * Transactions
 * Plan
-* \% Fulfillment
+* % Fulfillment
 
 **Location**
 * Actual
