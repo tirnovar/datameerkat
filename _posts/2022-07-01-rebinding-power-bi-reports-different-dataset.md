@@ -52,7 +52,7 @@ I also need **"Report.ReadWrite.All"** from a permission API perspective. Assumi
 
 For this call, I will use the Postman service, where I will first make an authentication call to get a token, which I will then use to authenticate directly against the Power BI Service. I make this call using the following curl: 
 
-{% highlight html %}
+{% highlight %}
 curl --location --request POST 'https://login.microsoftonline.com/{tenantId}/oauth2/token' 
 --header 'Host: login.microsoftonline.com' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -74,7 +74,7 @@ The following call is the one we needed to get the **groupId**, **reportId**, an
 
 Curl notation for call:
 
-{% highlight html %}
+{% highlight %}
 curl --location --request POST 'https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportId}/Rebind' 
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {Accss Token}' \
