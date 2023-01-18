@@ -26,7 +26,7 @@ However, in the Power BI Service, there is no way to tell the report to change i
 ## So how can I link the report to another dataset?
 The short answer is the Power BI REST API. This type of call can be found within the API [Reports - Rebind Report In Group - REST API (Power BI Power BI REST APIs)](https://learn.microsoft.com/en-us/rest/api/power-bi/reports/rebind-report-in-group?id=DP-MVP-5003801)
 
-<div class="codebox">POST [https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportId}/Rebind](https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportId}/Rebind)</div><br>
+<div class="codebox">POST https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportId}/Rebind</div><br>
 
 However, for the successful execution of the call, it is necessary to obtain **{groupId}**, **{reportId}**, **{datasetId}** and fulfill a few criteria. The **{groupId}** and **{reportId}** are to be found on the report that we need to move and **{datasetId}** on the dataset to which we will move the report.
 
@@ -52,7 +52,7 @@ I also need **"Report.ReadWrite.All"** from a permission API perspective. Assumi
 
 For this call, I will use the Postman service, where I will first make an authentication call to get a token, which I will then use to authenticate directly against the Power BI Service. I make this call using the following curl: 
 
-~~~~ curl
+{% highlight html %}
 curl --location --request POST 'https://login.microsoftonline.com/{tenantId}/oauth2/token' 
 --header 'Host: login.microsoftonline.com' \
 --header 'Content-Type: application/x-www-form-urlencoded' \
@@ -60,7 +60,7 @@ curl --location --request POST 'https://login.microsoftonline.com/{tenantId}/oau
 --data-urlencode 'client_id={clientId}' \
 --data-urlencode 'client_secret={clientSecret} ' \
 --data-urlencode 'resource=https://analysis.windows.net/powerbi/api'\
-~~~~
+{% endhighlight %}
 
 Where I just change {clientId}, {clientSecret} and {tenantId} to the respective values. I demonstrated how to get them, for example, in [Querying Power BI Datasets by DAX through Admin API](https://www.linkedin.com/pulse/querying-power-bi-datasets-dax-through-admin-api-%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l/). And I will take the Access Token from the answer.
 
@@ -74,14 +74,14 @@ The following call is the one we needed to get the **groupId**, **reportId**, an
 
 Curl notation for call:
 
-~~~~ curl
+{% highlight html %}
 curl --location --request POST 'https://api.powerbi.com/v1.0/myorg/groups/{groupId}/reports/{reportId}/Rebind' 
 --header 'Content-Type: application/json' \
 --header 'Authorization: Bearer {Accss Token}' \
 --data-raw '{
     "datasetId":"{datasetId}"
 }'\
-~~~~
+{% endhighlight %}
 
 I got a status **200** after the call which means it was successful. I can confirm this in Power BI Service, where I see the **"HR cockpit v2"** connected to the correct dataset!
 
@@ -91,7 +91,7 @@ I got a status **200** after the call which means it was successful. I can confi
 ## API calls from the User's point of view
 Assuming that I am a user who meets the requirements mentioned above, I can do this myself – for example, using PowerShell. It is necessary to have PowerShell modules installed ([Power BI Cmdlets reference | Microsoft Docs](https://learn.microsoft.com/en-us/powershell/power-bi/overview?view=powerbi-ps&id=DP-MVP-5003801)), which can help you solve many things – for example, the user's Access Token we need. We can get it in the module just by using the following code
 
-~~~~ PowerShell
+{% highlight powershell %}
 Login-PowerBI
 
 $token = (Get-PowerBIAccessToken)["Authorization"]
@@ -104,7 +104,7 @@ Invoke-WebRequest `
  -Headers @{ "Authorization"=$token } `
  -Body ($body|ConvertTo-Json) `
  -ContentType "application/json"
-~~~~
+{% endhighlight %}
 
 After calling the first line, you will get a classic login window, and after you log in, PowerShell will tell you which Environment you have logged in to. Then you can save the obtained **AccessToken** in the **$token** variable. 
 
