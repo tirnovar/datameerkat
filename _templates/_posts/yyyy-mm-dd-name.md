@@ -20,9 +20,14 @@ featured: true # set to true to show on homepage
 
 # CODE
 ## JSON
-~~~~ json
+{% highlight json %}
 {}
-~~~~
+{% endhighlight %}
+
+## HTML with LINES
+{% highlight html linenos %}
+<html></html>
+{% endhighlight %}
 
 ## DAX
 <div class="codebox"></div><br>
@@ -31,4 +36,4 @@ featured: true # set to true to show on homepage
 [Link Text](https://www.link.com)
 
 # Buttons
-<kdb>P</kdb>
+<kbd>P</kbd>

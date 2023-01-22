@@ -11,7 +11,7 @@ featured: true
 ---
 Among the new DAX functions is the **INDEX** function. I was skeptical about this. Because in comparison to the other added functions, there is not a dynamic position concerning the position currently being evaluated. It looks at the input table as a stable view, where it can move using the **1…X** or **-1…X** coordinates.
 
-But this feature gave me the idea that it could replace **MINX** and **MAXX** in some moments when moving around the Date dimension. After all, **"1"** is **MINX**, and **"-1"** is **MAXX**. This is quite simple. At the same time, in contrast to the OFFSET function, for example, it does not make shifts that would stack on top of each other with each subsequent **OFFSET** (see the [previous article](https://www.linkedin.com/pulse/offset-its-usage-calculation-groups-%C5%A1t%C4%9Bp%C3%A1n-re%C5%A1l/)), so it is much easier to understand.
+But this feature gave me the idea that it could replace **MINX** and **MAXX** in some moments when moving around the Date dimension. After all, **"1"** is **MINX**, and **"-1"** is **MAXX**. This is quite simple. At the same time, in contrast to the OFFSET function, for example, it does not make shifts that would stack on top of each other with each subsequent **OFFSET** (see the [previous article]({{site.baseurl}}/offset-its-usage-calculation-groups)), so it is much easier to understand.
 
 But without a practical example, it's just an "interesting" feature. So I set out to explore it a bit and use it in a real scenario… as it happens, it's a scenario that combines calculation groups at the same time.
 
