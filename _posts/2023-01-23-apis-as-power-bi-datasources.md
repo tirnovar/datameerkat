@@ -52,7 +52,7 @@ What was said, but now in a shorter way:
 
 ## Power Query vs. simple API
 
-It will be best to show it practically. And let's start easy. Let's download the data from some straightforward API. It means an API that doesn't have complex authentication and where we will get only a few or **page-by-page responses**. For demonstration purposes, I will choose one of the APIs, which is also very often recommended for some programming practice. For example, [NewsAPI](https://newsapi.org/). This API can return news gathered from different corners of the world.
+It will be best to show it practically. And let's start easy. Let's download the data from some straightforward API. It means an API that doesn't have complex authentication and where we will get only a few or **page-by-page responses** (If you would like to learn more about this, here is a link to an article by [Rick de Groot](https://www.linkedin.com/in/rickmaurinus/) that explains it very well - [List Generate API Calls](https://gorilla.bi/power-query/list-generate-api-calls/)). For demonstration purposes, I will choose one of the APIs, which is also very often recommended for some programming practice. For example, [NewsAPI](https://newsapi.org/). This API can return news gathered from different corners of the world.
 
 If you are a developer, you can use this API for free in the **TRIAL version** and try many things on it.
 
