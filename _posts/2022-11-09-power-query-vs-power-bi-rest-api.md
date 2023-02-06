@@ -6,7 +6,7 @@ date: 2022-11-09 10:00:00 +0100 # date of the post
 author: Štěpán # author name
 image: '/images/covers/power-query-vs-power-bi-rest-api.png' # required to store image in /images/covers
 image_caption: '' # optional
-tags: [power_query, rest_api, admin, azure] # tag names should be lowercase
+tags: [m, power_query, rest_api, admin, azure] # tag names should be lowercase
 featured: false # set to true to show on homepage
 ---
 I presented this topic to the [Iowa Power BI User Group](https://www.pbiusergroup.com/communities/community-home?CommunityKey=e6e66122-e621-4bba-8adb-17fb68b9c419) (Their [Meetup](https://www.meetup.com/IowaPowerBI/)), and the entire recording can be viewed here:
