@@ -167,7 +167,7 @@ Prepared JSON to transfer to Power Automate:
                 },
                 {
                     "title": "Started at:",
-                    "value": "{{DATE(${start},SHORT)}} at {{TIME(${start})}}"
+                    "value": "\{\{DATE\($\{start\},SHORT\)\}\} at \{\{TIME\($\{start\}\)\}\}"
                 }
             ]
         },
