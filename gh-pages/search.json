@@ -1,0 +1,123 @@
+[
+  
+    {
+      "title"    : "Dataflows refresh monitoring",
+      "category" : "",
+      "tags"     : "power-automate, api, dataflow, admin, and monitoring",
+      "url"      : "/dataflows-refresh-monitoring",
+      "image"    : "/images/covers/dataflows-refresh-monitoring.png"
+    } ,
+  
+    {
+      "title"    : "APIs as Power BI Datasources",
+      "category" : "",
+      "tags"     : "m, power_query, and api",
+      "url"      : "/apis-as-power-bi-datasources",
+      "image"    : "/images/covers/apis-as-power-bi-datasources.png"
+    } ,
+  
+    {
+      "title"    : "Date dimensions in Power Query",
+      "category" : "",
+      "tags"     : "m, power_query, date, and dimension",
+      "url"      : "/date-dimensions-in-power-query",
+      "image"    : "/images/covers/date-dimensions-in-power-query.png"
+    } ,
+  
+    {
+      "title"    : "Dynamic windows in calculation groups",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, field_parameters, and window",
+      "url"      : "/dynamic-windows-in-calculation-groups",
+      "image"    : "/images/covers/dynamic-windows-in-calculation-groups.png"
+    } ,
+  
+    {
+      "title"    : "INDEX as a friend for Conditional Format Strings",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, format_string, conditional_formatting, and index",
+      "url"      : "/index-as-a-friend-for-conditional-format-string",
+      "image"    : "/images/covers/INDEX-as-a-friend-for-conditional-format-string.png"
+    } ,
+  
+    {
+      "title"    : "OFFSET and its usage with Calculation Groups",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, format_string, conditional_formatting, and offset",
+      "url"      : "/offset-its-usage-calculation-groups",
+      "image"    : "/images/covers/offset-its-usage-calculation-groups.png"
+    } ,
+  
+    {
+      "title"    : "Restrict Power BI Integration Button in Microsoft Lists",
+      "category" : "",
+      "tags"     : "integration, service, admin, and sharepoint",
+      "url"      : "/restrict-power-bi-integration-button-microsoft-lists",
+      "image"    : "/images/covers/restrict-power-bi-integration-button-microsoft-lists.png"
+    } ,
+  
+    {
+      "title"    : "Power Query vs. Power BI Rest API",
+      "category" : "",
+      "tags"     : "m, power_query, rest_api, admin, and azure",
+      "url"      : "/power-query-vs-power-bi-rest-api",
+      "image"    : "/images/covers/power-query-vs-power-bi-rest-api.png"
+    } ,
+  
+    {
+      "title"    : "Multi-Color Gradient with DAX in Power BI",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, conditional_formatting, and color",
+      "url"      : "/multi-color-gradient-dax-power-bi",
+      "image"    : "/images/covers/multi-color-gradient-dax-power-bi.png"
+    } ,
+  
+    {
+      "title"    : "Conditional Formatting with Calculation Groups",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, format_string, and conditional_formatting",
+      "url"      : "/conditional-formatting-calculation-groups",
+      "image"    : "/images/covers/conditional-formatting-calculation-groups.png"
+    } ,
+  
+    {
+      "title"    : "Conditional Formatting based on Field Parameters",
+      "category" : "",
+      "tags"     : "dax, field_parameters, format_string, and conditional_formatting",
+      "url"      : "/conditional-formatting-based-field-parameters",
+      "image"    : "/images/covers/conditional-formatting-based-field-parameters.png"
+    } ,
+  
+    {
+      "title"    : "Hierarchies with dynamic levels in Matrix by Field Parameters",
+      "category" : "",
+      "tags"     : "dax, field_parameters, hierarchies, and conditional_formatting",
+      "url"      : "/hierarchies-dynamic-levels-matrix-field-parameters",
+      "image"    : "/images/covers/hierarchies-dynamic-levels-matrix-field-parameters.png"
+    } ,
+  
+    {
+      "title"    : "Rebinding Power BI Reports to Different Dataset",
+      "category" : "",
+      "tags"     : "admin, service, rest_api, and powershell",
+      "url"      : "/rebinding-power-bi-reports-different-dataset",
+      "image"    : "/images/covers/rebinding-power-bi-reports-different-dataset.png"
+    } ,
+  
+    {
+      "title"    : "Why Should I Be Interested in the ExecuteQueries Endpoint of PBI REST API?",
+      "category" : "",
+      "tags"     : "power_automate, rest_api, service, and data_driven",
+      "url"      : "/execute-query-endpoint-of-power-bi-rest-api",
+      "image"    : "/images/covers/execute-query-endpoint-of-power-bi-rest-api.png"
+    } ,
+  
+    {
+      "title"    : "Field parameters in cooperation with Calculation groups",
+      "category" : "",
+      "tags"     : "dax, calculation_groups, field_parameters, and conditional_formatting",
+      "url"      : "/field-parameters-cooperation-calculation-groups",
+      "image"    : "/images/covers/field-parameters-cooperation-calculation-groups.png"
+    } 
+  
+]

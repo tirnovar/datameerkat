@@ -19,7 +19,7 @@ paginate_path: "/page/:num"
 
 #-------------------------------
 safe: false
-
+destination: gh-pages
 #-------------------------------
 # Collections
 collections:
