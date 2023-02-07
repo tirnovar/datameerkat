@@ -1,4 +1,3 @@
-Jekyll::Hooks.register :pages, :post_render do |site|
-  puts "Hello World!"
-  require "rouge"
+Jekyll::Hooks.register :site, :pre_render do |site|
+    puts "Adding more JavaScript Markdown aliases..."
 end
