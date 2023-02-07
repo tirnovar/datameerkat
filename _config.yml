@@ -18,6 +18,9 @@ paginate_path: "/page/:num"
 
 
 #-------------------------------
+safe: false
+
+#-------------------------------
 # Collections
 collections:
   pages:
