@@ -19,6 +19,13 @@ featured: true # set to true to show on homepage
 [![IMAGE](){:loading="lazy"}](https://www.link.com)
 
 # CODE
+## PQ
+{% highlight pq %}
+{% endhighlight %}
+
+## PQ With line highlight
+{% highlight pq highlight_lines="6 8" %}
+{% endhighlight %}
 ## JSON
 {% highlight json %}
 {}
