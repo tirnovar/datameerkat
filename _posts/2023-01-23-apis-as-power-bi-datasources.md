@@ -94,7 +94,20 @@ These and other parts can be inserted into the second parameter, **"options."** 
 
 Let's try it out:
 
-<script src="https://gist.github.com/tirnovar/b04c8b3622e09dacd03dd410d73a5c5b.js"></script>
+{% highlight pq %}
+let
+    key = ""
+in
+    Web.Contents("https://newsapi.org/v2", 
+        [
+            RelativePath = "top-headlines",
+            Query = [
+                country = "us",
+                apiKey = key
+            ]
+        ]
+    )
+{% endhighlight %}
 
 If you put this code into Power Query and put your key in the prepared empty string, you should see the following response:
 
@@ -134,9 +147,27 @@ The first thing evident from this, which was already evident a while ago in the 
 
 So we can already send it within the URL as part of the Query. So let's show how we will do o within the Header. Suppose we extend the original code in the **"options"** framework with Headers and define the input according to the specification in the documentation. In that case, we should reach something like this in the code:
 
-<script src="https://gist.github.com/tirnovar/2c7f69171b69008aff738c3bb24945d2.js"></script>
+{% highlight pq highlight_lines="10" %}
+let
+    key = ""
+in
+    Json.Document(
+        Web.Contents(
+            "https://newsapi.org/v2",
+            [
+                RelativePath = "top-headlines",
+                Headers = [
+                    #"X-Api-Key" = key
+                ],
+                Query = [
+                    country = "us"
+                ]
+            ]
+        )
+    )
+{% endhighlight %}
 
-You can notice in the code *(on a line 10)* that I used the offered **"X-Api-Key" option**. Unfortunately, due to the presence of the **"-"** character, I have to wrap the entire attribute name in a fixed naming notation using **#""**. However, after execution in Power Query, the result is the same and functional again!
+You can notice in the code that I used the offered **"X-Api-Key" option**. Unfortunately, due to the presence of the **"-"** character, I have to wrap the entire attribute name in a fixed naming notation using **#""**. However, after execution in Power Query, the result is the same and functional again!
 
 ![Positive results]({{site.baseurl}}/images/posts/APIs as Power BI Datasources/positiveResults.png){:loading="lazy"}
 *Positive results*
@@ -147,7 +178,38 @@ So we can also pass any other header components this way. So if the API will hav
 
 So we have the basic parts almost all covered! We're missing one last one! It is the passing of Content within the **Content part** of the call. It is the part that changes the **GET** method we've used all along to a **POST** method. I understand if a question mark just popped into your head! After all... Why would I want to send data away from Power Query? It is only sometimes necessary to send data directly away. Sometimes, even just API authentication processes, it is necessary to send authentication information that will return you a **temporary key** *(token)* that you can use to retrieve your data. For example, suppose you're trying to get data from the **Power BI REST API**. In that case, you will have a different key than we had with the NewsAPI. Here, you must authenticate against **Azure Active Directory (AAD)** either as a user or as an application. AAD will return you an access key after validating basic permissions, which will have a specific **lifetime** *(relatively short)* and will need to be renewed once it expires. **So in such cases, the idea is that you create the first POST request and then pass its output to the GET request.** But let's show it!
 
-<script src="https://gist.github.com/tirnovar/7908dd53cbba77dda469ae95a6f068b7.js"></script>
+{% highlight pq highlight_lines="10 11 12 13 14 15 16 17 18 19" %}
+let
+    output = (AzureADTenantID as text, AzureApplicationClientSecret as text, AzureApplicationClientID as text) as text =>
+        let
+            resource = "https://analysis.windows.net/powerbi/api",
+            tokenResponse = Json.Document(
+                Web.Contents(
+                    "https://login.windows.net",
+                    [
+                        RelativePath = AzureADTenantID & "/oauth2/token",
+                        Content = Text.ToBinary(
+                            Uri.BuildQueryString(
+                                [
+                                    client_id = AzureApplicationClientID,
+                                    resource = resource,
+                                    grant_type = "client_credentials",
+                                    client_secret = AzureApplicationClientSecret
+                                ]
+                            )
+                        ),
+                        Headers = [
+                            Accept = "application/json"
+                        ]
+                    ]
+                )
+            ),
+            token_output = tokenResponse[token_type] & " " & tokenResponse[access_token]
+        in
+            token_output
+in
+    output
+{% endhighlight %}
 
 Don't be afraid of this code. It is pretty straightforward. I have only wrapped the whole thing in a function so that we could pass the necessary parts to this call simply and on call. Primarily, from **line number 10**, we added an attribute called **Content**. As I mentioned at the beginning, we have to give the Content in binary form. That's the reason why the **[Text.ToContent()](https://learn.microsoft.com/en-us/powerquery-m/text-tobinary?id=DP-MVP-5003801)** function wraps the Content. It translates the Text into binary for us. Instead of the **[Uri.BuildQueryString](https://learn.microsoft.com/en-us/powerquery-m/uri-buildquerystring?id=DP-MVP-5003801)** function, we could also have a direct entry of our **Content**, or you can define it as a JSON, which would look like this:
 
