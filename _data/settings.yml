@@ -44,11 +44,17 @@ blog:
 
 #-------------------------------
 # Recommended Tag Settings
+tag__section__name: Newest articles by topics
+
 tag:
   enable: true
-  tag__title: Recommended TAG - DAX
+  tag__title: DAX
   tag__name: DAX
 
+second__tag:
+  enable: true
+  tag__title: Power Query
+  tag__name: power_query
 
 #-------------------------------
 # Newsletter Settings
