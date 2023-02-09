@@ -24,14 +24,136 @@ I presented this topic to the [Iowa Power BI User Group](https://www.pbiusergrou
 
 **Get Token:**
 
-<script src="https://gist.github.com/tirnovar/05edecf93fb62677040fc3e6a60246e0.js"></script>
-<br>
+{% highlight pq %}
+let
+    output =
+        (AzureADTenantID as text, AzureApplicationClientSecret as text, AzureApplicationClientID as text) as text =>
+            let
+                resource = "https://analysis.windows.net/powerbi/api",
+                tokenResponse =
+                    Json.Document(
+                        Web.Contents(
+                            "https://login.windows.net",
+                            [
+                                RelativePath = AzureADTenantID & "/oauth2/token",
+                                Content =
+                                    Text.ToBinary(
+                                        Uri.BuildQueryString(
+                                            [
+                                                client_id = AzureApplicationClientID,
+                                                resource = resource,
+                                                grant_type = "client_credentials",
+                                                client_secret = AzureApplicationClientSecret
+                                            ]
+                                        )
+                                    ),
+                                Headers = [
+                                    Accept = "application/json"
+                                ],
+                                ManualStatusHandling = {
+                                    400
+                                }
+                            ]
+                        )
+                    ),
+                token_output =
+                    tokenResponse[token_type]
+                    & " "
+                    & tokenResponse[access_token]
+            in
+                token_output,
+    documentation = [
+        Documentation.Name = " get-BearerToken.pq ",
+        Documentation.Description = " Get Bearer Token needed for Power BI REST API calls ",
+        Documentation.Source = "https://www.datameerkat.com",
+        Documentation.Version = " 1.0 ",
+        Documentation.Author = " Štěpán Rešl "
+    ]
+in
+    Value.ReplaceType(
+        output,
+        Value.ReplaceMetadata(
+            Value.Type(output),
+            documentation
+        )
+    )
+{% endhighlight %}
 
 **Datasets from selected Group:**
 
-<script src="https://gist.github.com/tirnovar/0010bb1b1f86cf35f93a97c8d87f9f73.js"></script>
-<br>
+{% highlight pq %}
+let
+    apiCall =
+        Json.Document(
+            Web.Contents(
+                "https://api.powerbi.com/v1.0/myorg",
+                [
+                    RelativePath = "admin/groups/"& groupsId &"/datasets",
+                    Headers = [
+                        #"Content-Type" = "application/json",
+                        Authorization = generatedToken
+                    ]
+                ]
+            )
+        )
+in
+    apiCall[value]
+{% endhighlight %}
 
 **Datasets from selected Group - Table generation:**
 
-<script src="https://gist.github.com/tirnovar/d11bc103e5151e5827769e8942e45818.js"></script>
+{% highlight pq %}
+let
+    apiCall =
+        Json.Document(
+            Web.Contents(
+                "https://api.powerbi.com/v1.0/myorg",
+                [
+                    RelativePath = "admin/groups/"& groupsId &"/datasets",
+                    Headers = [
+                        #"Content-Type" = "application/json",
+                        Authorization = generatedToken
+                    ]
+                ]
+            )
+        )
+in
+    #table(
+        type table [
+            id = text,
+            name = text,
+            addRowsAPIEnabled = logical,
+            configuredBy = text,
+            isRefreshable = logical,
+            isEffectiveIdentityRequired = logical,
+            isEffectiveIdentityRolesRequired = logical,
+            isOnPremGatewayRequired = logical,
+            webUrl = text,
+            targetStorageMode = text,
+            createdDate = datetime,
+            createReportEmbedURL = text,
+            qnaEmbedURL = text,
+            upstreamDatasets = list
+        ],
+        List.Transform(
+            apiCall[value],
+            each
+                {
+                    _[id]?,
+                    _[name]?,
+                    _[addRowsAPIEnabled]?,
+                    _[configuredBy]?,
+                    _[isRefreshable]?,
+                    _[isEffectiveIdentityRequired]?,
+                    _[isEffectiveIdentityRolesRequired]?,
+                    _[isOnPremGatewayRequired]?,
+                    _[webUrl]?,
+                    _[targetStorageMode]?,
+                    DateTime.From(_[createdDate]?),
+                    _[createReportEmbedURL]?,
+                    _[qnaEmbedURL]?,
+                    _[upstreamDatasets]?
+                }
+        )
+    )
+{% endhighlight %}

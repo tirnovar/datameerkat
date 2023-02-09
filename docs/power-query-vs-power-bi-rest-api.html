@@ -402,20 +402,133 @@
 
 <p><strong>Get Token:</strong></p>
 
-<script src="https://gist.github.com/tirnovar/05edecf93fb62677040fc3e6a60246e0.js"></script>
-
-<p><br /></p>
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">output</span> <span class="o">=</span>
+        <span class="p">(</span>AzureADTenantID <span class="nc">as</span> <span class="nb">text</span><span class="o">,</span> AzureApplicationClientSecret <span class="nc">as</span> <span class="nb">text</span><span class="o">,</span> AzureApplicationClientID <span class="nc">as</span> <span class="nb">text</span><span class="p">)</span> <span class="nc">as</span> <span class="nb">text</span> <span class="o">=&gt;</span>
+            <span class="k">let</span>
+                <span class="n">resource</span> <span class="o">=</span> <span class="s">"https://analysis.windows.net/powerbi/api"</span><span class="o">,</span>
+                <span class="n">tokenResponse</span> <span class="o">=</span>
+                    Json<span class="o">.</span>Document<span class="p">(</span>
+                        Web<span class="o">.</span>Contents<span class="p">(</span>
+                            <span class="s">"https://login.windows.net"</span><span class="o">,</span>
+                            <span class="o">[</span>
+                                RelativePath <span class="o">=</span> AzureADTenantID <span class="o">&amp;</span> <span class="s">"/oauth2/token"</span><span class="o">,</span>
+                                Content <span class="o">=</span>
+                                    Text<span class="o">.</span>ToBinary<span class="p">(</span>
+                                        Uri<span class="o">.</span>BuildQueryString<span class="p">(</span>
+                                            <span class="o">[</span>
+                                                <span class="n">client_id</span> <span class="o">=</span> AzureApplicationClientID<span class="o">,</span>
+                                                <span class="n">resource</span> <span class="o">=</span> <span class="n">resource</span><span class="o">,</span>
+                                                <span class="n">grant_type</span> <span class="o">=</span> <span class="s">"client_credentials"</span><span class="o">,</span>
+                                                <span class="n">client_secret</span> <span class="o">=</span> AzureApplicationClientSecret
+                                            <span class="o">]</span>
+                                        <span class="p">)</span>
+                                    <span class="p">)</span><span class="o">,</span>
+                                Headers <span class="o">=</span> <span class="o">[</span>
+                                    Accept <span class="o">=</span> <span class="s">"application/json"</span>
+                                <span class="o">],</span>
+                                ManualStatusHandling <span class="o">=</span> <span class="o">{</span>
+                                    <span class="mf">400</span>
+                                <span class="o">}</span>
+                            <span class="o">]</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span><span class="o">,</span>
+                <span class="n">token_output</span> <span class="o">=</span>
+                    <span class="n">tokenResponse</span><span class="o">[</span><span class="n">token_type</span><span class="o">]</span>
+                    <span class="o">&amp;</span> <span class="s">" "</span>
+                    <span class="o">&amp;</span> <span class="n">tokenResponse</span><span class="o">[</span><span class="n">access_token</span><span class="o">]</span>
+            <span class="k">in</span>
+                <span class="n">token_output</span><span class="o">,</span>
+    <span class="n">documentation</span> <span class="o">=</span> <span class="o">[</span>
+        Documentation<span class="o">.</span>Name <span class="o">=</span> <span class="s">" get-BearerToken.pq "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Description <span class="o">=</span> <span class="s">" Get Bearer Token needed for Power BI REST API calls "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Source <span class="o">=</span> <span class="s">"https://www.datameerkat.com"</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Version <span class="o">=</span> <span class="s">" 1.0 "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Author <span class="o">=</span> <span class="s">" Štěpán Rešl "</span>
+    <span class="o">]</span>
+<span class="k">in</span>
+    Value<span class="o">.</span>ReplaceType<span class="p">(</span>
+        <span class="n">output</span><span class="o">,</span>
+        Value<span class="o">.</span>ReplaceMetadata<span class="p">(</span>
+            <span class="na">Value.Type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">,</span>
+            <span class="n">documentation</span>
+        <span class="p">)</span>
+    <span class="p">)</span></code></pre></figure>
 
 <p><strong>Datasets from selected Group:</strong></p>
 
-<script src="https://gist.github.com/tirnovar/0010bb1b1f86cf35f93a97c8d87f9f73.js"></script>
-
-<p><br /></p>
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">apiCall</span> <span class="o">=</span>
+        Json<span class="o">.</span>Document<span class="p">(</span>
+            Web<span class="o">.</span>Contents<span class="p">(</span>
+                <span class="s">"https://api.powerbi.com/v1.0/myorg"</span><span class="o">,</span>
+                <span class="o">[</span>
+                    RelativePath <span class="o">=</span> <span class="s">"admin/groups/"</span><span class="o">&amp;</span> <span class="n">groupsId</span> <span class="o">&amp;</span><span class="s">"/datasets"</span><span class="o">,</span>
+                    Headers <span class="o">=</span> <span class="o">[</span>
+                        #"Content-Type" <span class="o">=</span> <span class="s">"application/json"</span><span class="o">,</span>
+                        Authorization <span class="o">=</span> <span class="n">generatedToken</span>
+                    <span class="o">]</span>
+                <span class="o">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+<span class="k">in</span>
+    <span class="n">apiCall</span><span class="o">[</span><span class="n">value</span><span class="o">]</span></code></pre></figure>
 
 <p><strong>Datasets from selected Group - Table generation:</strong></p>
 
-<script src="https://gist.github.com/tirnovar/d11bc103e5151e5827769e8942e45818.js"></script>
-
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">apiCall</span> <span class="o">=</span>
+        Json<span class="o">.</span>Document<span class="p">(</span>
+            Web<span class="o">.</span>Contents<span class="p">(</span>
+                <span class="s">"https://api.powerbi.com/v1.0/myorg"</span><span class="o">,</span>
+                <span class="o">[</span>
+                    RelativePath <span class="o">=</span> <span class="s">"admin/groups/"</span><span class="o">&amp;</span> <span class="n">groupsId</span> <span class="o">&amp;</span><span class="s">"/datasets"</span><span class="o">,</span>
+                    Headers <span class="o">=</span> <span class="o">[</span>
+                        #"Content-Type" <span class="o">=</span> <span class="s">"application/json"</span><span class="o">,</span>
+                        Authorization <span class="o">=</span> <span class="n">generatedToken</span>
+                    <span class="o">]</span>
+                <span class="o">]</span>
+            <span class="p">)</span>
+        <span class="p">)</span>
+<span class="k">in</span>
+    #table<span class="p">(</span>
+        <span class="nb">type</span> <span class="nb">table</span> <span class="o">[</span>
+            <span class="n">id</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">name</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">addRowsAPIEnabled</span> <span class="o">=</span> <span class="n">logical</span><span class="o">,</span>
+            <span class="n">configuredBy</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">isRefreshable</span> <span class="o">=</span> <span class="n">logical</span><span class="o">,</span>
+            <span class="n">isEffectiveIdentityRequired</span> <span class="o">=</span> <span class="n">logical</span><span class="o">,</span>
+            <span class="n">isEffectiveIdentityRolesRequired</span> <span class="o">=</span> <span class="n">logical</span><span class="o">,</span>
+            <span class="n">isOnPremGatewayRequired</span> <span class="o">=</span> <span class="n">logical</span><span class="o">,</span>
+            <span class="n">webUrl</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">targetStorageMode</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">createdDate</span> <span class="o">=</span> <span class="nb">datetime</span><span class="o">,</span>
+            <span class="n">createReportEmbedURL</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">qnaEmbedURL</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+            <span class="n">upstreamDatasets</span> <span class="o">=</span> <span class="nb">list</span>
+        <span class="o">],</span>
+        List<span class="o">.</span>Transform<span class="p">(</span>
+            <span class="n">apiCall</span><span class="o">[</span><span class="n">value</span><span class="o">],</span>
+            <span class="nc">each</span>
+                <span class="o">{</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">id</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">name</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">addRowsAPIEnabled</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">configuredBy</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">isRefreshable</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">isEffectiveIdentityRequired</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">isEffectiveIdentityRolesRequired</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">isOnPremGatewayRequired</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">webUrl</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">targetStorageMode</span><span class="o">]?,</span>
+                    DateTime<span class="o">.</span>From<span class="p">(</span><span class="n">_</span><span class="o">[</span><span class="n">createdDate</span><span class="o">]?</span><span class="p">)</span><span class="o">,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">createReportEmbedURL</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">qnaEmbedURL</span><span class="o">]?,</span>
+                    <span class="n">_</span><span class="o">[</span><span class="n">upstreamDatasets</span><span class="o">]?</span>
+                <span class="o">}</span>
+        <span class="p">)</span>
+    <span class="p">)</span></code></pre></figure>
 
     </div>
 
