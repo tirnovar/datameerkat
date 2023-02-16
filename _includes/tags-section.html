@@ -8,7 +8,7 @@
         <h2 class="section__title">{{ site.data.settings.tag__section__name }}</h2>
       </div>
     </div>
-    <!-- FIRST TAG -->
+    <!-- FIRST MAIN TAG -->
     <div class="row">
       <div class="col col-12">
         <div class="section__head__small__second">
@@ -62,7 +62,7 @@
         {% endif %}
       {% endfor %}
     </div>
-    <!-- SECOND TAG -->
+    <!-- SECOND MAIN TAG -->
     <div class="row">
       <div class="col col-12">
         <div class="section__head__small__second">
@@ -115,23 +115,6 @@
           </div>
         {% endif %}
       {% endfor %}
-    </div>
-    <!-- ALL TAGS -->
-    <div class="row">
-      {% if site.tags.size >= 1 %}
-      <div class="search-tags">
-        <h3 class="section__title">All tags for a quick search</h3>
-        {% capture site_tags %}{% for tag in site.tags %}{{ tag | first }}{% unless forloop.last %},{% endunless %}{% endfor %}{% endcapture %}
-        {% assign tag_words = site_tags | split:',' | sort %}
-        <div class="search-tags__inner">
-        {% for item in (0..site.tags.size) %}{% unless forloop.last %}
-        {% capture this_word %}{{ tag_words[item] | strip_newlines }}{% endcapture %}
-          <a href="{{ site.baseurl }}/tags/?tag={{ this_word | cgi_escape }}" class="search-tag">{{ this_word }}</a>
-        {% endunless %}
-        {% endfor %}
-        </div>
-      </div>
-      {% endif %}
     </div>
   </div>
 </section>

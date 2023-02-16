@@ -5,8 +5,8 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Thu, 09 Feb 2023 15:55:53 +0100</pubDate>
-        <lastBuildDate>Thu, 09 Feb 2023 15:55:53 +0100</lastBuildDate>
+        <pubDate>Thu, 16 Feb 2023 19:22:36 +0000</pubDate>
+        <lastBuildDate>Thu, 16 Feb 2023 19:22:36 +0000</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
         
             <item>
@@ -314,7 +314,7 @@
 
 &lt;p&gt;Every critical point within your data architecture &lt;strong&gt;should be monitored&lt;/strong&gt;, and &lt;strong&gt;mechanisms&lt;/strong&gt; should be created that will allow you &lt;strong&gt;to prevent outages or disruptions&lt;/strong&gt; or at least create the possibility &lt;strong&gt;to respond promptly&lt;/strong&gt; to the situation. Power BI takes care of it for you, so if something fails, at least you have historical data, and it notifies you anyway. So they are trying to fulfill this need for you. However, time moves forward, so it is necessary to reach for more actionable variants than &lt;strong&gt;E-mail&lt;/strong&gt;. At the same time, monitoring all critical points in one central place is crucial so that work is not unnecessarily added at moments when it is least convenient.&lt;/p&gt;
 </description>
-                <pubDate>Mon, 06 Feb 2023 10:00:00 +0100</pubDate>
+                <pubDate>Mon, 06 Feb 2023 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/dataflows-refresh-monitoring</link>
                 <guid isPermaLink="true">http://localhost:4000/dataflows-refresh-monitoring</guid>
                 
@@ -559,7 +559,7 @@
   &lt;li&gt;&lt;a href=&quot;https://blog.crossjoin.co.uk/2022/11/28/web-contents-text-concatenation-and-dataset-refresh-errors-in-power-bi-power-query/&quot;&gt;CHRIS WEBB - Web.Contents, Text Concatenation And Dataset Refresh Errors In Power BI and Power Query&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                <pubDate>Sun, 22 Jan 2023 10:00:00 +0100</pubDate>
+                <pubDate>Sun, 22 Jan 2023 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/apis-as-power-bi-datasources</link>
                 <guid isPermaLink="true">http://localhost:4000/apis-as-power-bi-datasources</guid>
                 
@@ -900,7 +900,7 @@
 
 &lt;p&gt;But at the same time, a scenario will come when you need to optimize the speed of data transformation, and then some of these tricks come in handy. For example, you create all the necessary columns in records and only then extract them into columns.&lt;/p&gt;
 </description>
-                <pubDate>Mon, 09 Jan 2023 10:00:00 +0100</pubDate>
+                <pubDate>Mon, 09 Jan 2023 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/date-dimensions-in-power-query</link>
                 <guid isPermaLink="true">http://localhost:4000/date-dimensions-in-power-query</guid>
                 
@@ -1037,7 +1037,7 @@
   &lt;li&gt;&lt;a href=&quot;https://data-mozart.com/looking-through-the-window-calculating-customer-lifetime-value-with-new-dax-functions/&quot;&gt;Looking through the WINDOW - Calculating customer lifetime value with new DAX functions! - Data Mozart (data-mozart.com)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                <pubDate>Fri, 06 Jan 2023 10:00:00 +0100</pubDate>
+                <pubDate>Fri, 06 Jan 2023 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/dynamic-windows-in-calculation-groups</link>
                 <guid isPermaLink="true">http://localhost:4000/dynamic-windows-in-calculation-groups</guid>
                 
@@ -1254,7 +1254,7 @@
   &lt;li&gt;&lt;a href=&quot;https://data-marc.com/2022/09/21/how-offset-in-dax-will-make-your-life-easier/&quot;&gt;How OFFSET in DAX will make your life easier – Data – Marc (data-marc.com)&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                <pubDate>Thu, 29 Dec 2022 10:00:00 +0100</pubDate>
+                <pubDate>Thu, 29 Dec 2022 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/index-as-a-friend-for-conditional-format-string</link>
                 <guid isPermaLink="true">http://localhost:4000/index-as-a-friend-for-conditional-format-string</guid>
                 
@@ -1440,7 +1440,7 @@ Would it work to turn it around? First, we would leave the value output at the b
 &lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
 &lt;p&gt;This OFFSET is a great function that can make many calculations more straightforward, but it can also mess things up very quickly. I hope this article has helped you understand more about how OFFSET works and how it can be used for different purposes. &lt;strong&gt;Please be careful WHERE you will use it. Because it also creates lots of questions.&lt;/strong&gt;&lt;/p&gt;
 </description>
-                <pubDate>Tue, 13 Dec 2022 10:00:00 +0100</pubDate>
+                <pubDate>Tue, 13 Dec 2022 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/offset-its-usage-calculation-groups</link>
                 <guid isPermaLink="true">http://localhost:4000/offset-its-usage-calculation-groups</guid>
                 
@@ -1559,7 +1559,7 @@ Would it work to turn it around? First, we would leave the value output at the b
 
 &lt;p&gt;Anyway, it’s great that there are options to keep some of this thread hidden from regular users if needed. After all… If something can only be seen in certain places or specific situations, it will appear to the average user that it is “useful” only in specific cases.&lt;/p&gt;
 </description>
-                <pubDate>Sun, 20 Nov 2022 10:00:00 +0100</pubDate>
+                <pubDate>Sun, 20 Nov 2022 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/restrict-power-bi-integration-button-microsoft-lists</link>
                 <guid isPermaLink="true">http://localhost:4000/restrict-power-bi-integration-button-microsoft-lists</guid>
                 
@@ -1721,7 +1721,7 @@ Would it work to turn it around? First, we would leave the value output at the b
         &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
     &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 </description>
-                <pubDate>Wed, 09 Nov 2022 10:00:00 +0100</pubDate>
+                <pubDate>Wed, 09 Nov 2022 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/power-query-vs-power-bi-rest-api</link>
                 <guid isPermaLink="true">http://localhost:4000/power-query-vs-power-bi-rest-api</guid>
                 
@@ -1890,7 +1890,7 @@ Would it work to turn it around? First, we would leave the value output at the b
   &lt;li&gt;Do you use them?&lt;/li&gt;
 &lt;/ul&gt;
 </description>
-                <pubDate>Sun, 06 Nov 2022 10:00:00 +0100</pubDate>
+                <pubDate>Sun, 06 Nov 2022 09:00:00 +0000</pubDate>
                 <link>http://localhost:4000/multi-color-gradient-dax-power-bi</link>
                 <guid isPermaLink="true">http://localhost:4000/multi-color-gradient-dax-power-bi</guid>
                 
@@ -2106,7 +2106,7 @@ We can start here from different sides, either from the side of colors or from t
 
 &lt;p&gt;Or to one of my previous articles about the possibilities of Field Parameters in cooperation with Calculation Groups. &lt;a href=&quot;/field-parameters-cooperation-calculation-groups&quot;&gt;Field parameters in cooperation with Calculation groups&lt;/a&gt;&lt;/p&gt;
 </description>
-                <pubDate>Fri, 30 Sep 2022 11:00:00 +0200</pubDate>
+                <pubDate>Fri, 30 Sep 2022 10:00:00 +0100</pubDate>
                 <link>http://localhost:4000/conditional-formatting-calculation-groups</link>
                 <guid isPermaLink="true">http://localhost:4000/conditional-formatting-calculation-groups</guid>
                 
