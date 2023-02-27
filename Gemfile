@@ -6,3 +6,5 @@ gem "jekyll-sitemap"
 gem "jekyll-feed", group: :jekyll_plugins
 gem "github-pages", "~> 227"
 gem "webrick", "~> 1.7"
+gem "httparty"
+gem "nokogiri"

@@ -1,5 +1,4 @@
 Jekyll::Hooks.register :posts, :pre_render do |posts|
-    puts "Adding more JavaScript Markdown aliases..."
     require "rouge"
   
     # This class defines the PDL lexer which is used to highlight "pdl" code snippets during render-time

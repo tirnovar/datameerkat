@@ -1,6 +1,14 @@
 [
   
     {
+      "title"    : "TEST",
+      "category" : "",
+      "tags"     : "dax, calculation groups, format string, conditional formatting, and index",
+      "url"      : "/name",
+      "image"    : "/images/covers/INDEX-as-a-friend-for-conditional-format-string.png"
+    } ,
+  
+    {
       "title"    : "Dataflows refresh monitoring",
       "category" : "",
       "tags"     : "power-automate, api, dataflow, admin, and monitoring",
