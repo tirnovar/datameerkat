@@ -5,8 +5,8 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 04 Mar 2023 17:00:39 +0100</pubDate>
-        <lastBuildDate>Sat, 04 Mar 2023 17:00:39 +0100</lastBuildDate>
+        <pubDate>Sat, 04 Mar 2023 17:03:22 +0100</pubDate>
+        <lastBuildDate>Sat, 04 Mar 2023 17:03:22 +0100</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
         
             <item>
@@ -95,6 +95,10 @@
 &lt;em&gt;Inserted basic Attributes&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;To calculate the elapsed time, we can use the procedure mentioned by &lt;a href=&quot;https://www.linkedin.com/in/tom-riha/&quot;&gt;Tomáš Říha&lt;/a&gt; in his article: &lt;a href=&quot;https://tomriha.com/how-to-calculate-difference-between-two-times-in-power-automate/&quot;&gt;How to calculate the difference between two times in Power Automate&lt;/a&gt;. Specifically, it involves using a DateTime converter, which converts this format into “ticks,” which we subtract from each other and then divide by the required time quantity, as in this case for seconds &lt;em&gt;(that’s why we divide by the number 10000000)&lt;/em&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;div(sub(ticks(triggerOutputs()?[&apos;body/endTime&apos;]),ticks(triggerOutputs()?[&apos;body/startTime&apos;])),10000000)&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 

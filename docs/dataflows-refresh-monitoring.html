@@ -469,6 +469,10 @@
 
 <p>To calculate the elapsed time, we can use the procedure mentioned by <a href="https://www.linkedin.com/in/tom-riha/">Tomáš Říha</a> in his article: <a href="https://tomriha.com/how-to-calculate-difference-between-two-times-in-power-automate/">How to calculate the difference between two times in Power Automate</a>. Specifically, it involves using a DateTime converter, which converts this format into “ticks,” which we subtract from each other and then divide by the required time quantity, as in this case for seconds <em>(that’s why we divide by the number 10000000)</em>.</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">div(sub(ticks(triggerOutputs()?['body/endTime']),ticks(triggerOutputs()?['body/startTime'])),10000000)</code></pre></figure>
 
 <p><img src="/images/posts/Dataflows Refresh Monitoring/insertedFunction.png" alt="Inserted function" loading="lazy" />
