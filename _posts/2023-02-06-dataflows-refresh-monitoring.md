@@ -95,6 +95,7 @@ Once we've filled in the basic information about the location of our dataset, Po
 
 To calculate the elapsed time, we can use the procedure mentioned by [Tomáš Říha](https://www.linkedin.com/in/tom-riha/) in his article: [How to calculate the difference between two times in Power Automate](https://tomriha.com/how-to-calculate-difference-between-two-times-in-power-automate/). Specifically, it involves using a DateTime converter, which converts this format into "ticks," which we subtract from each other and then divide by the required time quantity, as in this case for seconds *(that's why we divide by the number 10000000)*.
 
+{% include codeHeader.html %}
 {% highlight plaintext %}
 div(sub(ticks(triggerOutputs()?['body/endTime']),ticks(triggerOutputs()?['body/startTime'])),10000000)
 {% endhighlight %}
