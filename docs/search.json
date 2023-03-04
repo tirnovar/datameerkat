@@ -1,14 +1,6 @@
 [
   
     {
-      "title"    : "Documentation options in Power Query",
-      "category" : "",
-      "tags"     : "m, power_query, documentation, comments, and development",
-      "url"      : "/documentation-options-in-power-query",
-      "image"    : "/images/covers/documentation-options-in-power-query.png"
-    } ,
-  
-    {
       "title"    : "Dataflows refresh monitoring",
       "category" : "",
       "tags"     : "power-automate, api, dataflow, admin, and monitoring",

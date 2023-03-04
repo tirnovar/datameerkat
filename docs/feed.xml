@@ -5,171 +5,9 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 04 Mar 2023 16:56:27 +0100</pubDate>
-        <lastBuildDate>Sat, 04 Mar 2023 16:56:27 +0100</lastBuildDate>
+        <pubDate>Sat, 04 Mar 2023 16:57:07 +0100</pubDate>
+        <lastBuildDate>Sat, 04 Mar 2023 16:57:07 +0100</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
-        
-            <item>
-                <title></title>
-                <description>&lt;p&gt;I’m sure you’ve heard this somewhere before. It is a reasonably clear truth that does not need more or less to be presented. But it’s more complicated. Why? Because he wants to learn. There’s no need to write a long-winded essay on exactly how the code works. You need to get just the necessary details. At the same time, you must get used to the fact that it needs to be done. I don’t want to discuss how to describe the entire Power BI Dataset and all its parts. This could be worth a book because there are many approaches to documentation, and Power BI supports documentation of everything possible and at different levels.&lt;/p&gt;
-
-&lt;p&gt;What I want to discuss here is the documentation in Power Query. Again, I will not solve the exact procedures of what to describe, but instead, I want to show you what and how it can be specifically described and where it will then be promoted.&lt;/p&gt;
-
-&lt;h2 id=&quot;m-code-comments&quot;&gt;M code comments&lt;/h2&gt;
-&lt;p&gt;With its M language, Power Query is no exception to other languages, so M also supports using annotations in code. We have two basic types for this:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Single-line comments - “// My single-line comment.”&lt;/li&gt;
-  &lt;li&gt;Multi-line comments - “/* My multi-line comment */”&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Power Query colors comment in the code green to make them stand out from the rest of the code.
-&lt;img src=&quot;/images/posts/Documentation options in Power Query/comments.png&quot; alt=&quot;Comment Showcase&quot; loading=&quot;lazy&quot; /&gt;
-&lt;em&gt;Comment Showcase&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;To be able to create these comments faster, there are even keyboard shortcuts to help us with this:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;&lt;kbd&gt;Ctrl&lt;/kbd&gt; + &lt;kbd&gt;&apos;&lt;/kbd&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2 id=&quot;documentation-of-steps&quot;&gt;Documentation of steps&lt;/h2&gt;
-&lt;p&gt;Ok, so we all know the comments. So let’s get to the documentation and start with the most obvious by describing the steps that the Power Query editor created for you or that you wrote yourself. However, Power Query is a reasonably understandable language that uses English as its basis. If one understands the skeleton of its functions, types, and operands, this code should be read like a book. But you’ve probably already heard that in other languages ​​as well. It is true, but a “machine” understanding of what is happening with the data is often insufficient in itself. That’s why there is an option to add your label to any step so that you can add, for example, WHY we are doing the given step or what the expected result is.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/images/posts/Documentation options in Power Query/stepDescription.png&quot; alt=&quot;Step Description&quot; loading=&quot;lazy&quot; /&gt;
-&lt;em&gt;Step Description&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;We can create such an icon with a description/documentation of the step using Power Query UI or code.&lt;/p&gt;
-
-&lt;h3 id=&quot;ui-variant&quot;&gt;UI Variant&lt;/h3&gt;
-&lt;p&gt;Right-click on the step you want to describe and select “Properties…”.
-&lt;img src=&quot;/images/posts/Documentation options in Power Query/properties.png&quot; alt=&quot;Step Properties&quot; loading=&quot;lazy&quot; /&gt;
-&lt;em&gt;Step Properties&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;The following POP-UP window will appear where you can complete the Description.
-&lt;img src=&quot;/images/posts/Documentation options in Power Query/propertiesPopup.png&quot; alt=&quot;Step Properties POP-UP&quot; loading=&quot;lazy&quot; /&gt;
-&lt;em&gt;Step Properties POP-UP&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;This Description is then reflected in the information icon. If we open the Advanced Editor, we can notice how this Description is reflected in the code. But let’s create it ourselves.&lt;/p&gt;
-
-&lt;h3 id=&quot;code-way&quot;&gt;Code way&lt;/h3&gt;
-&lt;p&gt;It may seem like a particular advantage to create this &lt;strong&gt;“i”&lt;/strong&gt; icon, and we can reach for both single-line and multi-line comments. Unfortunately, this is not a 100% advantage because the multi-line text will be folded back to a single line during the presentation, so formatting is quite complicated.&lt;/p&gt;
-
-&lt;div class=&quot;code-header&quot;&gt;
-    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
-  &lt;/div&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Excel&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Workbook&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;URL&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Data&lt;span class=&quot;o&quot;&gt;]{&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;},&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;promote&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;PromoteHeaders&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;#&quot;Imported Excel Workbook&quot;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;PromoteAllScalars&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nc&quot;&gt;true&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-&lt;span class=&quot;hll&quot;&gt;    &lt;span class=&quot;c1&quot;&gt;// This step filters out all blank values in column Name&lt;/span&gt;
-&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;SelectRows&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;promote&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Name&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;null&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;filter&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Anyway, for the comment to become a description of the step, quite paradoxically, it must be &lt;strong&gt;BEFORE&lt;/strong&gt; the step that we want to describe in this way. It’s a rather strange concept because comments are usually placed AFTER the code is described.&lt;/p&gt;
-
-&lt;h2 id=&quot;feature-documentation&quot;&gt;Feature documentation&lt;/h2&gt;
-&lt;p&gt;Not every user ever needed to create their functions in Power Query, but if you ever had this need, you will find it helpful to know that functions can be described many times more than ordinary steps. At the same time, I highly recommend describing the functions because that way, you can avoid a lot of HOW I DID IT moments, which can bring even just a few hours, during which you no longer look at this code. Of course, the key to the initial understanding of what the given function does is already its name, but that is not everything.&lt;/p&gt;
-
-&lt;p&gt;By itself, the already empty preview window of its function claims that it can be expanded.&lt;/p&gt;
-
-&lt;p&gt;[IMAGE]&lt;/p&gt;
-
-&lt;p&gt;And overall, the fact that if you call any function but only as a reference to it (that is, without “()”), the following view will be returned to you.&lt;/p&gt;
-
-&lt;p&gt;[IMAGE]&lt;/p&gt;
-
-&lt;p&gt;We could review the functions and decompose the individual “Documentation” options. Or we use the more straightforward options and look in the documentation: &lt;a href=&quot;&quot;&gt;LINK TO DOCUMENTATION&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;It is pretty clear from it that we can document the following:&lt;/p&gt;
-&lt;ul&gt;
-  &lt;li&gt;Name&lt;/li&gt;
-  &lt;li&gt;Description&lt;/li&gt;
-  &lt;li&gt;Version&lt;/li&gt;
-  &lt;li&gt;Author&lt;/li&gt;
-  &lt;li&gt;Source&lt;/li&gt;
-  &lt;li&gt;Examples&lt;/li&gt;
-  &lt;li&gt;AllowedValues&lt;/li&gt;
-  &lt;li&gt;FieldDescription&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;That’s quite a few documentation options. I do not prefer using all options for various reasons. For example, I don’t use Allowed Values ​​because it’s just a documentation option that modifies the UI of the created function and does not limit the potentially entered values ​​when calling the function in a usual code way.&lt;/p&gt;
-
-&lt;p&gt;[IMAGE]&lt;/p&gt;
-
-&lt;p&gt;At the same time, for some of these functions, a simple extension of the metadata of the last “step” of the function is sufficient:
-[IMAGE]&lt;/p&gt;
-
-&lt;p&gt;If you would like to use some of these documentation elements yourself, we are here to prepare a simple template for creating your functions with explanations:&lt;/p&gt;
-
-&lt;div class=&quot;code-header&quot;&gt;
-    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
-  &lt;/div&gt;
-
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;c1&quot;&gt;// --------------------------- Function ------------------------------&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// --------------------------- Fucntion segment -----------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;cm&quot;&gt;/* parameter as text, optional opt_parameter as text */&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;cm&quot;&gt;/* as text */&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;      &lt;span class=&quot;c1&quot;&gt;// Input definition + Function output type definition&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;                                                                         &lt;span class=&quot;c1&quot;&gt;// Inner function steps declaration&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;initStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;lastStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
-            &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-                &lt;span class=&quot;n&quot;&gt;lastStep&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                                               &lt;span class=&quot;c1&quot;&gt;// Output from inner steps     &lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// --------------------------- Documentation segment ------------------------------&lt;/span&gt;
-    &lt;span class=&quot;n&quot;&gt;documentation&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Name &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; NAME OF FUNCTION &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                      &lt;span class=&quot;c1&quot;&gt;// Name of the function&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Description &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; DESCRIPTION &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                    &lt;span class=&quot;c1&quot;&gt;// Decription of the function&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Source &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; URL / SOURCE DESCRIPTION &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                            &lt;span class=&quot;c1&quot;&gt;// Source of the function&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Version &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; VERSION &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                            &lt;span class=&quot;c1&quot;&gt;// Version of the function&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Author &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; AUTHOR &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                              &lt;span class=&quot;c1&quot;&gt;// Author of the function&lt;/span&gt;
-        Documentation&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Examples &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;                                                        &lt;span class=&quot;c1&quot;&gt;// Examples of the functions&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
-                Description &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; EXAMPLE DESCRIPTION &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                  &lt;span class=&quot;c1&quot;&gt;// Description of the example&lt;/span&gt;
-                Code &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; EXAMPLE CODE &quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                                &lt;span class=&quot;c1&quot;&gt;// Code of the example&lt;/span&gt;
-                Result &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot; EXAMPLE RESULT &quot;&lt;/span&gt;                                             &lt;span class=&quot;c1&quot;&gt;// Result of the example&lt;/span&gt;
-            &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-        &lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;
-    &lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;// --------------------------- Output --------------------------------------------&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
-    Value&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;ReplaceType&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                                                                  &lt;span class=&quot;c1&quot;&gt;// Replace type of the value           &lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                                                         &lt;span class=&quot;c1&quot;&gt;// Function caller&lt;/span&gt;
-        Value&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;ReplaceMetadata&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;                                                          &lt;span class=&quot;c1&quot;&gt;// Replace metadata of the function&lt;/span&gt;
-            &lt;span class=&quot;na&quot;&gt;Value.Type&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;                                                         &lt;span class=&quot;c1&quot;&gt;// Return output type of function               &lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;documentation&lt;/span&gt;                                                               &lt;span class=&quot;c1&quot;&gt;// Documentation assigment&lt;/span&gt;
-        &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;c1&quot;&gt;// ------------------------------------------------------------------------------------&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
-
-&lt;p&gt;Příklad toho, jak to pak může vypadat:
-[IMAGE]&lt;/p&gt;
-
-&lt;p&gt;Kdykoliv tedy dojde k zavolání odkazu funkce, tak se navrátí včetně této dokumentace.&lt;/p&gt;
-
-&lt;h2 id=&quot;dokumentace-dotazů&quot;&gt;Dokumentace dotazů&lt;/h2&gt;
-&lt;p&gt;?? LZE&lt;/p&gt;
-
-&lt;p&gt;## Dokumentace parameterů
-?? STEJNĚ JAKO FUNKCE?
-?? ZAPROPAGUJE SE TO?&lt;/p&gt;
-</description>
-                <pubDate>Sat, 04 Mar 2023 10:00:00 +0100</pubDate>
-                <link>http://localhost:4000/documentation-options-in-power-query</link>
-                <guid isPermaLink="true">http://localhost:4000/documentation-options-in-power-query</guid>
-                
-                <category>m</category>
-                
-                <category>power_query</category>
-                
-                <category>documentation</category>
-                
-                <category>comments</category>
-                
-                <category>development</category>
-                
-                
-            </item>
         
             <item>
                 <title></title>
@@ -2063,6 +1901,222 @@ Would it work to turn it around? First, we would leave the value output at the b
                 <category>conditional_formatting</category>
                 
                 <category>color</category>
+                
+                
+            </item>
+        
+            <item>
+                <title></title>
+                <description>&lt;p&gt;Many visuals in Power BI support Conditional Formatting through an &lt;strong&gt;FX button&lt;/strong&gt; where I can set it up—for example, using measures, as I showed in the previous article &lt;a href=&quot;/conditional-formatting-based-field-parameters&quot;&gt;Conditional Formatting based on Field Parameters&lt;/a&gt;. So far, we have only talked about the definition of colors. However, conditional formatting isn’t always just about them. There’s a lot more that can be conditionally formatted. For example, the format in which individual columns or measures output is displayed. We can adjust such a format directly in Power BI using the Format String definition or a predefined one. But when it comes to the fact that we need to change it dynamically, we usually have two options. Either reach for the &lt;strong&gt;FORMAT()&lt;/strong&gt; function or reach for Calculation Groups.&lt;/p&gt;
+
+&lt;p&gt;The primary difference between these methods?&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;FORMAT()&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;It must be set for each Measure separately&lt;/li&gt;
+  &lt;li&gt;Native support&lt;/li&gt;
+  &lt;li&gt;Output is converted into TEXT (data type)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Calculation Groups&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;Re-usable at any measure&lt;/li&gt;
+  &lt;li&gt;Requires external tool&lt;/li&gt;
+  &lt;li&gt;Respects data type of input&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;These points can help me a lot when deciding the method I want to use. I will focus on reusability, and for that reason, I will choose &lt;strong&gt;Calculate Groups&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Scenario for mass editing the format string&lt;/strong&gt;
+This scenario will sound a little crazy, but it could serve well to explain how to work with it within &lt;strong&gt;CG (Calculation Groups)&lt;/strong&gt;. Imagine the scenario in which you are preparing a report and do not want to define the number of decimal places for each Measure, whether a percentage or a currency.&lt;/p&gt;
+
+&lt;p&gt;We know that the company uses a naming convention when naming measures. The &lt;strong&gt;first two characters&lt;/strong&gt; in the name are reserved for the &lt;strong&gt;data type&lt;/strong&gt; and the number of &lt;strong&gt;decimal places&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The first character (specifying data type)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;# - Number&lt;/li&gt;
+  &lt;li&gt;\% - Percentage&lt;/li&gt;
+  &lt;li&gt;$ - Currency&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;The second character (specifying the number of decimal places)&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;0&lt;/strong&gt; – Output should not have any decimal places&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;1&lt;/strong&gt; (up to &lt;strong&gt;9&lt;/strong&gt;)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;strong&gt;Examples of measure names:&lt;/strong&gt;&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;em&gt;[#0 Sum of Quantity] – Output should look like a number without any decimal places&lt;/em&gt;&lt;/li&gt;
+  &lt;li&gt;&lt;em&gt;[$2 Sum of Product costs] – Output should be Currency with two decimal places&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;We now have an idea of what we want to achieve. So let’s solve this within Calculation Groups. I will demonstrate it in the mentioned examples.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/baseNumbers.png&quot; alt=&quot;Base numbers in cards&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Base numbers in cards&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Within &lt;a href=&quot;https://tabulareditor.com/&quot;&gt;Tabular Editor 3&lt;/a&gt;, I created a calculation group named &lt;strong&gt;MeasureFormatter&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/createdCalulationGroup.png&quot; alt=&quot;Created calculation group&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Created calculation group&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And within it, I created a Calculation Item called &lt;strong&gt;DynamicFormattingByName&lt;/strong&gt;. This is where the “&lt;strong&gt;magic&lt;/strong&gt;” begins. The first thing that appears to me is the option to edit the Expression that this Item would edit. However, we do not need to modify the Expression in this case. So here, I insert the function &lt;strong&gt;SELECTEDMEASURE()&lt;/strong&gt; so that nothing changes from the point of view of the calculation of the measures themselves.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/expression.png&quot; alt=&quot;Expression&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Expression in item Dynamic Formatting by Name&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And I switch to &lt;strong&gt;Format String Expression&lt;/strong&gt;. This will show me a new canvas for the dax code.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/formatStringExpression.png&quot; alt=&quot;Format String Expression&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Switch to Format String Expression&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Calculation Groups allow us to benefit from functions that directly deal with the measures their items target. These features include:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;SELECTEDMEASURE()&lt;/li&gt;
+  &lt;li&gt;SELECTEDMEASURENAME()&lt;/li&gt;
+  &lt;li&gt;SELECTEDMEASUREFORMATSTRING()&lt;/li&gt;
+  &lt;li&gt;ISSELECTEDMEASURE()&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;And the just mentioned &lt;strong&gt;SELECTEDMEASURENAME()&lt;/strong&gt; can return us a name from which we can extract that prefix:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/firstPartOfCalculation.png&quot; alt=&quot;First part of Calculation&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;First part of Calculation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Once I have the prefixes, I can start editing the Format String. &lt;strong&gt;SWITCH()&lt;/strong&gt; can help me with that, where I can say that if “&lt;em&gt;_TypePrefix&lt;/em&gt;” is equal to the value “#”, then the calculation is kept differently than for “$” or “\%”. However, deciding how the formats should look for our purposes is still good. Because for example, the Currency is sometimes displayed with the currency symbol before the number and sometimes after. I will choose the character’s placement after the number for this demonstration. So I will have two format directions. One when I have a pure number (“#”) and one when I have to place the appropriate character after the number ({“\%”, “$”}). If someone doesn’t follow this syntax, I’ll return the default string format that the Measure has preset.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/updateOfCalculation.png&quot; alt=&quot;Update of calculation&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Update of calculation&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In the code above, I’m ignoring decimal places yet. The time for those is coming right now. But again, a small warning is helpful. The &lt;strong&gt;LEFT()&lt;/strong&gt; and &lt;strong&gt;RIGHT()&lt;/strong&gt; functions work with texts. Therefore, I have to consider that our number is also text and will need to be converted to a number format. The most straightforward conversion now will be in the form of adding an &lt;strong&gt;INT()&lt;/strong&gt; function within the “&lt;em&gt;_DecimalPrefix&lt;/em&gt;” variable, which will wrap up the original &lt;strong&gt;RIGHT()&lt;/strong&gt; function.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/intUpdate.png&quot; alt=&quot;INT Update&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;INT() Update&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now it’s just a game with strings that we want to return. We can also use the &lt;strong&gt;REPT()&lt;/strong&gt; function, which creates the specified text string as often as we say. This is very handy when we want to care about decimal places.&lt;/p&gt;
+
+&lt;div class=&quot;codebox&quot;&gt;DynamicFormattingByName&amp;nbsp;(CG&amp;nbsp;Format&amp;nbsp;String&amp;nbsp;Expression)&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_selectedMeasureName&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASURENAME&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;#0&amp;nbsp;Sum&amp;nbsp;of&amp;nbsp;Quantity&amp;nbsp;&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_selectedMeasureName&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;2&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;#0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;1&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;#&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RIGHT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;1&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_typeDeclaration&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SWITCH&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#&quot;&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;||&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISBLANK&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#&quot;&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#.&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;REPT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;0&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IN&lt;/span&gt;&amp;nbsp;{&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;%&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;$&quot;&lt;/span&gt;&amp;nbsp;},&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;||&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISBLANK&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#.&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;REPT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;0&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASUREFORMATSTRING&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RETURN&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_typeDeclaration&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Applied this Item, for example, using the &lt;strong&gt;Filter Pane&lt;/strong&gt; or within the &lt;strong&gt;Slicer&lt;/strong&gt;, it modifies the original measures, and we can immediately see that the output is already conditionally formatted.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/baseNumbersFormatted.png&quot; alt=&quot;Base numbers formatted&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Base numbers formatted&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It would still like to add a thousand separators. You may need many of them, but they can be easily added to the Item.&lt;/p&gt;
+
+&lt;div class=&quot;codebox&quot;&gt;DynamicFormattingByName&amp;nbsp;(CG&amp;nbsp;Format&amp;nbsp;String&amp;nbsp;Expression)&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_selectedMeasureName&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASURENAME&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_selectedMeasureName&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;2&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;#0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;LEFT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;1&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;#&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;INT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RIGHT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_prefix&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;1&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Comment&quot; style=&quot;color:#39a03b&quot;&gt;//&amp;nbsp;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_typeDeclaration&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SWITCH&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#&quot;&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;||&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISBLANK&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#,,,,,,,#&quot;&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#,,,,,,,#.&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;REPT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;0&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IN&lt;/span&gt;&amp;nbsp;{&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;%&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;$&quot;&lt;/span&gt;&amp;nbsp;},&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;=&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;0&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;||&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISBLANK&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#,,,,,,,#&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#,,,,,,,#.&quot;&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;REPT&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;0&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_DecimalPrefix&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&amp;nbsp;&amp;amp;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_TypePrefix&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASUREFORMATSTRING&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RETURN&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_typeDeclaration&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/fullyFormattedNumbers.png&quot; alt=&quot;Formatting update&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Formatting update&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Great! We have completed the first scenario. So, we have confirmed that this form of conditional formatting is possible within CG.&lt;/p&gt;
+
+&lt;h2 id=&quot;scenario-for-data-labels&quot;&gt;Scenario for data labels&lt;/h2&gt;
+&lt;p&gt;Data labels have recently started to support conditional formatting for the &lt;strong&gt;color of their text&lt;/strong&gt;. But that is not the only part that can be &lt;strong&gt;conditionally edited&lt;/strong&gt;. For example, calculated Groups have been able to edit them for quite some time on quite a different level. From that comes the scenario where you only need to see data labels where some condition is met. Our following scenario is based on this.&lt;/p&gt;
+
+&lt;p&gt;The trader regularly looks at the number of his sales for individual months to know when he has not significantly deviated negatively from the &lt;strong&gt;overall average&lt;/strong&gt; and whether the current month has already exceeded this breakpoint. For him, a deviation from the overall average is problematic if it is deviated by more than &lt;strong&gt;5%&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;His chart today that he uses for this analytics looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/chartInit.png&quot; alt=&quot;Chart at the begging&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Chart at the begging&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;It is easy to find the columns below the deviation in such few values. But it could go even faster if we included CG and conditional formatting in the game.
+We can start here from different sides, either from the side of colors or from the side of data labels. &lt;strong&gt;So I’ll stick with labels for a while.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;In that scenario, I want to ensure that the behavior I set for the data labels will only apply to the Measure used for Monthly Sales or the previously mentioned Measure named &lt;em&gt;[#0 Sum of Quantity]&lt;/em&gt;. Therefore, I will create a new CG called &lt;strong&gt;AnalyticalFromatterCG&lt;/strong&gt;, an item called &lt;strong&gt;UnderDeviation&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;From the point of view of Expression, for the time being, I will always return the executed Measure using the already known &lt;strong&gt;SELECTEDMEASURE()&lt;/strong&gt; function. You may wonder why I don’t make the results disappear within the &lt;strong&gt;Expression&lt;/strong&gt; or let them be equal to 0. It would be an option, but it would be highly misleading because the user would only see the columns below the deviation in the graph. However, I return the columns and just let the data labels disappear. &lt;strong&gt;Format String Expression&lt;/strong&gt; will serve me for this again.&lt;/p&gt;
+
+&lt;p&gt;But this time with an expression that could look like this, for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/wrongBlankChar.png&quot; alt=&quot;Wrong Blank Char&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Wrong Blank Char&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;ISSELECTEDMEASURE&lt;/strong&gt;({&lt;em&gt;measure1,measure2,…&lt;/em&gt;}) is a function that returns &lt;strong&gt;TRUE()&lt;/strong&gt; if any of the measures defined within the internal attribute is the one the calculation is currently directed against. As almost everyone would have tried, I put empty quotes if I didn’t want to return the format string. &lt;em&gt;(Same as in the picture)&lt;/em&gt; But this is just for demonstration purposes. Empty quotes are not supported and &lt;strong&gt;are overwritten by the original Format String&lt;/strong&gt;. So the output looks the same as at the beginning, even if CG is applied to the graph.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/nothingChanged.png&quot; alt=&quot;Nothing changed&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Nothing changed&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;A supported character must replace empty quotes. For example, &lt;strong&gt;UNICHAR(8203)&lt;/strong&gt; or from the character map, this character:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/characterMap.png&quot; alt=&quot;Character map&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Character map&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;However, it would be difficult for me to show you in the code because its width is basically 0, and thus it &lt;strong&gt;is not visible&lt;/strong&gt;. So I will use notation with unichar:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/expressionWithRightUnichar.png&quot; alt=&quot;Updated expression&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Updated expression&lt;/em&gt;&lt;/p&gt;
+
+&lt;div class=&quot;codebox&quot;&gt;Format&amp;nbsp;String&amp;nbsp;Expression&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISSELECTEDMEASURE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;[#0&amp;nbsp;Sum&amp;nbsp;of&amp;nbsp;Quantity]&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_deviation&lt;/span&gt;&amp;nbsp;=&amp;nbsp;[#&amp;nbsp;Average&amp;nbsp;of&amp;nbsp;Quantity&amp;nbsp;by&amp;nbsp;Months&amp;nbsp;-&amp;nbsp;Deviation]&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_outputOfMeasure&lt;/span&gt;&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASURE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RETURN&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_outputOfMeasure&lt;/span&gt;&amp;nbsp;&amp;lt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_deviation&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASUREFORMATSTRING&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;UNICHAR&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Number&quot; style=&quot;color:#EE7F18&quot;&gt;8203&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASUREFORMATSTRING&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Data labels are now modified as needed, and it works precisely!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/modifiedChart.png&quot; alt=&quot;Modified chart&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Modified chart&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;You can already see that the output works well, but what if we wanted to add more colors to the whole thing to highlight it and improve orientation? Of course, we could solve it in another CG, but why run more of them about one graph if it is unnecessary?&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Of course, the colors could be solved without CG just by using Measure, but for the sake of demonstration, I’m staying in CG.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;First, we must note that we have modified the &lt;strong&gt;Format String&lt;/strong&gt; up to this point. This is because it can handle quite a lot, and its output does not directly change the behavior of the graph as such. But now, we will need to change the &lt;strong&gt;Expression&lt;/strong&gt;, which directly impacts the individual parts of the graph, such as columns or lines.&lt;/p&gt;
+
+&lt;p&gt;For that reason, it is not a good idea to manipulate the output measures directly but to use some substitute that will not bother you by overwriting it. Everyone gives such a measure a different name, and sometimes you can find more of them in the model when you need their slightly different connections each time. I use a simple measure from the name [cgColors] and an expression that equals “#000000 “. There is a simple reason why I use a measure whose value is “#000000”. Power BI does not allow you to insert any measure in conditional formatting that does not meet the color conditions. That’s why I insert any color that I will subsequently overwrite.&lt;/p&gt;
+
+&lt;div class=&quot;codebox&quot;&gt;cgColors&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#000000&quot;&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;Chart after inserting [cgColors] into conditional formatting within columns.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/colorFormatingByCG.png&quot; alt=&quot;Color formatted by Calculation Group&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Color formatted by Calculation Group&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now it’s time to return to &lt;strong&gt;AnalyticalFormatterCG&lt;/strong&gt; and its UnderDeviation and &lt;strong&gt;Expression&lt;/strong&gt;. Within this, you can prepare a very similar construct as we prepared in &lt;strong&gt;Format String Expression&lt;/strong&gt;, but this time with the fact that we override Measure &lt;em&gt;[cgColors]&lt;/em&gt; and firmly define which two measures make our decisions.&lt;/p&gt;
+
+&lt;div class=&quot;codebox&quot;&gt;Expression&amp;nbsp;=&lt;br /&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;ISSELECTEDMEASURE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;[cgColors]&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_deviation&lt;/span&gt;&amp;nbsp;=&amp;nbsp;[#&amp;nbsp;Average&amp;nbsp;of&amp;nbsp;Quantity&amp;nbsp;by&amp;nbsp;Months&amp;nbsp;-&amp;nbsp;Deviation]&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;VAR&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_outputOfMeasure&lt;/span&gt;&amp;nbsp;=&amp;nbsp;[#0&amp;nbsp;Sum&amp;nbsp;of&amp;nbsp;Quantity]&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;RETURN&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;indent8&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;IF&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_outputOfMeasure&lt;/span&gt;&amp;nbsp;&amp;lt;&amp;nbsp;&lt;span class=&quot;Variable&quot; style=&quot;color:#49b0af&quot;&gt;_deviation&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#FF5F57&quot;&lt;/span&gt;,&amp;nbsp;&lt;span class=&quot;StringLiteral&quot; style=&quot;color:#D93124&quot;&gt;&quot;#F5F5F5&quot;&lt;/span&gt;&amp;nbsp;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;,&lt;br /&gt;&lt;span class=&quot;indent4&quot;&gt;&amp;nbsp;&amp;nbsp;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;span class=&quot;Keyword&quot; style=&quot;color:#035aca&quot;&gt;SELECTEDMEASURE&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;&amp;nbsp;(&lt;/span&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;br /&gt;&lt;span class=&quot;Parenthesis&quot; style=&quot;color:#808080&quot;&gt;)&lt;/span&gt;&lt;/div&gt;
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;You can prepare a very similar construct as we prepared in Format String Expression, but this time with the fact that we override MeasureMeasure &lt;em&gt;[cgColors]&lt;/em&gt; and firmly define which two measures make our decisions.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/dynamicColors.png&quot; alt=&quot;Dynamic Colors by Calculation Group&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Dynamic Colors by Calculation Group&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;If I add &lt;em&gt;[cgColors]&lt;/em&gt; as conditional formatting for data labels, I get a complete chart controlled by CG. So if I prepared other items that would focus on other issues, such as the &lt;strong&gt;highest/lowest&lt;/strong&gt; value and the like, I could prepare a simple switch for the user to change the examined planes for the chart.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/images/posts/Conditional Formatting with Calculation Groups/dataLabelsDynamicalyFormatted.png&quot; alt=&quot;Data labels dynamicaly formatted&quot; loading=&quot;lazy&quot; /&gt;
+&lt;em&gt;Data labels dynamicaly formatted&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;And that is one of the many potent qualities that CGs have.&lt;/p&gt;
+
+&lt;h2 id=&quot;summary&quot;&gt;Summary&lt;/h2&gt;
+&lt;p&gt;&lt;strong&gt;Calculation Groups are one of the most fantastic objects within the entire Power BI complex.&lt;/strong&gt; They can be used in countless ways to facilitate development with them. At the same time, they can also be used for something like conditional formatting and thus achieve very dynamic and flexible reports.&lt;/p&gt;
+
+&lt;table&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Suppose you are interested in more detail about them. In that case, I recommend you check out &lt;a href=&quot;https://www.linkedin.com/in/bernatagullo/&quot;&gt;Bernat Agulló Roselló&lt;/a&gt; ([BLOG&lt;/td&gt;
+      &lt;td&gt;Esbrina (esbrina-ba.com)](https://www.esbrina-ba.com/blog)), who has fallen completely under their spell and is truly an expert on their scripting and capabilities.&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Or to one of my previous articles about the possibilities of Field Parameters in cooperation with Calculation Groups. &lt;a href=&quot;/field-parameters-cooperation-calculation-groups&quot;&gt;Field parameters in cooperation with Calculation groups&lt;/a&gt;&lt;/p&gt;
+</description>
+                <pubDate>Fri, 30 Sep 2022 11:00:00 +0200</pubDate>
+                <link>http://localhost:4000/conditional-formatting-calculation-groups</link>
+                <guid isPermaLink="true">http://localhost:4000/conditional-formatting-calculation-groups</guid>
+                
+                <category>dax</category>
+                
+                <category>calculation_groups</category>
+                
+                <category>format_string</category>
+                
+                <category>conditional_formatting</category>
                 
                 
             </item>
