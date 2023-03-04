@@ -19,7 +19,11 @@ featured: true # set to true to show on homepage
 [![IMAGE](){:loading="lazy"}](https://www.link.com)
 
 # CODE
+
+## COPY BUTTON
+{% include codeHeader.html %}
 ## PQ
+{% include codeHeader.html %}
 {% highlight pq %}
 {% endhighlight %}
 
