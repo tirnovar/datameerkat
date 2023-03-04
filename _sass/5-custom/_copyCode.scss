@@ -1,0 +1,51 @@
+.code-header {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.copy-code-button {
+  padding: 0px;
+	border: none;
+	outline: none;
+	border-radius: 5px;
+	cursor: pointer;
+  display: grid;
+  grid-auto-flow: column;
+  position:relative;
+  top: 25px;
+  right: 5px;
+  height: 20px;
+  width: 20px;
+}
+
+.cp{
+  background: #107474;
+  background-image: url("../images/copy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12.5px;
+}
+
+.cp:active {
+	background: #149191;
+  background-image: url("../images/copy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12.5px;
+}
+
+.cp:hover {
+  background: #114C5E;
+  background-image: url("../images/copy.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12.5px;
+}
+
+.cp-done {
+  background: #F2CC17;
+  background-image: url("../images/accept.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 12.5px;
+}

@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Dynamic windows in calculation groups</title>
-  <meta name='description' content='The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At ...'>
+  <title>Documentation options in Power Query</title>
+  <meta name='description' content='Document your code! One day you will thank yourself, or someone else will thank you, who will take over.'>
 
-  <link rel="canonical" href="http://localhost:4000/dynamic-windows-in-calculation-groups">
+  <link rel="canonical" href="http://localhost:4000/documentation-options-in-power-query">
   <link rel="alternate" type="application/rss+xml" title="Data Meerkat" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Dynamic windows in calculation groups – Data Meerkat">
-  <meta name="twitter:description" content="The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups.">
-  <meta name="twitter:image:src" content="http://localhost:4000/images/covers/dynamic-windows-in-calculation-groups.png">
+  <meta name="twitter:title" content="Documentation options in Power Query – Data Meerkat">
+  <meta name="twitter:description" content="Document your code! One day you will thank yourself, or someone else will thank you, who will take over.">
+  <meta name="twitter:image:src" content="http://localhost:4000/images/covers/documentation-options-in-power-query.png">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Dynamic windows in calculation groups – Data Meerkat">
-  <meta property="og:description" content="The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups.">
-  <meta property="og:image" content="http://localhost:4000/images/covers/dynamic-windows-in-calculation-groups.png">
+  <meta property="og:title" content="Documentation options in Power Query – Data Meerkat">
+  <meta property="og:description" content="Document your code! One day you will thank yourself, or someone else will thank you, who will take over.">
+  <meta property="og:image" content="http://localhost:4000/images/covers/documentation-options-in-power-query.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -330,21 +330,23 @@
           
           <div class="post__tags">
             
-            <a href="/tags/?tag=dax" class="post__tag">dax</a>
+            <a href="/tags/?tag=m" class="post__tag">m</a>
             
-            <a href="/tags/?tag=calculation_groups" class="post__tag">calculation_groups</a>
+            <a href="/tags/?tag=power_query" class="post__tag">power_query</a>
             
-            <a href="/tags/?tag=field_parameters" class="post__tag">field_parameters</a>
+            <a href="/tags/?tag=documentation" class="post__tag">documentation</a>
             
-            <a href="/tags/?tag=window" class="post__tag">window</a>
+            <a href="/tags/?tag=comments" class="post__tag">comments</a>
+            
+            <a href="/tags/?tag=development" class="post__tag">development</a>
             
           </div>
           
       
-          <h1 class="post__title">Dynamic windows in calculation groups</h1>
+          <h1 class="post__title">Documentation options in Power Query</h1>
 
           
-          <p class="post__description">The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups.</p>
+          <p class="post__description">Document your code! One day you will thank yourself, or someone else will thank you, who will take over.</p>
           
       
           <div class="post__meta">
@@ -361,7 +363,7 @@
               
                 <a class="post__author__name" href="/about/">Štěpán Rešl</a>
               
-              <time class="post__date" datetime="2023-01-06T10:00:00+01:00">06 January 2023</time>
+              <time class="post__date" datetime="2023-03-04T10:00:00+01:00">04 March 2023</time>
             </div>
           </div>
       
@@ -373,7 +375,7 @@
       
       <div class="col col-5 push-1 col-d-12 push-d-0">
         <div class="post-image">
-          <img class="lazy" data-src="/images/covers/dynamic-windows-in-calculation-groups.png" alt="Dynamic windows in calculation groups">
+          <img class="lazy" data-src="/images/covers/documentation-options-in-power-query.png" alt="Documentation options in Power Query">
         </div>
         
           <div class="post-image-caption">
@@ -394,125 +396,148 @@
   <article class="post">
 
     <div class="post__content">
-      <p>It is a function that can create a moving “window” above the input table and apply it to the computing context. That <strong>“window”</strong> is defined quite similarly, as it was in the case of the <strong>INDEX</strong> function. Or that the numerical representation of the position <strong>(0)1…X or X…-1(0)</strong> is used. But there is one fundamental difference. <strong>INDEX</strong> requires only one such representative, <strong>but the WINDOW function requires two.</strong></p>
+      <p>I’m sure you’ve heard this somewhere before. It is a reasonably clear truth that does not need more or less to be presented. But it’s more complicated. Why? Because he wants to learn. There’s no need to write a long-winded essay on exactly how the code works. You need to get just the necessary details. At the same time, you must get used to the fact that it needs to be done. I don’t want to discuss how to describe the entire Power BI Dataset and all its parts. This could be worth a book because there are many approaches to documentation, and Power BI supports documentation of everything possible and at different levels.</p>
 
-<p>Overall, the syntax can be confusing at first glance, so I’d rather spend some time on it:</p>
+<p>What I want to discuss here is the documentation in Power Query. Again, I will not solve the exact procedures of what to describe, but instead, I want to show you what and how it can be specifically described and where it will then be promoted.</p>
 
-<div class="codebox">WINDOW ( from[, from_type], to[, to_type][, &lt;\relation&gt;][, &lt;\orderBy&gt;][, &lt;\blanks&gt;][, &lt;\partitionBy&gt;] )</div>
-<p><br /></p>
-
-<p><a href="https://learn.microsoft.com/en-us/dax/window-function-dax?id=DP-MVP-5003801">Official documentation for WINDOWS function</a></p>
-
-<p>Fascinating are the parameters <strong>“FROM”</strong> and <strong>“TO”</strong> and the mentioned <strong>“from_type”</strong> and <strong>“to_type.”</strong> This may be completely obvious to someone, but I have already had the honor of encountering the question. “From To? How is that direction meant?”</p>
-
-<p>It all depends on the mentioned <em>“type” parameters</em>. There are precisely two values ​​that these parameters take:</p>
+<h2 id="m-code-comments">M code comments</h2>
+<p>With its M language, Power Query is no exception to other languages, so M also supports using annotations in code. We have two basic types for this:</p>
 <ul>
-  <li><em>ABS</em></li>
-  <li><em>REL</em></li>
+  <li>Single-line comments - “// My single-line comment.”</li>
+  <li>Multi-line comments - “/* My multi-line comment */”</li>
 </ul>
 
-<p>When you use the REL value, <strong>“FROM”</strong> or <strong>“TO”</strong> moves along the time axis with a positive number to the right and a negative one to the left. It is always a movement from the currently evaluated row of the input table. At the same time, the value 0 can be used for <strong>“FROM”</strong> or <strong>“TO”</strong> so that the just mentioned line is used as a <strong>“start”</strong> or <strong>“end”</strong> within the <strong>Window</strong>.</p>
+<p>Power Query colors comment in the code green to make them stand out from the rest of the code.
+<img src="/images/posts/Documentation options in Power Query/comments.png" alt="Comment Showcase" loading="lazy" />
+<em>Comment Showcase</em></p>
 
-<p>The ABS value is reminiscent of the <strong>INDEX</strong> function since <strong>1</strong> means the beginning of the input table/partition, and <strong>-1</strong> the last line. The difference with <strong>INDEX</strong> (to remind you) is that <strong>WINDOW</strong> returns a range of rows, not just one row.</p>
-
-<p>Of course, these <em>“type” parameters</em> can be combined so that you can have <em>“ABS”</em> for <strong>“FROM”</strong> and <em>“REL”</em> for <em>“TO.”</em> This is great for calculations of the <strong>YTD (Year-To-Date)</strong> type.</p>
-
-<h2 id="lets-try-it">Let’s try it</h2>
-<p>For the DEMO, I will use the model I already used in the previous article regarding the <strong>INDEX</strong> function.</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/datamodel.png" alt="Data model" loading="lazy" />
-<em>Data model</em></p>
-
-<p>And initial chart:</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/revenue.png" alt="Revenue" loading="lazy" />
-<em>Revenue</em></p>
-
-<p>Here we have prepared a graph that contains the monthly results of Revenue. Of course, before the advent of the <strong>WINDOW</strong> function, we would do <strong>YTD</strong> equivalents using the <strong>TOTATYTD</strong>, <strong>DATESYTD</strong>, <strong>DATESBETWEEN</strong>, or <strong>FILTER</strong> functions, for example. But WINDOW should put these methods in its pocket.</p>
-
-<p>Using WINDOW, it might look like this:</p>
-
-<div class="codebox">#&nbsp;Sum&nbsp;Revenue&nbsp;YTD&nbsp;Window&nbsp;=<br /><span class="Keyword" style="color:#035aca">CALCULATE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>[#&nbsp;Sum&nbsp;of&nbsp;Revenue&nbsp;from&nbsp;Pipepine],<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">WINDOW</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Number" style="color:#EE7F18">1</span>,&nbsp;ABS,&nbsp;<span class="Number" style="color:#EE7F18">0</span>,&nbsp;REL,&nbsp;<span class="Keyword" style="color:#035aca">ALLSELECTED</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year],&nbsp;DateKey[Month]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ORDERBY</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>KEEP,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">PARTITIONBY</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year]&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="Parenthesis" style="color:#808080">)</span></div>
-<p><br /></p>
-
-<p>Within the function, I use the parameter <em>FROM = 1</em> with <em>TYPE = ABS</em>, so I declare the Window from the beginning of the input table, and the parameter <em>TO = 0</em> with <em>TYPE = REL</em>, so the Window ends with the current line. Without the <strong>PARTITIONBY</strong> function aimed at <strong>[Year]</strong>, we would have a selected-period-to-date calculation. Because the <strong>PARTITIONBY</strong> function is present, it creates individual partitions in the specified table based on the specified input. In our case, based on individual years. So <em>FROM = 1</em>, <em>TYPE = ABS</em> will always be the first day of the currently executed Year. Not in the very first Year of the entire entry.</p>
-
-<p>Which can be seen in the graph:</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/revenueYtd.png" alt="Revenue YTD" loading="lazy" />
-<em>Revenue YTD</em></p>
-
-<p>At the same time, if we wanted to calculate the <strong>Year-End (YE)</strong> value in combination with <strong>PARTITIONBY</strong>, <em>TYPE = ABS</em> would help us in both cases. Both <em>FROM = 1</em> and <em>TO = -1</em>. In short, it would set us back the whole Year.</p>
-
-<p>We can also slightly modify the metric used, for example, to get a different but equally important calculation! Specifically, the <strong>Trailing Twelve-Month (T12M)</strong>:</p>
-
-<div class="codebox">#&nbsp;Sum&nbsp;Revenue&nbsp;T12M&nbsp;Window&nbsp;=<br /><span class="Keyword" style="color:#035aca">CALCULATE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>[#&nbsp;Sum&nbsp;of&nbsp;Revenue&nbsp;from&nbsp;Pipepine],<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">WINDOW</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Number" style="color:#EE7F18">-12</span>,&nbsp;REL,&nbsp;<span class="Number" style="color:#EE7F18">0</span>,&nbsp;REL,&nbsp;<span class="Keyword" style="color:#035aca">ALLSELECTED</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year],&nbsp;DateKey[Month]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="Parenthesis" style="color:#808080">)</span></div>
-<p><br /></p>
-
-<p>And the graph also beautifully reflected our change:</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/revenueT12M.png" alt="Revenue T12M" loading="lazy" />
-<em>Revenue T12M</em></p>
-
-<p>Although it was only a tiny change in the metric, the result is entirely different and correct. In this, the WINDOW function is great, clear, and, above all, fast.</p>
-
-<p>I often encounter the requirement that the user be able to switch between these types of calculations himself. As for switching to a single metric, we can solve it in different ways… quickly via a disconnected table. But what about dynamically? So that the user can, for example, select the metrics he wants to see via “Personalize your Visuals” or promote them inside the graph using Field of Measures. So we have to reach for Calculation Groups.</p>
-
-<h2 id="cooperation-with-the-calculation-group">Cooperation with the Calculation Group</h2>
-<p>Let’s prepare three essential items on which we can test this behavior. We already have two in a way (they are mentioned above). First, we just replaced the measure with <strong>SELECTEDMEASURE()</strong>.</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/calculationGroup.png" alt="Calculation Group" loading="lazy" />
-<em>Prepared Calculation Group</em></p>
-
-<p>That last item will be selected-period-to-date (let’s give it an abbreviation like <strong>PTD</strong>):</p>
-
-<div class="codebox"><span class="Keyword" style="color:#035aca">CALCULATE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">WINDOW</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Number" style="color:#EE7F18">1</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>ABS,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Number" style="color:#EE7F18">0</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>REL,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ALLSELECTED</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year],&nbsp;DateKey[Month]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ORDERBY</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DateKey[Year]&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="Parenthesis" style="color:#808080">)</span></div>
-<p><br /></p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/ptd.png" alt="Created PTD Calculation Item" loading="lazy" />
-<em>Created PTD Calculation Item</em></p>
-
-<p>Let’s load this calculation group of ours into the model and for now, let’s try to apply the last mentioned item using Slicer, for example, to check that everything works.</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/activatedPTD.png" alt="PTD Item activated via Slicer" loading="lazy" />
-<em>PTD Item activated via Slicer</em></p>
-
-<p>Everything works as expected, which is good news! I’m glad we didn’t run into any surprises. But let’s load it with <strong>Field of Measures</strong>.</p>
-
-<p>I will create a <strong>fieldOfMeasures</strong> from three other measures, but they will have approximately similar Y-axis values. I really don’t want to mix apples and pears. So I selected <strong>Revenue</strong>, <strong>Pipeline Potential</strong>, and <strong>Costs</strong>:</p>
-
-<div class="codebox">fieldOfMeasure&nbsp;=<br />{<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Revenue"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Measure'[#&nbsp;Sum&nbsp;of&nbsp;Revenue&nbsp;from&nbsp;Pipepine]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Potential"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Measure'[#&nbsp;Sum&nbsp;of&nbsp;Pipeline&nbsp;Potential]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Costs"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Measure'[#&nbsp;Costs&nbsp;of&nbsp;Products]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">2</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br />}</div>
-<p><br /></p>
-
-<p>Will the prepared expression in the calculation group be okay with it? To make the results more visible, I’ll switch from a bar chart to a line chart. After all, only three types of columns would probably not read very well with so many “categories” within the X-axis.</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/fieldParameterInAction.png" alt="Measures provided via Field Parameter modified by Calculation item with WINDOW function" loading="lazy" />
-<em>Measures provided via Field Parameter modified by Calculation item with WINDOW function</em></p>
-
-<p>No problem with that at all! <em>I almost don’t want to believe it.</em> I can also select only some parameters, and everything will recalculate correctly.</p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/selectionOfItems-PTD.png" alt="Selected Revenue and Potential only" loading="lazy" />
-<em>Selected Revenue and Potential only</em></p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/ytdCalculation.png" alt="YTD Calculation" loading="lazy" />
-<em>YTD Calculation</em></p>
-
-<p><img src="/images/posts/Dynamic windows in calculation groups/t12mCalculation.png" alt="T12M Calculation" loading="lazy" />
-<em>T12M Calculation</em></p>
-
-<h2 id="summary">Summary</h2>
-
-<p>During the tests, I did not encounter any major obstacle or specialty, such as the multiple movements of the <strong>OFFSET</strong> function. The <strong>WINDOW</strong> function is probably the most transparent and readable of all the newly added functions: (<strong>OFFSET</strong>, <strong>INDEX</strong>, <strong>WINDOW</strong>).</p>
-
-<p><strong>You will love the WINDOW function as much as I do, and it will become part of your regularly used functions.</strong></p>
-
-<p>If you are interested in any more information about <strong>WINDOW</strong>, I recommend the following links:</p>
+<p>To be able to create these comments faster, there are even keyboard shortcuts to help us with this:</p>
 <ul>
-  <li><a href="https://pbidax.wordpress.com/2022/12/15/introducing-dax-window-functions-part-1/">Introducing DAX Window Functions (Part 1) – pbidax (wordpress.com)</a></li>
-  <li><a href="https://pbidax.wordpress.com/2022/12/23/introducing-dax-window-functions-part-2/">INTRODUCING DAX WINDOW FUNCTIONS (PART 2) – pbidax (wordpress.com)</a></li>
-  <li><a href="https://www.minceddata.info/2022/12/14/unlock-an-ample-new-world-by-seeing-through-a-window/">Unlock an ample new world by seeing through a window - Mincing Data - Gain Insight from Data (minceddata.info)</a></li>
-  <li><a href="https://data-mozart.com/looking-through-the-window-calculating-customer-lifetime-value-with-new-dax-functions/">Looking through the WINDOW - Calculating customer lifetime value with new DAX functions! - Data Mozart (data-mozart.com)</a></li>
+  <li><kbd>Ctrl</kbd> + <kbd>'</kbd></li>
 </ul>
+
+<h2 id="documentation-of-steps">Documentation of steps</h2>
+<p>Ok, so we all know the comments. So let’s get to the documentation and start with the most obvious by describing the steps that the Power Query editor created for you or that you wrote yourself. However, Power Query is a reasonably understandable language that uses English as its basis. If one understands the skeleton of its functions, types, and operands, this code should be read like a book. But you’ve probably already heard that in other languages ​​as well. It is true, but a “machine” understanding of what is happening with the data is often insufficient in itself. That’s why there is an option to add your label to any step so that you can add, for example, WHY we are doing the given step or what the expected result is.</p>
+
+<p><img src="/images/posts/Documentation options in Power Query/stepDescription.png" alt="Step Description" loading="lazy" />
+<em>Step Description</em></p>
+
+<p>We can create such an icon with a description/documentation of the step using Power Query UI or code.</p>
+
+<h3 id="ui-variant">UI Variant</h3>
+<p>Right-click on the step you want to describe and select “Properties…”.
+<img src="/images/posts/Documentation options in Power Query/properties.png" alt="Step Properties" loading="lazy" />
+<em>Step Properties</em></p>
+
+<p>The following POP-UP window will appear where you can complete the Description.
+<img src="/images/posts/Documentation options in Power Query/propertiesPopup.png" alt="Step Properties POP-UP" loading="lazy" />
+<em>Step Properties POP-UP</em></p>
+
+<p>This Description is then reflected in the information icon. If we open the Advanced Editor, we can notice how this Description is reflected in the code. But let’s create it ourselves.</p>
+
+<h3 id="code-way">Code way</h3>
+<p>It may seem like a particular advantage to create this <strong>“i”</strong> icon, and we can reach for both single-line and multi-line comments. Unfortunately, this is not a 100% advantage because the multi-line text will be folded back to a single line during the presentation, so formatting is quite complicated.</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">import</span> <span class="o">=</span> Excel<span class="o">.</span>Workbook<span class="p">(</span>URL<span class="p">)</span><span class="o">[</span>Data<span class="o">]{</span><span class="mf">0</span><span class="o">},</span>
+    <span class="n">promote</span> <span class="o">=</span> Table<span class="o">.</span>PromoteHeaders<span class="p">(</span>#"Imported Excel Workbook"<span class="o">,</span> <span class="o">[</span>PromoteAllScalars<span class="o">=</span><span class="nc">true</span><span class="o">]</span><span class="p">)</span><span class="o">,</span>
+<span class="hll">    <span class="c1">// This step filters out all blank values in column Name</span>
+</span>    <span class="n">filter</span> <span class="o">=</span> Table<span class="o">.</span>SelectRows<span class="p">(</span><span class="n">promote</span><span class="o">,</span> <span class="nc">each</span> <span class="p">(</span><span class="o">[</span>Name<span class="o">]</span> <span class="o">&lt;&gt;</span> <span class="nb">null</span><span class="p">))</span>
+<span class="k">in</span>
+    <span class="n">filter</span></code></pre></figure>
+
+<p>Anyway, for the comment to become a description of the step, quite paradoxically, it must be <strong>BEFORE</strong> the step that we want to describe in this way. It’s a rather strange concept because comments are usually placed AFTER the code is described.</p>
+
+<h2 id="feature-documentation">Feature documentation</h2>
+<p>Not every user ever needed to create their functions in Power Query, but if you ever had this need, you will find it helpful to know that functions can be described many times more than ordinary steps. At the same time, I highly recommend describing the functions because that way, you can avoid a lot of HOW I DID IT moments, which can bring even just a few hours, during which you no longer look at this code. Of course, the key to the initial understanding of what the given function does is already its name, but that is not everything.</p>
+
+<p>By itself, the already empty preview window of its function claims that it can be expanded.</p>
+
+<p>[IMAGE]</p>
+
+<p>And overall, the fact that if you call any function but only as a reference to it (that is, without “()”), the following view will be returned to you.</p>
+
+<p>[IMAGE]</p>
+
+<p>We could review the functions and decompose the individual “Documentation” options. Or we use the more straightforward options and look in the documentation: <a href="">LINK TO DOCUMENTATION</a></p>
+
+<p>It is pretty clear from it that we can document the following:</p>
+<ul>
+  <li>Name</li>
+  <li>Description</li>
+  <li>Version</li>
+  <li>Author</li>
+  <li>Source</li>
+  <li>Examples</li>
+  <li>AllowedValues</li>
+  <li>FieldDescription</li>
+</ul>
+
+<p>That’s quite a few documentation options. I do not prefer using all options for various reasons. For example, I don’t use Allowed Values ​​because it’s just a documentation option that modifies the UI of the created function and does not limit the potentially entered values ​​when calling the function in a usual code way.</p>
+
+<p>[IMAGE]</p>
+
+<p>At the same time, for some of these functions, a simple extension of the metadata of the last “step” of the function is sufficient:
+[IMAGE]</p>
+
+<p>If you would like to use some of these documentation elements yourself, we are here to prepare a simple template for creating your functions with explanations:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="c1">// --------------------------- Function ------------------------------</span>
+<span class="k">let</span>
+    <span class="c1">// --------------------------- Fucntion segment -----------------------------------</span>
+    <span class="n">output</span> <span class="o">=</span>
+        <span class="p">(</span><span class="cm">/* parameter as text, optional opt_parameter as text */</span><span class="p">)</span> <span class="cm">/* as text */</span> <span class="o">=&gt;</span>      <span class="c1">// Input definition + Function output type definition</span>
+            <span class="k">let</span>                                                                         <span class="c1">// Inner function steps declaration</span>
+                <span class="n">initStep</span> <span class="o">=</span> <span class="s">""</span><span class="o">,</span>
+                <span class="n">lastStep</span> <span class="o">=</span> <span class="s">""</span>
+            <span class="k">in</span>
+                <span class="n">lastStep</span><span class="o">,</span>                                                               <span class="c1">// Output from inner steps     </span>
+    <span class="c1">// --------------------------- Documentation segment ------------------------------</span>
+    <span class="n">documentation</span> <span class="o">=</span> <span class="o">[</span>
+        Documentation<span class="o">.</span>Name <span class="o">=</span> <span class="s">" NAME OF FUNCTION "</span><span class="o">,</span>                                      <span class="c1">// Name of the function</span>
+        Documentation<span class="o">.</span>Description <span class="o">=</span> <span class="s">" DESCRIPTION "</span><span class="o">,</span>                                    <span class="c1">// Decription of the function</span>
+        Documentation<span class="o">.</span>Source <span class="o">=</span> <span class="s">" URL / SOURCE DESCRIPTION "</span><span class="o">,</span>                            <span class="c1">// Source of the function</span>
+        Documentation<span class="o">.</span>Version <span class="o">=</span> <span class="s">" VERSION "</span><span class="o">,</span>                                            <span class="c1">// Version of the function</span>
+        Documentation<span class="o">.</span>Author <span class="o">=</span> <span class="s">" AUTHOR "</span><span class="o">,</span>                                              <span class="c1">// Author of the function</span>
+        Documentation<span class="o">.</span>Examples <span class="o">=</span>                                                        <span class="c1">// Examples of the functions</span>
+        <span class="o">{</span>
+            <span class="o">[</span>
+                Description <span class="o">=</span> <span class="s">" EXAMPLE DESCRIPTION "</span><span class="o">,</span>                                  <span class="c1">// Description of the example</span>
+                Code <span class="o">=</span> <span class="s">" EXAMPLE CODE "</span><span class="o">,</span>                                                <span class="c1">// Code of the example</span>
+                Result <span class="o">=</span> <span class="s">" EXAMPLE RESULT "</span>                                             <span class="c1">// Result of the example</span>
+            <span class="o">]</span>
+        <span class="o">}</span>
+    <span class="o">]</span>
+    <span class="c1">// --------------------------- Output --------------------------------------------</span>
+<span class="k">in</span>
+    Value<span class="o">.</span>ReplaceType<span class="p">(</span>                                                                  <span class="c1">// Replace type of the value           </span>
+        <span class="n">output</span><span class="o">,</span>                                                                         <span class="c1">// Function caller</span>
+        Value<span class="o">.</span>ReplaceMetadata<span class="p">(</span>                                                          <span class="c1">// Replace metadata of the function</span>
+            <span class="na">Value.Type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">,</span>                                                         <span class="c1">// Return output type of function               </span>
+            <span class="n">documentation</span>                                                               <span class="c1">// Documentation assigment</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="c1">// ------------------------------------------------------------------------------------</span></code></pre></figure>
+
+<p>Příklad toho, jak to pak může vypadat:
+[IMAGE]</p>
+
+<p>Kdykoliv tedy dojde k zavolání odkazu funkce, tak se navrátí včetně této dokumentace.</p>
+
+<h2 id="dokumentace-dotazů">Dokumentace dotazů</h2>
+<p>?? LZE</p>
+
+<p>## Dokumentace parameterů
+?? STEJNĚ JAKO FUNKCE?
+?? ZAPROPAGUJE SE TO?</p>
 
     </div>
 
@@ -520,12 +545,12 @@
       <ul class="share__list list-reset">
         <li class="share__item">
           <a class="share__link share__twitter"
-            href="https://twitter.com/intent/tweet?text=Dynamic%20windows%20in%20calculation%20groups&url=http://localhost:4000/dynamic-windows-in-calculation-groups"
+            href="https://twitter.com/intent/tweet?text=Documentation%20options%20in%20Power%20Query&url=http://localhost:4000/documentation-options-in-power-query"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
         </li>
         <li class="share__item">
-          <a class="share__link share__linkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/dynamic-windows-in-calculation-groups"
+          <a class="share__link share__linkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/documentation-options-in-power-query"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
         </li>
@@ -578,32 +603,19 @@
   <div class="post__navigation animate">
     
     <div class="post__prev">
-      <a href="/index-as-a-friend-for-conditional-format-string" class="prev__image">
-        <img class="lazy" data-src="/images/covers/INDEX-as-a-friend-for-conditional-format-string.png" alt="Dynamic windows in calculation groups">
+      <a href="/dataflows-refresh-monitoring" class="prev__image">
+        <img class="lazy" data-src="/images/covers/dataflows-refresh-monitoring.png" alt="Documentation options in Power Query">
       </a>
       <div class="prev__box">
         <span class="post__nav post__nav__prev">Older post</span>
-        <h2 class="post__nav__title"><a href="/index-as-a-friend-for-conditional-format-string">INDEX as a friend for Conditional Format Strings</a></h2>
+        <h2 class="post__nav__title"><a href="/dataflows-refresh-monitoring">Dataflows refresh monitoring</a></h2>
         <p class="post__nav__excerpt">
-          The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups.
+          Document your code! One day you will thank yourself, or someone else will thank you, who will take over.
         </p>
       </div>
     </div>
     
   
-    
-    <div class="post__next">
-      <div class="next__box">
-        <span class="post__nav post__nav__next">Newer post</span>
-        <h2 class="post__nav__title"><a href="/date-dimensions-in-power-query">Date dimensions in Power Query</a></h2>
-        <p class="post__nav__excerpt">
-          The WINDOWS function is becoming very popular because it can save a lot of time both for the execution of the calculation and for the development itself. At the same time, this is the last of the new functions I need to test against Calculation Groups.
-        </p>
-      </div>
-      <a href="/date-dimensions-in-power-query" class="next__image">
-        <img class="lazy" data-src="/images/covers/date-dimensions-in-power-query.png" alt="Dynamic windows in calculation groups">
-      </a>
-    </div>
     
   </div>
 </div>
@@ -627,7 +639,9 @@
                 
                 
                   
-                    <a href="/tags/?tag=dax" class="section__link related-tag"><div>See all <span>dax</span></div> <i class="ion ion-ios-arrow-round-forward"></i></a>
+                    <a href="/tags/?tag=m" class="section__link related-tag"><div>See all <span>m</span></div> <i class="ion ion-ios-arrow-round-forward"></i></a>
+                  
+                
                   
                 
                   
@@ -663,27 +677,6 @@
             
 
             
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
 
             <div class="article col col-3 col-d-6 col-m-12">
 
@@ -692,8 +685,8 @@
                   
 
                   
-                  <a class="article__image" href="/index-as-a-friend-for-conditional-format-string">
-                    <img class="lazy" data-src="/images/covers/INDEX-as-a-friend-for-conditional-format-string.png" alt="INDEX as a friend for Conditional Format Strings">
+                  <a class="article__image" href="/apis-as-power-bi-datasources">
+                    <img class="lazy" data-src="/images/covers/apis-as-power-bi-datasources.png" alt="APIs as Power BI Datasources">
                   </a>
                   
 
@@ -709,7 +702,7 @@
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/index-as-a-friend-for-conditional-format-string">INDEX as a friend for Conditional Format Strings</a>
+                    <a href="/apis-as-power-bi-datasources">APIs as Power BI Datasources</a>
                   </h2>
                 </div>
               </div>
@@ -734,8 +727,8 @@
                   
 
                   
-                  <a class="article__image" href="/offset-its-usage-calculation-groups">
-                    <img class="lazy" data-src="/images/covers/offset-its-usage-calculation-groups.png" alt="OFFSET and its usage with Calculation Groups">
+                  <a class="article__image" href="/date-dimensions-in-power-query">
+                    <img class="lazy" data-src="/images/covers/date-dimensions-in-power-query.png" alt="Date dimensions in Power Query">
                   </a>
                   
 
@@ -751,7 +744,7 @@
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/offset-its-usage-calculation-groups">OFFSET and its usage with Calculation Groups</a>
+                    <a href="/date-dimensions-in-power-query">Date dimensions in Power Query</a>
                   </h2>
                 </div>
               </div>
@@ -782,6 +775,20 @@
             
 
             
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
 
             <div class="article col col-3 col-d-6 col-m-12">
 
@@ -790,8 +797,8 @@
                   
 
                   
-                  <a class="article__image" href="/multi-color-gradient-dax-power-bi">
-                    <img class="lazy" data-src="/images/covers/multi-color-gradient-dax-power-bi.png" alt="Multi-Color Gradient with DAX in Power BI">
+                  <a class="article__image" href="/power-query-vs-power-bi-rest-api">
+                    <img class="lazy" data-src="/images/covers/power-query-vs-power-bi-rest-api.png" alt="Power Query vs. Power BI Rest API">
                   </a>
                   
 
@@ -807,7 +814,7 @@
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/multi-color-gradient-dax-power-bi">Multi-Color Gradient with DAX in Power BI</a>
+                    <a href="/power-query-vs-power-bi-rest-api">Power Query vs. Power BI Rest API</a>
                   </h2>
                 </div>
               </div>
@@ -824,41 +831,49 @@
             
 
             
-
-            <div class="article col col-3 col-d-6 col-m-12">
-
-              <div class="article__inner">
-                <div class="article__head">
-                  
-
-                  
-                  <a class="article__image" href="/conditional-formatting-calculation-groups">
-                    <img class="lazy" data-src="/images/covers/conditional-formatting-calculation-groups.png" alt="Conditional Formatting with Calculation Groups">
-                  </a>
-                  
-
-                  <div class="article__meta">
-                    
-                    
-                    <a href="/about/" class="article__author__image" title="Štěpán Rešl">
-                      <img class="lazy" data-src="/images/steve_profile.jpg" alt="Štěpán Rešl">
-                    </a>
-                    
-                  </div>
-                </div>
-
-                <div class="article__content">
-                  <h2 class="article__title">
-                    <a href="/conditional-formatting-calculation-groups">Conditional Formatting with Calculation Groups</a>
-                  </h2>
-                </div>
-              </div>
-
-            </div>
+            
+            
+            
 
             
-                
-                  
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
           </div>
         </div>
       </div>
