@@ -416,10 +416,10 @@
 <h2 id="number-list-and-date-list">Number list and Date list</h2>
 <p>In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into <strong>Numbers</strong> and <strong>Dates</strong>? This is because when a person starts with Power Query or with the <strong>language M</strong>, he very often comes to the operand <strong>”..”</strong>, which forms a sequence of values <strong>from the left value to the right</strong>.</p>
 
+<p>Example:</p>
 <div class="code-header">
     <button title="Copy code from block" class="copy-code-button cp"></button>
   </div>
-<p>Example:</p>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="o">=</span> <span class="o">{</span><span class="mf">1.</span><span class="o">.</span><span class="mf">10</span><span class="o">}</span></code></pre></figure>
 
@@ -462,8 +462,11 @@
 
 <p>The “start” and “count” parameters are relatively self-explanatory. In short, the starting date and the number of steps that will be taken from this selected day forward. The last parameter defines whether the steps will be by days, hours, minutes, or seconds. We can define it via the “#duration()” initiator.</p>
 
-<div class="codebox">#duration(days as number, hours as number, minutes as number, seconds as number)</div>
-<p><br /></p>
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq">#duration<span class="p">(</span><span class="n">days</span> <span class="nc">as</span> <span class="nb">number</span><span class="o">,</span> <span class="n">hours</span> <span class="nc">as</span> <span class="nb">number</span><span class="o">,</span> <span class="n">minutes</span> <span class="nc">as</span> <span class="nb">number</span><span class="o">,</span> <span class="n">seconds</span> <span class="nc">as</span> <span class="nb">number</span><span class="p">)</span></code></pre></figure>
 
 <ul>
   <li>#duration(1,0,0,0) = 1 day</li>

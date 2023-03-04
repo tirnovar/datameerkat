@@ -5,8 +5,8 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 04 Mar 2023 17:03:22 +0100</pubDate>
-        <lastBuildDate>Sat, 04 Mar 2023 17:03:22 +0100</lastBuildDate>
+        <pubDate>Sat, 04 Mar 2023 17:07:01 +0100</pubDate>
+        <lastBuildDate>Sat, 04 Mar 2023 17:07:01 +0100</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
         
             <item>
@@ -652,10 +652,10 @@
 &lt;h2 id=&quot;number-list-and-date-list&quot;&gt;Number list and Date list&lt;/h2&gt;
 &lt;p&gt;In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into &lt;strong&gt;Numbers&lt;/strong&gt; and &lt;strong&gt;Dates&lt;/strong&gt;? This is because when a person starts with Power Query or with the &lt;strong&gt;language M&lt;/strong&gt;, he very often comes to the operand &lt;strong&gt;”..”&lt;/strong&gt;, which forms a sequence of values &lt;strong&gt;from the left value to the right&lt;/strong&gt;.&lt;/p&gt;
 
+&lt;p&gt;Example:&lt;/p&gt;
 &lt;div class=&quot;code-header&quot;&gt;
     &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
   &lt;/div&gt;
-&lt;p&gt;Example:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -698,8 +698,11 @@
 
 &lt;p&gt;The “start” and “count” parameters are relatively self-explanatory. In short, the starting date and the number of steps that will be taken from this selected day forward. The last parameter defines whether the steps will be by days, hours, minutes, or seconds. We can define it via the “#duration()” initiator.&lt;/p&gt;
 
-&lt;div class=&quot;codebox&quot;&gt;#duration(days as number, hours as number, minutes as number, seconds as number)&lt;/div&gt;
-&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;#duration&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;days&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hours&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;minutes&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;seconds&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;ul&gt;
   &lt;li&gt;#duration(1,0,0,0) = 1 day&lt;/li&gt;

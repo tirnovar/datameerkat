@@ -37,8 +37,8 @@ That might give us enough values for some testing as well.
 ## Number list and Date list
 In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into **Numbers** and **Dates**? This is because when a person starts with Power Query or with the **language M**, he very often comes to the operand **".."**, which forms a sequence of values **from the left value to the right**.
 
-{% include codeHeader.html %}
 Example:
+{% include codeHeader.html %}
 {% highlight pq %}
 = {1..10}
 {% endhighlight %}
@@ -79,7 +79,10 @@ This procedure works but needs to be simplified. **There is another way to creat
 
 The "start" and "count" parameters are relatively self-explanatory. In short, the starting date and the number of steps that will be taken from this selected day forward. The last parameter defines whether the steps will be by days, hours, minutes, or seconds. We can define it via the "#duration()" initiator.
 
-<div class="codebox">#duration(days as number, hours as number, minutes as number, seconds as number)</div><br>
+{% include codeHeader.html %}
+{% highlight pq %}
+#duration(days as number, hours as number, minutes as number, seconds as number)
+{% endhighlight %}
 
 - #duration(1,0,0,0) = 1 day
 - #duration(5,0,0,0) = 5 days 
