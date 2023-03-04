@@ -441,6 +441,10 @@
 
 <p>All you have to do is choose one of the options and send a request for data. For example, this call:</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">curl --location -g --request GET 'https://newsapi.org/v2/top-headlines?country=us&amp;apiKey={apiKey}'</code></pre></figure>
 
 <p>The attached cURL notation shows that I will use the API Key within the URL address for this attempt. Specifically within the query section. But there is another parameter, namely the <strong>“country” parameter</strong>, so we can immediately show ourselves how to create such queries!</p>
@@ -463,6 +467,10 @@
 
 <p>Let’s try it out:</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
     <span class="n">key</span> <span class="o">=</span> <span class="s">""</span>
 <span class="k">in</span>
@@ -482,6 +490,10 @@
 <em>Response from API</em></p>
 
 <p>This API returns its response in approximately the following form:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
 <span class="w">  </span><span class="nl">"status"</span><span class="p">:</span><span class="w"> </span><span class="s2">"ok"</span><span class="p">,</span>
@@ -509,6 +521,10 @@
 <h3 id="api-key-covered-in-headers">API Key covered in Headers</h3>
 
 <p>So we can already send it within the URL as part of the Query. So let’s show how we will do o within the Header. Suppose we extend the original code in the <strong>“options”</strong> framework with Headers and define the input according to the specification in the documentation. In that case, we should reach something like this in the code:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
     <span class="n">key</span> <span class="o">=</span> <span class="s">""</span>
@@ -538,6 +554,10 @@
 <h3 id="sending-data-to-the-api">Sending data to the API</h3>
 
 <p>So we have the basic parts almost all covered! We’re missing one last one! It is the passing of Content within the <strong>Content part</strong> of the call. It is the part that changes the <strong>GET</strong> method we’ve used all along to a <strong>POST</strong> method. I understand if a question mark just popped into your head! After all… Why would I want to send data away from Power Query? It is only sometimes necessary to send data directly away. Sometimes, even just API authentication processes, it is necessary to send authentication information that will return you a <strong>temporary key</strong> <em>(token)</em> that you can use to retrieve your data. For example, suppose you’re trying to get data from the <strong>Power BI REST API</strong>. In that case, you will have a different key than we had with the NewsAPI. Here, you must authenticate against <strong>Azure Active Directory (AAD)</strong> either as a user or as an application. AAD will return you an access key after validating basic permissions, which will have a specific <strong>lifetime</strong> <em>(relatively short)</em> and will need to be renewed once it expires. <strong>So in such cases, the idea is that you create the first POST request and then pass its output to the GET request.</strong> But let’s show it!</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
     <span class="n">output</span> <span class="o">=</span> <span class="p">(</span>AzureADTenantID <span class="nc">as</span> <span class="nb">text</span><span class="o">,</span> AzureApplicationClientSecret <span class="nc">as</span> <span class="nb">text</span><span class="o">,</span> AzureApplicationClientID <span class="nc">as</span> <span class="nb">text</span><span class="p">)</span> <span class="nc">as</span> <span class="nb">text</span> <span class="o">=&gt;</span>
@@ -571,6 +591,10 @@
     <span class="n">output</span></code></pre></figure>
 
 <p>Don’t be afraid of this code. It is pretty straightforward. I have only wrapped the whole thing in a function so that we could pass the necessary parts to this call simply and on call. Primarily, from <strong>line number 10</strong>, we added an attribute called <strong>Content</strong>. As I mentioned at the beginning, we have to give the Content in binary form. That’s the reason why the <strong><a href="https://learn.microsoft.com/en-us/powerquery-m/text-tobinary?id=DP-MVP-5003801">Text.ToContent()</a></strong> function wraps the Content. It translates the Text into binary for us. Instead of the <strong><a href="https://learn.microsoft.com/en-us/powerquery-m/uri-buildquerystring?id=DP-MVP-5003801">Uri.BuildQueryString</a></strong> function, we could also have a direct entry of our <strong>Content</strong>, or you can define it as a JSON, which would look like this:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
 <span class="w">  </span><span class="nl">"client_id"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>

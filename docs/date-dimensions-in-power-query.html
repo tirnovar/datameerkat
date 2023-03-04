@@ -416,6 +416,9 @@
 <h2 id="number-list-and-date-list">Number list and Date list</h2>
 <p>In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into <strong>Numbers</strong> and <strong>Dates</strong>? This is because when a person starts with Power Query or with the <strong>language M</strong>, he very often comes to the operand <strong>”..”</strong>, which forms a sequence of values <strong>from the left value to the right</strong>.</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 <p>Example:</p>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="o">=</span> <span class="o">{</span><span class="mf">1.</span><span class="o">.</span><span class="mf">10</span><span class="o">}</span></code></pre></figure>
@@ -451,6 +454,10 @@
 
 <p>This procedure works but needs to be simplified. <strong>There is another way to create a Date list.</strong> It is more straightforward. This is a function:</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="o">=</span> List<span class="o">.</span>Dates<span class="p">(</span><span class="n">start</span> <span class="nc">as</span> <span class="nb">date</span><span class="o">,</span> <span class="n">count</span> <span class="nc">as</span> <span class="nb">number</span><span class="o">,</span> <span class="n">step</span> <span class="nc">as</span> <span class="nb">duration</span><span class="p">)</span></code></pre></figure>
 
 <p>The “start” and “count” parameters are relatively self-explanatory. In short, the starting date and the number of steps that will be taken from this selected day forward. The last parameter defines whether the steps will be by days, hours, minutes, or seconds. We can define it via the “#duration()” initiator.</p>
@@ -464,6 +471,10 @@
 </ul>
 
 <p>Thus, we can also define that the date list will contain, for example, every second day from the initial day. But to achieve our desired List, it will have to look like this:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="o">=</span> List<span class="o">.</span>Dates<span class="p">(</span>#date<span class="p">(</span><span class="mf">2000</span><span class="o">,</span><span class="mf">1</span><span class="o">,</span><span class="mf">1</span><span class="p">)</span><span class="o">,</span><span class="mf">18627</span><span class="o">,</span>#duration<span class="p">(</span><span class="mf">1</span><span class="o">,</span><span class="mf">0</span><span class="o">,</span><span class="mf">0</span><span class="o">,</span><span class="mf">0</span><span class="p">))</span></code></pre></figure>
 
@@ -499,15 +510,26 @@
 
 <p>It’s simple for quarters. We get the quarter number, turn it into text, and concatenate it with the letter <strong>“Q”</strong> to get output like <strong>“1Q”, “2Q,”</strong> and so on.</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq">QuarterName <span class="o">=</span> Table<span class="o">.</span>AddColumn<span class="p">(</span> <span class="o">&lt;</span> <span class="n">previousStep</span> <span class="o">&gt;</span> <span class="o">,</span> <span class="s">"QuarterName"</span><span class="o">,</span> <span class="nc">each</span> Text<span class="o">.</span>From<span class="p">(</span>Date<span class="o">.</span>QuarterOfYear<span class="p">(</span><span class="o">[</span>Date<span class="o">]</span><span class="p">))</span> <span class="o">&amp;</span> <span class="s">"Q"</span><span class="o">,</span> <span class="nb">type</span> <span class="nb">text</span><span class="p">)</span></code></pre></figure>
 
 <p>Deciding whether it’s the weekend won’t be so fast. First of all, note that the <strong><a href="https://learn.microsoft.com/en-us/powerquery-m/date-dayofweek?id=DP-MVP-5003801">Date.DayOfWeek()</a></strong> function returns the days of the week as <strong>numbers between 0 and 6</strong>. And <strong>0</strong> is <strong>Sunday</strong>. Unless we define it differently in the second parameter of the function. If, for example, we used the number 1 in the second parameter, then the numbers of the days of the week will be returned a little differently because <strong>Monday</strong> will now be returned as a <strong>position number 0</strong>. Nevertheless, it can make it very easy for us to prepare this decision because, in that case, it is enough to say that if the returned number is greater than <strong>4 (Friday)</strong>, then it is the weekend.</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="n">isWeekend</span> <span class="o">=</span> Table<span class="o">.</span>AddColumn<span class="p">(</span><span class="o">&lt;</span> <span class="n">previousStep</span> <span class="o">&gt;</span> <span class="o">,</span> <span class="s">"Day of Week"</span><span class="o">,</span> <span class="nc">each</span> <span class="nc">if</span> Date<span class="o">.</span>DayOfWeek<span class="p">(</span><span class="o">[</span>Date<span class="o">],</span><span class="mf">1</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mf">4</span> <span class="nc">then</span> <span class="nc">true</span> <span class="nc">else</span> <span class="nc">false</span><span class="o">,</span> <span class="nb">type</span> <span class="n">logical</span><span class="p">)</span></code></pre></figure>
 
 <p>With these two entries, we already have all the columns we need. Note one small thing. We didn’t have to set the data types for individual columns. The same goes for the columns that I wrote here for you. It is because those native functions for creating columns from the Datum column type use the fourth attribute of the <strong>Table.AddColumn</strong> function allows you to tell what data type the column should have. <strong>Just BEWARE!!!</strong> Suppose your calculation returns output in a format other than that specified in this fourth attribute. In that case, the Power Query interface will not notify you of the error, and you will only find out about it when you try to load the data into the model. It differs from changing the data type, which tries to convert each value in a column while validating it. This fourth attribute is more like your assurance to Power Query that it doesn’t have to deal with the data type because you handled it.</p>
 
 <p>The full entry is here:</p>
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
     Source <span class="o">=</span> List<span class="o">.</span>Dates<span class="p">(</span>#date<span class="p">(</span><span class="mf">2000</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">1</span><span class="p">)</span><span class="o">,</span> <span class="mf">18627</span><span class="o">,</span> #duration<span class="p">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="p">))</span><span class="o">,</span>
@@ -549,6 +571,9 @@
 <p>Within this variant, however, we then have to define their data types for all expanded columns because, after the expansion, there will be no spontaneous typing or transfer of the data type. In short, all columns will be of type <strong>ANY</strong>.</p>
 
 <p>But the resulting query will look like the following:</p>
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
     Source <span class="o">=</span> List<span class="o">.</span>Dates<span class="p">(</span>#date<span class="p">(</span><span class="mf">2000</span><span class="o">,</span> <span class="mf">1</span><span class="o">,</span> <span class="mf">1</span><span class="p">)</span><span class="o">,</span> <span class="mf">18627</span><span class="o">,</span> #duration<span class="p">(</span><span class="mf">1</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="o">,</span> <span class="mf">0</span><span class="p">))</span><span class="o">,</span>
@@ -609,6 +634,10 @@
 
 <p>The procedure will be similar to when we defined that record for the new column. However, it will be a little easier because we don’t have to define the names yet, and we can use the character <strong>“_“</strong> as a wildcard for the edited date. Just remember two things! We will still need the modified date, so we should keep it as well, and we define a <strong>LIST</strong>, so we have to store the result in these brackets <strong>”{}.”</strong></p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq">List<span class="o">.</span>Transform<span class="p">(</span>
     List<span class="o">.</span>Dates<span class="p">(</span>#date<span class="p">(</span><span class="mf">2000</span><span class="o">,</span><span class="mf">1</span><span class="o">,</span><span class="mf">1</span><span class="p">)</span><span class="o">,</span><span class="mf">18627</span><span class="o">,</span>#duration<span class="p">(</span><span class="mf">1</span><span class="o">,</span><span class="mf">0</span><span class="o">,</span><span class="mf">0</span><span class="o">,</span><span class="mf">0</span><span class="p">))</span><span class="o">,</span>
     <span class="nc">each</span>
@@ -635,6 +664,10 @@
 
 <p>But before we do that, a few more words about the fact that we have created rows but no columns. If we wanted to create columns without a data type, we could pass the individual names within the List, but if we want to give it the data type as well, we have to do it a little differently:</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="nb">type</span> <span class="nb">table</span> <span class="o">[</span>
     Date <span class="o">=</span> <span class="nb">date</span><span class="o">,</span>
     Year <span class="o">=</span> <span class="na">Int64.Type</span><span class="o">,</span>
@@ -651,6 +684,10 @@
 <p>The column definitions must be in the same order as they are defined within the “<strong>List.Transform</strong>” output! You can also evaluate this entry in Power Query. The result will be that the value “table” will be returned to you, and the query icon will be a table icon with a question mark. But no data anywhere.</p>
 
 <p>The miracle will happen after we connect these two parts, i.e., the columns and rows within the <strong>#table</strong>.</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-pq" data-lang="pq">#table<span class="p">(</span>
     <span class="nb">type</span> <span class="nb">table</span> <span class="o">[</span>

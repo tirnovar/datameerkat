@@ -148,6 +148,7 @@ When creating an adaptive card, I recommend using its builder on the [official w
 
 Prepared JSON to transfer to Power Automate:
 
+{% include codeHeader.html %}
 {% highlight json %}
 {
     "type": "AdaptiveCard",
@@ -207,6 +208,7 @@ Unfortunately, **MS Teams cannot support everything that Adaptive cards can do**
 
 At the same time, you need to add a link to where the button will lead. For example, I direct it to the Settings of the given Dataflow.
 
+{% include codeHeader.html %}
 {% highlight json %}
 {
     "type": "AdaptiveCard",
@@ -285,6 +287,7 @@ At the same time, it's an opportunity to look at another option to get these upd
 
 The second option (not the last) is through the Power BI REST API, where we are interested in this endpoint - [Dataflow Transactions](https://learn.microsoft.com/en-us/rest/api/power-bi/dataflows/get-dataflow-transactions?id=DP-MVP-5003801)
 
+{% include codeHeader.html %}
 {% highlight plaintext %}
 curl --location --request GET 'https://api.powerbi.com/v1.0/myorg/groups/{WORKSPACE-ID}/dataflows/{DATAFLOW-ID}/transactions' \
 --header 'Authorization: Bearer token' \
@@ -294,6 +297,7 @@ This endpoint can get updates on the selected Dataflow. It can also be nicely wr
 
 It returns data approximately similar to those that come from Power Automate:
 
+{% include codeHeader.html %}
 {% highlight json %}
 {
     "@odata.context": "",

@@ -5,8 +5,8 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Sat, 04 Mar 2023 16:57:07 +0100</pubDate>
-        <lastBuildDate>Sat, 04 Mar 2023 16:57:07 +0100</lastBuildDate>
+        <pubDate>Sat, 04 Mar 2023 17:00:39 +0100</pubDate>
+        <lastBuildDate>Sat, 04 Mar 2023 17:00:39 +0100</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
         
             <item>
@@ -147,6 +147,10 @@
 
 &lt;p&gt;Prepared JSON to transfer to Power Automate:&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AdaptiveCard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;body&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;
@@ -203,6 +207,10 @@
 &lt;p&gt;Unfortunately, &lt;strong&gt;MS Teams cannot support everything that Adaptive cards can do&lt;/strong&gt;. At the same time, they have their requirements for formats and the like, so it is often better to define some transformations directly in Power Automate and pass only the results. For example, with that &lt;strong&gt;DateTime&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;At the same time, you need to add a link to where the button will lead. For example, I direct it to the Settings of the given Dataflow.&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;type&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;AdaptiveCard&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -278,12 +286,20 @@
 
 &lt;p&gt;The second option (not the last) is through the Power BI REST API, where we are interested in this endpoint - &lt;a href=&quot;https://learn.microsoft.com/en-us/rest/api/power-bi/dataflows/get-dataflow-transactions?id=DP-MVP-5003801&quot;&gt;Dataflow Transactions&lt;/a&gt;&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;curl --location --request GET &apos;https://api.powerbi.com/v1.0/myorg/groups/{WORKSPACE-ID}/dataflows/{DATAFLOW-ID}/transactions&apos; \
 --header &apos;Authorization: Bearer token&apos; \&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;This endpoint can get updates on the selected Dataflow. It can also be nicely wrapped into some script that gets individual dataflows and then gradually gets individual updates for them and saves them in some resulting file/database.&lt;/p&gt;
 
 &lt;p&gt;It returns data approximately similar to those that come from Power Automate:&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;    &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;@odata.context&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -394,6 +410,10 @@
 
 &lt;p&gt;All you have to do is choose one of the options and send a request for data. For example, this call:&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-plaintext&quot; data-lang=&quot;plaintext&quot;&gt;curl --location -g --request GET &apos;https://newsapi.org/v2/top-headlines?country=us&amp;amp;apiKey={apiKey}&apos;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The attached cURL notation shows that I will use the API Key within the URL address for this attempt. Specifically within the query section. But there is another parameter, namely the &lt;strong&gt;“country” parameter&lt;/strong&gt;, so we can immediately show ourselves how to create such queries!&lt;/p&gt;
@@ -416,6 +436,10 @@
 
 &lt;p&gt;Let’s try it out:&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;in&lt;/span&gt;
@@ -435,6 +459,10 @@
 &lt;em&gt;Response from API&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;This API returns its response in approximately the following form:&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;status&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;ok&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -462,6 +490,10 @@
 &lt;h3 id=&quot;api-key-covered-in-headers&quot;&gt;API Key covered in Headers&lt;/h3&gt;
 
 &lt;p&gt;So we can already send it within the URL as part of the Query. So let’s show how we will do o within the Header. Suppose we extend the original code in the &lt;strong&gt;“options”&lt;/strong&gt; framework with Headers and define the input according to the specification in the documentation. In that case, we should reach something like this in the code:&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;key&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;&quot;&lt;/span&gt;
@@ -491,6 +523,10 @@
 &lt;h3 id=&quot;sending-data-to-the-api&quot;&gt;Sending data to the API&lt;/h3&gt;
 
 &lt;p&gt;So we have the basic parts almost all covered! We’re missing one last one! It is the passing of Content within the &lt;strong&gt;Content part&lt;/strong&gt; of the call. It is the part that changes the &lt;strong&gt;GET&lt;/strong&gt; method we’ve used all along to a &lt;strong&gt;POST&lt;/strong&gt; method. I understand if a question mark just popped into your head! After all… Why would I want to send data away from Power Query? It is only sometimes necessary to send data directly away. Sometimes, even just API authentication processes, it is necessary to send authentication information that will return you a &lt;strong&gt;temporary key&lt;/strong&gt; &lt;em&gt;(token)&lt;/em&gt; that you can use to retrieve your data. For example, suppose you’re trying to get data from the &lt;strong&gt;Power BI REST API&lt;/strong&gt;. In that case, you will have a different key than we had with the NewsAPI. Here, you must authenticate against &lt;strong&gt;Azure Active Directory (AAD)&lt;/strong&gt; either as a user or as an application. AAD will return you an access key after validating basic permissions, which will have a specific &lt;strong&gt;lifetime&lt;/strong&gt; &lt;em&gt;(relatively short)&lt;/em&gt; and will need to be renewed once it expires. &lt;strong&gt;So in such cases, the idea is that you create the first POST request and then pass its output to the GET request.&lt;/strong&gt; But let’s show it!&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
     &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;AzureADTenantID &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; AzureApplicationClientSecret &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; AzureApplicationClientID &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&amp;gt;&lt;/span&gt;
@@ -524,6 +560,10 @@
     &lt;span class=&quot;n&quot;&gt;output&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Don’t be afraid of this code. It is pretty straightforward. I have only wrapped the whole thing in a function so that we could pass the necessary parts to this call simply and on call. Primarily, from &lt;strong&gt;line number 10&lt;/strong&gt;, we added an attribute called &lt;strong&gt;Content&lt;/strong&gt;. As I mentioned at the beginning, we have to give the Content in binary form. That’s the reason why the &lt;strong&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/powerquery-m/text-tobinary?id=DP-MVP-5003801&quot;&gt;Text.ToContent()&lt;/a&gt;&lt;/strong&gt; function wraps the Content. It translates the Text into binary for us. Instead of the &lt;strong&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/powerquery-m/uri-buildquerystring?id=DP-MVP-5003801&quot;&gt;Uri.BuildQueryString&lt;/a&gt;&lt;/strong&gt; function, we could also have a direct entry of our &lt;strong&gt;Content&lt;/strong&gt;, or you can define it as a JSON, which would look like this:&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-json&quot; data-lang=&quot;json&quot;&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
 &lt;span class=&quot;w&quot;&gt;  &lt;/span&gt;&lt;span class=&quot;nl&quot;&gt;&quot;client_id&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;w&quot;&gt; &lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;
@@ -608,6 +648,9 @@
 &lt;h2 id=&quot;number-list-and-date-list&quot;&gt;Number list and Date list&lt;/h2&gt;
 &lt;p&gt;In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into &lt;strong&gt;Numbers&lt;/strong&gt; and &lt;strong&gt;Dates&lt;/strong&gt;? This is because when a person starts with Power Query or with the &lt;strong&gt;language M&lt;/strong&gt;, he very often comes to the operand &lt;strong&gt;”..”&lt;/strong&gt;, which forms a sequence of values &lt;strong&gt;from the left value to the right&lt;/strong&gt;.&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 &lt;p&gt;Example:&lt;/p&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;10&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
@@ -643,6 +686,10 @@
 
 &lt;p&gt;This procedure works but needs to be simplified. &lt;strong&gt;There is another way to create a Date list.&lt;/strong&gt; It is more straightforward. This is a function:&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Dates&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;start&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;count&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;number&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;step&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;duration&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;The “start” and “count” parameters are relatively self-explanatory. In short, the starting date and the number of steps that will be taken from this selected day forward. The last parameter defines whether the steps will be by days, hours, minutes, or seconds. We can define it via the “#duration()” initiator.&lt;/p&gt;
@@ -656,6 +703,10 @@
 &lt;/ul&gt;
 
 &lt;p&gt;Thus, we can also define that the date list will contain, for example, every second day from the initial day. But to achieve our desired List, it will have to look like this:&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Dates&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;#date&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;18627&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;#duration&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
@@ -691,15 +742,26 @@
 
 &lt;p&gt;It’s simple for quarters. We get the quarter number, turn it into text, and concatenate it with the letter &lt;strong&gt;“Q”&lt;/strong&gt; to get output like &lt;strong&gt;“1Q”, “2Q,”&lt;/strong&gt; and so on.&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;QuarterName &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;AddColumn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;previousStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;QuarterName&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;each&lt;/span&gt; Text&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;From&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;Date&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;QuarterOfYear&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Date&lt;span class=&quot;o&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;amp;&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Q&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;text&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;Deciding whether it’s the weekend won’t be so fast. First of all, note that the &lt;strong&gt;&lt;a href=&quot;https://learn.microsoft.com/en-us/powerquery-m/date-dayofweek?id=DP-MVP-5003801&quot;&gt;Date.DayOfWeek()&lt;/a&gt;&lt;/strong&gt; function returns the days of the week as &lt;strong&gt;numbers between 0 and 6&lt;/strong&gt;. And &lt;strong&gt;0&lt;/strong&gt; is &lt;strong&gt;Sunday&lt;/strong&gt;. Unless we define it differently in the second parameter of the function. If, for example, we used the number 1 in the second parameter, then the numbers of the days of the week will be returned a little differently because &lt;strong&gt;Monday&lt;/strong&gt; will now be returned as a &lt;strong&gt;position number 0&lt;/strong&gt;. Nevertheless, it can make it very easy for us to prepare this decision because, in that case, it is enough to say that if the returned number is greater than &lt;strong&gt;4 (Friday)&lt;/strong&gt;, then it is the weekend.&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;n&quot;&gt;isWeekend&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; Table&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;AddColumn&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;previousStep&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&quot;Day of Week&quot;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;each&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;if&lt;/span&gt; Date&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;DayOfWeek&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;Date&lt;span class=&quot;o&quot;&gt;],&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;then&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;true&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;false&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;logical&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;With these two entries, we already have all the columns we need. Note one small thing. We didn’t have to set the data types for individual columns. The same goes for the columns that I wrote here for you. It is because those native functions for creating columns from the Datum column type use the fourth attribute of the &lt;strong&gt;Table.AddColumn&lt;/strong&gt; function allows you to tell what data type the column should have. &lt;strong&gt;Just BEWARE!!!&lt;/strong&gt; Suppose your calculation returns output in a format other than that specified in this fourth attribute. In that case, the Power Query interface will not notify you of the error, and you will only find out about it when you try to load the data into the model. It differs from changing the data type, which tries to convert each value in a column while validating it. This fourth attribute is more like your assurance to Power Query that it doesn’t have to deal with the data type because you handled it.&lt;/p&gt;
 
 &lt;p&gt;The full entry is here:&lt;/p&gt;
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
     Source &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Dates&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;#date&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;18627&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; #duration&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -741,6 +803,9 @@
 &lt;p&gt;Within this variant, however, we then have to define their data types for all expanded columns because, after the expansion, there will be no spontaneous typing or transfer of the data type. In short, all columns will be of type &lt;strong&gt;ANY&lt;/strong&gt;.&lt;/p&gt;
 
 &lt;p&gt;But the resulting query will look like the following:&lt;/p&gt;
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;k&quot;&gt;let&lt;/span&gt;
     Source &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Dates&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;#date&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;18627&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; #duration&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -801,6 +866,10 @@
 
 &lt;p&gt;The procedure will be similar to when we defined that record for the new column. However, it will be a little easier because we don’t have to define the names yet, and we can use the character &lt;strong&gt;“_“&lt;/strong&gt; as a wildcard for the edited date. Just remember two things! We will still need the modified date, so we should keep it as well, and we define a &lt;strong&gt;LIST&lt;/strong&gt;, so we have to store the result in these brackets &lt;strong&gt;”{}.”&lt;/strong&gt;&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Transform&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
     List&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;Dates&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;#date&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;2000&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;18627&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;#duration&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     &lt;span class=&quot;nc&quot;&gt;each&lt;/span&gt;
@@ -827,6 +896,10 @@
 
 &lt;p&gt;But before we do that, a few more words about the fact that we have created rows but no columns. If we wanted to create columns without a data type, we could pass the individual names within the List, but if we want to give it the data type as well, we have to do it a little differently:&lt;/p&gt;
 
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
+
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;&lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;
     Date &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;date&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
     Year &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;Int64.Type&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;,&lt;/span&gt;
@@ -843,6 +916,10 @@
 &lt;p&gt;The column definitions must be in the same order as they are defined within the “&lt;strong&gt;List.Transform&lt;/strong&gt;” output! You can also evaluate this entry in Power Query. The result will be that the value “table” will be returned to you, and the query icon will be a table icon with a question mark. But no data anywhere.&lt;/p&gt;
 
 &lt;p&gt;The miracle will happen after we connect these two parts, i.e., the columns and rows within the &lt;strong&gt;#table&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;div class=&quot;code-header&quot;&gt;
+    &lt;button title=&quot;Copy code from block&quot; class=&quot;copy-code-button cp&quot;&gt;&lt;/button&gt;
+  &lt;/div&gt;
 
 &lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-pq&quot; data-lang=&quot;pq&quot;&gt;#table&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;
     &lt;span class=&quot;nb&quot;&gt;type&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;table&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;[&lt;/span&gt;

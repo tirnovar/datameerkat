@@ -37,6 +37,7 @@ That might give us enough values for some testing as well.
 ## Number list and Date list
 In both of these variants, I have to start by creating a list of values that will serve as an input set, which I will then expand by individual columns. But why am I dividing it into **Numbers** and **Dates**? This is because when a person starts with Power Query or with the **language M**, he very often comes to the operand **".."**, which forms a sequence of values **from the left value to the right**.
 
+{% include codeHeader.html %}
 Example:
 {% highlight pq %}
 = {1..10}
@@ -71,6 +72,7 @@ If I subtract these numbers, I will find that the resulting table would have 186
 
 This procedure works but needs to be simplified. **There is another way to create a Date list.** It is more straightforward. This is a function:
 
+{% include codeHeader.html %}
 {% highlight pq %}
 = List.Dates(start as date, count as number, step as duration)
 {% endhighlight %}
@@ -84,6 +86,7 @@ The "start" and "count" parameters are relatively self-explanatory. In short, th
 
 Thus, we can also define that the date list will contain, for example, every second day from the initial day. But to achieve our desired List, it will have to look like this:
 
+{% include codeHeader.html %}
 {% highlight pq %}
 = List.Dates(#date(2000,1,1),18627,#duration(1,0,0,0))
 {% endhighlight %}
@@ -120,12 +123,14 @@ We would need more than two of the required columns: **QuarterName** and **isWee
 
 It's simple for quarters. We get the quarter number, turn it into text, and concatenate it with the letter **"Q"** to get output like **"1Q", "2Q,"** and so on.
 
+{% include codeHeader.html %}
 {% highlight pq %}
 QuarterName = Table.AddColumn( < previousStep > , "QuarterName", each Text.From(Date.QuarterOfYear([Date])) & "Q", type text)
 {% endhighlight %}
 
 Deciding whether it's the weekend won't be so fast. First of all, note that the **[Date.DayOfWeek\()](https://learn.microsoft.com/en-us/powerquery-m/date-dayofweek?id=DP-MVP-5003801)** function returns the days of the week as **numbers between 0 and 6**. And **0** is **Sunday**. Unless we define it differently in the second parameter of the function. If, for example, we used the number 1 in the second parameter, then the numbers of the days of the week will be returned a little differently because **Monday** will now be returned as a **position number 0**. Nevertheless, it can make it very easy for us to prepare this decision because, in that case, it is enough to say that if the returned number is greater than **4 (Friday)**, then it is the weekend.
 
+{% include codeHeader.html %}
 {% highlight pq %}
 isWeekend = Table.AddColumn(< previousStep > , "Day of Week", each if Date.DayOfWeek([Date],1) > 4 then true else false, type logical)
 {% endhighlight %}
@@ -133,6 +138,7 @@ isWeekend = Table.AddColumn(< previousStep > , "Day of Week", each if Date.DayOf
 With these two entries, we already have all the columns we need. Note one small thing. We didn't have to set the data types for individual columns. The same goes for the columns that I wrote here for you. It is because those native functions for creating columns from the Datum column type use the fourth attribute of the **Table.AddColumn** function allows you to tell what data type the column should have. **Just BEWARE!!!** Suppose your calculation returns output in a format other than that specified in this fourth attribute. In that case, the Power Query interface will not notify you of the error, and you will only find out about it when you try to load the data into the model. It differs from changing the data type, which tries to convert each value in a column while validating it. This fourth attribute is more like your assurance to Power Query that it doesn't have to deal with the data type because you handled it.
 
 The full entry is here:
+{% include codeHeader.html %}
 {% highlight pq %}
 let
     Source = List.Dates(#date(2000, 1, 1), 18627, #duration(1, 0, 0, 0)),
@@ -175,6 +181,7 @@ The result will look like the new column will contain the values marked as a rec
 Within this variant, however, we then have to define their data types for all expanded columns because, after the expansion, there will be no spontaneous typing or transfer of the data type. In short, all columns will be of type **ANY**.
 
 But the resulting query will look like the following:
+{% include codeHeader.html %}
 {% highlight pq %}
 let
     Source = List.Dates(#date(2000, 1, 1), 18627, #duration(1, 0, 0, 0)),
@@ -235,6 +242,7 @@ But now we need a list of lists, not only one layer with dates. So we need to lo
 
 The procedure will be similar to when we defined that record for the new column. However, it will be a little easier because we don't have to define the names yet, and we can use the character **"_"** as a wildcard for the edited date. Just remember two things! We will still need the modified date, so we should keep it as well, and we define a **LIST**, so we have to store the result in these brackets **"{}."**
 
+{% include codeHeader.html %}
 {% highlight pq %}
 List.Transform(
     List.Dates(#date(2000,1,1),18627,#duration(1,0,0,0)),
@@ -263,6 +271,7 @@ We can either save the procedure prepared in this way in a separate step and the
 
 But before we do that, a few more words about the fact that we have created rows but no columns. If we wanted to create columns without a data type, we could pass the individual names within the List, but if we want to give it the data type as well, we have to do it a little differently:
 
+{% include codeHeader.html %}
 {% highlight pq %}
 type table [
     Date = date,
@@ -282,6 +291,7 @@ The column definitions must be in the same order as they are defined within the 
 
 The miracle will happen after we connect these two parts, i.e., the columns and rows within the **#table**.
 
+{% include codeHeader.html %}
 {% highlight pq %}
 #table(
     type table [

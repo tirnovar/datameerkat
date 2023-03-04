@@ -520,6 +520,10 @@
 
 <p>Prepared JSON to transfer to Power Automate:</p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
 <span class="w">    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdaptiveCard"</span><span class="p">,</span>
 <span class="w">    </span><span class="nl">"body"</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
@@ -576,6 +580,10 @@
 <p>Unfortunately, <strong>MS Teams cannot support everything that Adaptive cards can do</strong>. At the same time, they have their requirements for formats and the like, so it is often better to define some transformations directly in Power Automate and pass only the results. For example, with that <strong>DateTime</strong>.</p>
 
 <p>At the same time, you need to add a link to where the button will lead. For example, I direct it to the Settings of the given Dataflow.</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
 <span class="w">    </span><span class="nl">"type"</span><span class="p">:</span><span class="w"> </span><span class="s2">"AdaptiveCard"</span><span class="p">,</span>
@@ -651,12 +659,20 @@
 
 <p>The second option (not the last) is through the Power BI REST API, where we are interested in this endpoint - <a href="https://learn.microsoft.com/en-us/rest/api/power-bi/dataflows/get-dataflow-transactions?id=DP-MVP-5003801">Dataflow Transactions</a></p>
 
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
 <figure class="highlight"><pre><code class="language-plaintext" data-lang="plaintext">curl --location --request GET 'https://api.powerbi.com/v1.0/myorg/groups/{WORKSPACE-ID}/dataflows/{DATAFLOW-ID}/transactions' \
 --header 'Authorization: Bearer token' \</code></pre></figure>
 
 <p>This endpoint can get updates on the selected Dataflow. It can also be nicely wrapped into some script that gets individual dataflows and then gradually gets individual updates for them and saves them in some resulting file/database.</p>
 
 <p>It returns data approximately similar to those that come from Power Automate:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
 <figure class="highlight"><pre><code class="language-json" data-lang="json"><span class="p">{</span>
 <span class="w">    </span><span class="nl">"@odata.context"</span><span class="p">:</span><span class="w"> </span><span class="s2">""</span><span class="p">,</span>

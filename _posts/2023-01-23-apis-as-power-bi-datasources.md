@@ -70,6 +70,7 @@ As the [documentation](https://newsapi.org/docs/authentication) says, this key c
 
 All you have to do is choose one of the options and send a request for data. For example, this call:
 
+{% include codeHeader.html %}
 {% highlight plaintext %}
 curl --location -g --request GET 'https://newsapi.org/v2/top-headlines?country=us&apiKey={apiKey}'
 {% endhighlight %}
@@ -94,6 +95,7 @@ These and other parts can be inserted into the second parameter, **"options."** 
 
 Let's try it out:
 
+{% include codeHeader.html %}
 {% highlight pq %}
 let
     key = ""
@@ -116,6 +118,7 @@ If you put this code into Power Query and put your key in the prepared empty str
 
 This API returns its response in approximately the following form:
 
+{% include codeHeader.html %}
 {% highlight json %}
 
 {
@@ -147,6 +150,7 @@ The first thing evident from this, which was already evident a while ago in the 
 
 So we can already send it within the URL as part of the Query. So let's show how we will do o within the Header. Suppose we extend the original code in the **"options"** framework with Headers and define the input according to the specification in the documentation. In that case, we should reach something like this in the code:
 
+{% include codeHeader.html %}
 {% highlight pq highlight_lines="10" %}
 let
     key = ""
@@ -178,6 +182,7 @@ So we can also pass any other header components this way. So if the API will hav
 
 So we have the basic parts almost all covered! We're missing one last one! It is the passing of Content within the **Content part** of the call. It is the part that changes the **GET** method we've used all along to a **POST** method. I understand if a question mark just popped into your head! After all... Why would I want to send data away from Power Query? It is only sometimes necessary to send data directly away. Sometimes, even just API authentication processes, it is necessary to send authentication information that will return you a **temporary key** *(token)* that you can use to retrieve your data. For example, suppose you're trying to get data from the **Power BI REST API**. In that case, you will have a different key than we had with the NewsAPI. Here, you must authenticate against **Azure Active Directory (AAD)** either as a user or as an application. AAD will return you an access key after validating basic permissions, which will have a specific **lifetime** *(relatively short)* and will need to be renewed once it expires. **So in such cases, the idea is that you create the first POST request and then pass its output to the GET request.** But let's show it!
 
+{% include codeHeader.html %}
 {% highlight pq highlight_lines="10 11 12 13 14 15 16 17 18 19" %}
 let
     output = (AzureADTenantID as text, AzureApplicationClientSecret as text, AzureApplicationClientID as text) as text =>
@@ -213,6 +218,7 @@ in
 
 Don't be afraid of this code. It is pretty straightforward. I have only wrapped the whole thing in a function so that we could pass the necessary parts to this call simply and on call. Primarily, from **line number 10**, we added an attribute called **Content**. As I mentioned at the beginning, we have to give the Content in binary form. That's the reason why the **[Text.ToContent()](https://learn.microsoft.com/en-us/powerquery-m/text-tobinary?id=DP-MVP-5003801)** function wraps the Content. It translates the Text into binary for us. Instead of the **[Uri.BuildQueryString](https://learn.microsoft.com/en-us/powerquery-m/uri-buildquerystring?id=DP-MVP-5003801)** function, we could also have a direct entry of our **Content**, or you can define it as a JSON, which would look like this:
 
+{% include codeHeader.html %}
 {% highlight json %}
 
 {
