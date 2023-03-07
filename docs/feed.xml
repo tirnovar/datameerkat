@@ -5,8 +5,8 @@
         <description>Blog not just about Power BI</description>
         <link>http://localhost:4000/</link>
         <atom:link href="http://localhost:4000/feed.xml" rel="self" type="application/rss+xml"/>
-        <pubDate>Tue, 07 Mar 2023 09:04:15 +0100</pubDate>
-        <lastBuildDate>Tue, 07 Mar 2023 09:04:15 +0100</lastBuildDate>
+        <pubDate>Tue, 07 Mar 2023 10:55:21 +0100</pubDate>
+        <lastBuildDate>Tue, 07 Mar 2023 10:55:21 +0100</lastBuildDate>
         <generator>Jekyll v3.9.2</generator>
         
             <item>
@@ -93,7 +93,7 @@
   &lt;li&gt;&lt;strong&gt;Version&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Author&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;Source&lt;/strong&gt;&lt;/li&gt;
-  &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt;ß&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;Examples&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;AllowedValues&lt;/strong&gt;&lt;/li&gt;
   &lt;li&gt;&lt;strong&gt;FieldDescription&lt;/strong&gt;&lt;/li&gt;
 &lt;/ul&gt;

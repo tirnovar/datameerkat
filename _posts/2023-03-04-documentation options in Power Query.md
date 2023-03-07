@@ -87,7 +87,7 @@ It is pretty clear from it that we can document the following:
 - **Version**
 - **Author**
 - **Source**
-- **Examples**ß
+- **Examples**
 - **AllowedValues**
 - **FieldDescription**
 
