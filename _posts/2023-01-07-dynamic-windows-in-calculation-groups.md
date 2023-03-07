@@ -7,7 +7,7 @@ author: Štěpán # author name
 image: '/images/covers/dynamic-windows-in-calculation-groups.png' # required to store image in /images/covers
 image_caption: '' # optional
 tags: [dax, calculation_groups, field_parameters, window] # tag names should be lowercase
-featured: true # set to true to show on homepage
+featured: false # set to true to show on homepage
 ---
 It is a function that can create a moving "window" above the input table and apply it to the computing context. That **"window"** is defined quite similarly, as it was in the case of the **INDEX** function. Or that the numerical representation of the position **(0)1...X or X...-1(0)** is used. But there is one fundamental difference. **INDEX** requires only one such representative, **but the WINDOW function requires two.**
 

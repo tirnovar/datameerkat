@@ -6,22 +6,22 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1">
 
-  <title>Field parameters in cooperation with Calculation groups</title>
-  <meta name='description' content='As soon as I saw the field parameters, I was very interested in the possibilities of use with calculation groups and their mutual overlap. So I finally got t...'>
+  <title>Documentation options in Power Query</title>
+  <meta name='description' content='Document your code! One day you will thank yourself, or someone else will thank you, who will take over.'>
 
-  <link rel="canonical" href="http://localhost:4000/field-parameters-cooperation-calculation-groups">
+  <link rel="canonical" href="http://localhost:4000/documentation-options-in-power-query">
   <link rel="alternate" type="application/rss+xml" title="Data Meerkat" href="/feed.xml">
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Field parameters in cooperation with Calculation groups – Data Meerkat">
-  <meta name="twitter:description" content="As soon as I saw the field parameters, I was very interested in the possibilities of use with calculation groups and their mutual overlap. So I finally got to writing my findings from testing the two features together.">
-  <meta name="twitter:image:src" content="http://localhost:4000/images/covers/field-parameters-cooperation-calculation-groups.png">
+  <meta name="twitter:title" content="Documentation options in Power Query – Data Meerkat">
+  <meta name="twitter:description" content="Document your code! One day you will thank yourself, or someone else will thank you, who will take over.">
+  <meta name="twitter:image:src" content="http://localhost:4000/images/covers/documentation-options-in-power-query.png">
 
   <!-- Facebook OpenGraph -->
-  <meta property="og:title" content="Field parameters in cooperation with Calculation groups – Data Meerkat">
-  <meta property="og:description" content="As soon as I saw the field parameters, I was very interested in the possibilities of use with calculation groups and their mutual overlap. So I finally got to writing my findings from testing the two features together.">
-  <meta property="og:image" content="http://localhost:4000/images/covers/field-parameters-cooperation-calculation-groups.png">
+  <meta property="og:title" content="Documentation options in Power Query – Data Meerkat">
+  <meta property="og:description" content="Document your code! One day you will thank yourself, or someone else will thank you, who will take over.">
+  <meta property="og:image" content="http://localhost:4000/images/covers/documentation-options-in-power-query.png">
 
   <!-- Fonts -->
   <link rel="preconnect" href="https://fonts.gstatic.com">
@@ -330,21 +330,23 @@
           
           <div class="post__tags">
             
-            <a href="/tags/?tag=dax" class="post__tag">dax</a>
+            <a href="/tags/?tag=m" class="post__tag">m</a>
             
-            <a href="/tags/?tag=calculation_groups" class="post__tag">calculation_groups</a>
+            <a href="/tags/?tag=power_query" class="post__tag">power_query</a>
             
-            <a href="/tags/?tag=field_parameters" class="post__tag">field_parameters</a>
+            <a href="/tags/?tag=documentation" class="post__tag">documentation</a>
             
-            <a href="/tags/?tag=conditional_formatting" class="post__tag">conditional_formatting</a>
+            <a href="/tags/?tag=comments" class="post__tag">comments</a>
+            
+            <a href="/tags/?tag=development" class="post__tag">development</a>
             
           </div>
           
       
-          <h1 class="post__title">Field parameters in cooperation with Calculation groups</h1>
+          <h1 class="post__title">Documentation options in Power Query</h1>
 
           
-          <p class="post__description">As soon as I saw the field parameters, I was very interested in the possibilities of use with calculation groups and their mutual overlap. So I finally got to writing my findings from testing the two features together.</p>
+          <p class="post__description">Document your code! One day you will thank yourself, or someone else will thank you, who will take over.</p>
           
       
           <div class="post__meta">
@@ -361,7 +363,7 @@
               
                 <a class="post__author__name" href="/about/">Štěpán Rešl</a>
               
-              <time class="post__date" datetime="2022-05-18T11:00:00+02:00">18 May 2022</time>
+              <time class="post__date" datetime="2023-03-04T10:00:00+01:00">04 March 2023</time>
             </div>
           </div>
       
@@ -373,7 +375,7 @@
       
       <div class="col col-5 push-1 col-d-12 push-d-0">
         <div class="post-image">
-          <img class="lazy" data-src="/images/covers/field-parameters-cooperation-calculation-groups.png" alt="Field parameters in cooperation with Calculation groups">
+          <img class="lazy" data-src="/images/covers/documentation-options-in-power-query.png" alt="Documentation options in Power Query">
         </div>
         
           <div class="post-image-caption">
@@ -394,185 +396,264 @@
   <article class="post">
 
     <div class="post__content">
-      <p>In <a href="https://powerbi.microsoft.com/en-us/blog/power-bi-may-2022-feature-summary/">May 2022 Desktop update</a>, we recieved the Field parameters function into Power BI. This function lets us change dimensions in visuals with a simple click on the slicer. It makes Power BI even more clicky, clicky, draggy, and droppy (How once <a href="https://twitter.com/i/status/1326953364446457856">Christian Wade</a> said).</p>
+      <p>I’m sure you’ve heard this somewhere before. It is a reasonably clear truth that does not need more or less to be presented. But it’s more complicated. Why? Because he wants to learn. There’s no need to write a long-winded essay on exactly how the code works. You need to get just the necessary details. At the same time, you must get used to the fact that it needs to be done. I don’t want to discuss how to describe the entire Power BI Dataset and all its parts. This could be worth a book because there are many approaches to documentation, and Power BI supports documentation of everything possible and <strong>at different levels.</strong></p>
 
-<h2 id="my-initial-thoughts">My initial thoughts</h2>
-<p>It caught my attention very heavily because I needed this capability years ago. But since then, we recieved calculation groups, which can be used for a similar purpose when we speak about columns in a matrix that are measure driven. And by them, we can set which column will be shown or if we should have some column overridden by the calculation item. But from its nature, calculation groups aren’t switching dimensions, so they can’t change from dimension Products where there are about fifty types and dimension Employees with 12 emails without setting every possible Product and Employee as a different Calculation Item with their own DAX procedure. And to be honest, this would be a waste of time for the developer to be preparing this. Even preparing it by C# script in Tabular Editor would be, from my perspective, a waste of time that could be used for more valuable things. So because of that, I am more than happy that we finally have an easy component that can fulfill this purpose.</p>
+<p>What I want to discuss here is the documentation in <strong>Power Query</strong>. Again, I will not solve the exact procedures of what to describe, but instead, I want to show you what and how it can be precisely described and where it will then be promoted.</p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/fieldParameterInChart.png" alt="Field parameters in chart" loading="lazy" />
-<em>Field parameters in chart</em></p>
+<h2 id="m-code-comments">M code comments</h2>
 
-<p>But if field parameters can switch dimensions (let’s call it a Field of Dimensions), can they be switching something else, like measures? Because if yes, then it means that they can overlap calculation groups capabilities.</p>
+<p>With its <strong>M language</strong>, Power Query is no exception to other languages, so M also supports using annotations in code. We have two basic types for this:</p>
 
-<div class="codebox">FieldOfMeasures&nbsp;=<br />{<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Sales"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'&nbsp;Measures'[#&nbsp;Total&nbsp;Sales]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Profit"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'&nbsp;Measures'[#&nbsp;Total&nbsp;Profit]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Cost"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'&nbsp;Measures'[#&nbsp;Total&nbsp;Cost]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">2</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Quantity"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'&nbsp;Measures'[#&nbsp;Total&nbsp;Quantity]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">3</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Margin"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'&nbsp;Measures'[%&nbsp;Margin&nbsp;Profit]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">4</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br />}<br /></div>
-
-<p>After a quick test, field parameter parameters can be created from measures. From an abstraction perspective, I am setting like this Field of Measures where I can select which measure will be sent to calculation and which not.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/matrixCreatedJustByFieldParameters.png" alt="Matrix created by Field of Dimensions and Field of Measures" loading="lazy" />
-<em>Matrix created by Field of Dimensions and Field of Measures</em></p>
-
-<p>This matrix is a result of two field parameters:</p>
 <ul>
-  <li><strong>Rows: Field of Dimensions</strong></li>
-  <li><strong>Values: Field of Measures</strong></li>
+  <li><strong>Single-line comments</strong> - “// My single-line comment.”</li>
+  <li><strong>Multi-line comments</strong> - “/<em>My multi-line comment</em>/”</li>
 </ul>
 
-<p>And <strong>W-O-W!</strong> This can make things a lot easier. But It would be great if we could group these items inside.</p>
+<p>Power Query colors comment in the <strong>code green</strong> to make them stand out from the rest of the code.
+<img src="/images/posts/Documentation options in Power Query/comments.png" alt="Comment Showcase" loading="lazy" />
+<em>Comment Showcase</em></p>
 
-<h2 id="how-to-create-groups-for-dimensionsmeasures-in-field-parameters">How to create groups for dimensions/measures in field parameters?</h2>
-<p>In natively generated code of Field parameters, you can find out that you can add as many of your values (of any type) as you want after ordering.</p>
+<p>To be able to create these comments faster, there are even <strong>keyboard shortcuts to help us with this</strong>: <kbd>Ctrl</kbd> + <kbd>'</kbd></p>
 
-<div class="codebox">FieldParemeterWithCustomGrouping&nbsp;=<br />{<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;name"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Pricelist'[Product&nbsp;name]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"category1"</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Employees'[Employee]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"category1"</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Location'[Location]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">2</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"category2"</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br />}<br /></div>
+<h2 id="documentation-of-steps">Documentation of steps</h2>
 
-<p>The resulted column can be used as a grouping one. This is the static way how to set up groups. For a dynamic way, we can use the <strong>ADDCOLUMNS()</strong> function:</p>
+<p>Ok, so we all know the comments. So let’s get to the documentation and start with the most obvious by describing the steps that the Power Query editor created for you or that you wrote yourself. However, Power Query is a reasonably understandable language that uses English as its basis. If one understands the skeleton of its functions, types, and operands, this code should be read like a book. But you’ve probably already heard that in other languages ​​as well. It is true, but a “machine” understanding of what is happening with the data is often insufficient in itself. That’s why there is an option to add your label to any step so that you can add, for example, <strong>WHY we are doing the given step or what the expected result is.</strong></p>
 
-<div class="codebox">FieldParameterWithDynamicGrouping&nbsp;=<br /><span class="Keyword" style="color:#035aca">ADDCOLUMNS</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>{<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;name"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Pricelist'[Product&nbsp;name]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">0</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Employees'[Employee]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">(</span>&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>,&nbsp;<span class="Keyword" style="color:#035aca">NAMEOF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'Location'[Location]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Number" style="color:#EE7F18">2</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>},<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="StringLiteral" style="color:#D93124">"DynamicGrouping"</span>,&nbsp;<span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;[Value3]&nbsp;&lt;&nbsp;<span class="Number" style="color:#EE7F18">2</span>,&nbsp;<span class="Number" style="color:#EE7F18">1</span>,&nbsp;<span class="Number" style="color:#EE7F18">2</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="Parenthesis" style="color:#808080">)</span><br /></div>
+<p><img src="/images/posts/Documentation options in Power Query/stepDescription.png" alt="Step Description" loading="lazy" />
+<em>Step Description</em></p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/fieldParameterInSlicer.png" alt="Example of field parameters groups in slicer" loading="lazy" />
-<em>Example of field parameters groups in slicer</em></p>
+<p>We can create such an icon with a <strong>description/documentation</strong> of the step using <strong>Power Query UI or code.</strong></p>
 
-<p>With groups, I have finally found where the limits are and when you need to go for Calculation groups.</p>
+<h3 id="ui-variant">UI Variant</h3>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/calucaltionGroupWithFieldParameter.png" alt="Example of behaviour of field parameters groups in matrix visual" loading="lazy" />
-<em>Example of behaviour of field parameters groups in matrix visual</em></p>
+<p>Right-click on the step you want to describe and select <strong>“Properties…“</strong>.
+<img src="/images/posts/Documentation options in Power Query/properties.png" alt="Step Properties" loading="lazy" />
+<em>Step Properties</em></p>
 
-<p>This matrix is the result of shown <strong>Field of Measures</strong> and <strong>Dimension</strong> of the <strong>Product name</strong>. As you can see, <strong>Field of Measures</strong> doesn’t respect that I want to show the measure name <strong>“Cost”</strong> only under <strong>“category2,”</strong> and it shows it under <strong>“category3”</strong> also. Same it is for measures under <strong>“category3”</strong> ##even when everything seems to be working in the previously demonstrated slicer visual. This capability of showing just the proper measures under the correct categories in measures is something that calculation groups can do!</p>
+<p>The following <strong>POP-UP window</strong> will appear where you can complete the Description.
+<img src="/images/posts/Documentation options in Power Query/propertiesPopup.png" alt="Step Properties POP-UP" loading="lazy" />
+<em>Step Properties POP-UP</em></p>
 
-<h2 id="how-do-you-show-exact-measures-under-selected-categories-by-calculation-groups">How do you show exact measures under selected categories by calculation groups?</h2>
-<p>There are more methods, but I will demonstrate this topic on method with a disconnected table.</p>
+<p>This Description is then reflected in the information icon. If we open the <strong>Advanced Editor</strong>, we can notice how this Description is reflected in the code. But let’s create it ourselves.</p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/customTable.png" alt="Custom table creation" loading="lazy" />
-<em>Custom table creation</em></p>
+<h3 id="code-way">Code way</h3>
 
-<p>This table will work completely fine for my purpose. But I have set the <strong>ID</strong> column to <strong>Whole numbers</strong> for more capabilities. To clarify. The point of a disconnected table is not to let this table be connected by relationship to any other table.</p>
+<p>It may seem like a particular advantage to create this <strong>“i”</strong> icon, and we can reach for both <strong>single-line</strong> and <strong>multi-line</strong> comments. Unfortunately, this is not a <strong>100% advantage because the multi-line</strong> text will be folded back to a <strong>single-line</strong> during the presentation, so formatting is quite complicated.</p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/disconnectedTable.png" alt="Disconnected table" loading="lazy" />
-*Disconnected table</p>
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
 
-<p>I can create a matrix with columns as categories and Fields of Dimensions as rows with this table.</p>
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">import</span> <span class="o">=</span> Excel<span class="o">.</span>Workbook<span class="o">[</span>URL<span class="o">]</span><span class="p">(</span>Data<span class="p">)</span><span class="o">{</span><span class="mf">0</span><span class="o">},</span>
+    <span class="n">promote</span> <span class="o">=</span> Table<span class="o">.</span>PromoteHeaders<span class="p">(</span>#"Imported Excel Workbook"<span class="o">,</span> <span class="o">[</span>PromoteAllScalars<span class="o">=</span><span class="nc">true</span><span class="o">]</span><span class="p">)</span><span class="o">,</span>
+<span class="hll">    <span class="c1">// This step filters out all blank values in column Name</span>
+</span>    <span class="n">filter</span> <span class="o">=</span> Table<span class="o">.</span>SelectRows<span class="p">(</span><span class="n">promote</span><span class="o">,</span> <span class="nc">each</span> <span class="p">(</span><span class="o">[</span>Name<span class="o">]</span> <span class="o">&lt;&gt;</span> <span class="nb">null</span><span class="p">))</span>
+<span class="k">in</span>
+    <span class="n">filter</span></code></pre></figure>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/dynamicTable.png" alt="Matrix created by mix of Calculation group and Field parameter" loading="lazy" />
-<em>Matrix created by mix of Calculation group and Field parameter</em></p>
+<p>Anyway, for the comment to describe the step, it must be <strong>BEFORE</strong> the step we want to describe in this way. It’s a rather strange concept because comments are usually placed AFTER the code is described.</p>
 
-<p>So field for calculation groups is ready. Now is time to prepare that group and its items that will be the same as I had before inside <strong>FieldOfMeasures</strong>.</p>
+<h2 id="feature-documentation">Feature documentation</h2>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/calculationGroup.png" alt="Calculation group in Tabular Editor 3" loading="lazy" />
-<em>Calculation group in Tabular Editor 3</em></p>
+<p>Only some users ever needed to create their functions in Power Query, but if you ever had this need, you will find it helpful to know that functions can be described many times more than ordinary steps. At the same time, I highly recommend describing the functions because that way, you can avoid a lot of <strong>HOW I DID IT moments</strong>, which can bring even just a few hours, during which you no longer look at this code. Of course, the key to the initial understanding of what the given function does is already its name, but that is only some of it.</p>
 
-<p>Suppose I would go into Sales item drop <em>[# Total Sales]</em> alone without any other further DAX expression If would be shown in every category as previously. <a href="https://www.linkedin.com/in/bernatagullo/">Bernat Agulló</a>, in one of his articles ( <a href="https://www.esbrina-ba.com/building-arbitrary-tables-with-2-level-column-headers/">Building arbitrary tables with 2-level column headers</a> ), describes his path in dealing with this distribution of items in groups. In short, besides the disconnected table, I will need any <strong>[Dynamic Measure]</strong> that the calculation group will override. Because of override, <strong>[Dynamic Measure]</strong> needs to have some output that can Power BI on most occasions, ignore and doesn’t show it. Like <strong>BLANK()</strong>. My <strong>[Dynamic Measure]</strong> has quite a different name <strong>[blank]</strong>. In the prepared calculation group, I need to edit its items to show the correct output at the right time. That’s precisely what is this code:</p>
+<p>By itself, the already empty preview window of its function claims that it can be expanded.</p>
 
-<div call="codebox">Sales&nbsp;=<br /><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ISSELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;[blank]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_selectedCategory</span>&nbsp;=<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDVALUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;DisconectedTable[ID]&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">RETURN</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Variable" style="color:#49b0af">_selectedCategory</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">1</span>,&nbsp;[#&nbsp;Total&nbsp;Sales]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="Parenthesis" style="color:#808080">)</span></div>
-<p><br /></p>
+<p><img src="/images/posts/Documentation options in Power Query/functionWindow.png" alt="Window of function" loading="lazy" />
+<em>Window of function</em></p>
 
-<p>If I am calling this calculation group against a measure called <strong>[blank]</strong> positive branch will try to evaluate if the right category is now in scope and return the right measure in an optimistic scenario. If I set this up for every item, I can see that my matrix is finally showing these measures under their categories.</p>
+<p>And overall, the fact that if you call any function but <strong>only as a reference to it (that is, without “()”)</strong>, the following view will be returned to you.</p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/insertedCgGroup.png" alt="Resulted Matrix of dynamic groups by Calculationg groups in columns and field parameter in rows" loading="lazy" />
-<em>Resulted Matrix of dynamic groups by Calculationg groups in columns and field parameter in rows</em></p>
+<p><img src="/images/posts/Documentation options in Power Query/nativeFunctionDocumentation.png" alt="Native function documentation" loading="lazy" />
+<em>Native function documentation</em></p>
 
-<p>Once I modify the calculated items format strings, my matrix will start to look like I would expect.</p>
+<p>We could review the functions and decompose the individual <strong>“Documentation”</strong> options. Or we use the more straightforward options and look in the documentation: <a href="https://learn.microsoft.com/power-query/handling-documentation?id=DP-MVP-5003801">LINK TO DOCUMENTATION</a></p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/modifiedItem.png" alt="Matrix after changed format string" loading="lazy" />
-<em>Matrix after changed format string</em></p>
+<p>It is pretty clear from it that we can document the following:</p>
 
-<p>After switching from parameter <strong>“Product name”</strong> to <strong>“Location,”</strong> everything seems to be working correctly.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/correctTable.png" alt="Resulted matrix after switching parameter" loading="lazy" />
-<em>Resulted matrix after switching parameter</em></p>
-
-<p>This test answers me that calculation groups can work with field parameters very nicely, even in this scenario. But! <strong>There is one more point that I want to know!</strong></p>
-
-<h2 id="can-i-combine-it-all-to-show-specific-measures-for-a-selected-parameter">Can I combine it all to show specific measures for a selected parameter?</h2>
-<p>So use the field parameter as a category that also decides what measure should be shown. Because in that case, field parameters and calculation groups could make Power BI report pages more dynamic and exciting. Because of the <strong>SELECTEDVALUE()</strong> function in items, I was a bit worried about how this function will work with field parameters. My fears were justified because the output is with the targeted table, and the column’s name is in square brackets if I would <strong>[Parameter2 Fields]</strong>. But at least it returns something. Same call but against <strong>[ParamterOfDimensions]</strong>, so against parameter is self returns an <strong>Error</strong>.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/content.png" alt="Content of field parameter" loading="lazy" />
-<em>Content of field parameter</em></p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/returnedError.png" alt="Error returned after calling SELECTEDVALUE funcion directly against field parameter" loading="lazy" />
-<em>Error returned after calling SELECTEDVALUE funcion directly against field parameter</em></p>
-
-<p>So usage of <strong>SELECTEDVALUE()</strong> could be done against the <strong>[Parameter2 Fields]</strong> column (<em>This is one of the offered columns, which is automatically created in the field parameter</em>), but I would need to parse out the name of a column. I was about to make a solution with this parsing, but I went across this article from <a href="https://www.linkedin.com/in/sqlbi/">Marco Russo</a> - <strong>SQLBI</strong> <a href="https://www.sqlbi.com/blog/marco/2022/06/11/using-selectedvalue-with-fields-parameters-in-power-bi/">Using SELECTEDVALUE with Fields Parameters in Power BI</a>. And reading this article, I am decided that I am not about to use <strong>SELECTEDVALUE()</strong> for this case. So let’s try Marco’s way.</p>
-
-<div class="codebox">_selectedParameter2&nbsp;=<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_selection</span>&nbsp;=<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTCOLUMNS</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SUMMARIZE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>FieldParameterOfDimensions,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>FieldParameterOfDimensions[ParamterOfDimensions],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>FieldParameterOfDimensions[Parameter2&nbsp;Fields]<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>FieldParameterOfDimensions[ParamterOfDimensions]<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="Keyword" style="color:#035aca">RETURN</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Keyword" style="color:#035aca">COUNTROWS</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Variable" style="color:#49b0af">_selection</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;<span class="Variable" style="color:#49b0af">_selection</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span></div>
-<p><br /></p>
-
-<p>Even though <strong>Power BI DAX Intellisence</strong> does not like that second parameter of <strong>SELECTCOLUMNS()</strong>, it is still working.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/outputOfMarcoSelection.png" alt="Output of Marco's selection measure" loading="lazy" />
-<em>Output of Marco’s selection measure</em></p>
-
-<p>I have prepared one more disconnected table for this purpose.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/secondDisconnectedTable.png" alt="Disconnected table for the second demo with calculation groups" loading="lazy" />
-<em>Disconnected table for the second demo with calculation groups</em></p>
-
-<p>This “Kpi “column contains KPIs I would like to show for my dimensions. But not all KPIs will be shown for every dimension. I want them to show by this list:
-<strong>Product name</strong></p>
 <ul>
-  <li>Actual</li>
-  <li>PY</li>
-  <li>Diff</li>
-  <li>Variance</li>
-  <li>YTD</li>
-  <li># Transactions</li>
+  <li><strong>Name</strong></li>
+  <li><strong>Description</strong></li>
+  <li><strong>Version</strong></li>
+  <li><strong>Author</strong></li>
+  <li><strong>Source</strong></li>
+  <li><strong>Examples</strong>ß</li>
+  <li><strong>AllowedValues</strong></li>
+  <li><strong>FieldDescription</strong></li>
 </ul>
 
-<p><strong>Employee</strong></p>
+<p>That’s quite a few documentation options. I prefer using only some options for various reasons. For example, <strong>I don’t use Allowed Values ​​because it’s just a documentation option that modifies the UI of the created function and does not limit the potentially entered values</strong> ​​when calling the function in a usual code way.</p>
+
+<p><img src="/images/posts/Documentation options in Power Query/selectValuesInFunction.png" alt="Select values in function" loading="lazy" />
+<em>Select values in function</em></p>
+
+<p>At the same time, for some of these functions, a simple extension of the metadata of the last <strong>“step” of the function is sufficient</strong>:
+<img src="/images/posts/Documentation options in Power Query/updateMetadataOfLastStep.png" alt="Changing Metadata of Last Step" loading="lazy" />
+<em>Changing Metadata of Last Step</em></p>
+
+<p>If you would like to use some of these documentation elements yourself, we are here to prepare a simple template for creating your functions with explanations:</p>
+
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="c1">// --------------------------- Function ------------------------------</span>
+<span class="k">let</span>
+    <span class="c1">// --------------------------- Fucntion segment -----------------------------------</span>
+    <span class="n">output</span> <span class="o">=</span>
+        <span class="p">(</span><span class="cm">/*parameter as text, optional opt_parameter as text*/</span><span class="p">)</span> <span class="cm">/*as text*/</span> <span class="o">=&gt;</span>      <span class="c1">// Input definition + Function output type definition</span>
+            <span class="k">let</span>                                                                         <span class="c1">// Inner function steps declaration</span>
+                <span class="n">initStep</span> <span class="o">=</span> <span class="s">""</span><span class="o">,</span>
+                <span class="n">lastStep</span> <span class="o">=</span> <span class="s">""</span>
+            <span class="k">in</span>
+                <span class="n">lastStep</span><span class="o">,</span>                                                               <span class="c1">// Output from inner steps</span>
+    <span class="c1">// --------------------------- Documentation segment ------------------------------</span>
+    <span class="n">documentation</span> <span class="o">=</span> <span class="o">[</span>
+        Documentation<span class="o">.</span>Name <span class="o">=</span> <span class="s">" NAME OF FUNCTION "</span><span class="o">,</span>                                      <span class="c1">// Name of the function</span>
+        Documentation<span class="o">.</span>Description <span class="o">=</span> <span class="s">" DESCRIPTION "</span><span class="o">,</span>                                    <span class="c1">// Decription of the function</span>
+        Documentation<span class="o">.</span>Source <span class="o">=</span> <span class="s">" URL / SOURCE DESCRIPTION "</span><span class="o">,</span>                            <span class="c1">// Source of the function</span>
+        Documentation<span class="o">.</span>Version <span class="o">=</span> <span class="s">" VERSION "</span><span class="o">,</span>                                            <span class="c1">// Version of the function</span>
+        Documentation<span class="o">.</span>Author <span class="o">=</span> <span class="s">" AUTHOR "</span><span class="o">,</span>                                              <span class="c1">// Author of the function</span>
+        Documentation<span class="o">.</span>Examples <span class="o">=</span>                                                        <span class="c1">// Examples of the functions</span>
+        <span class="o">{</span>
+            <span class="o">[</span>
+                Description <span class="o">=</span> <span class="s">" EXAMPLE DESCRIPTION "</span><span class="o">,</span>                                  <span class="c1">// Description of the example</span>
+                Code <span class="o">=</span> <span class="s">" EXAMPLE CODE "</span><span class="o">,</span>                                                <span class="c1">// Code of the example</span>
+                Result <span class="o">=</span> <span class="s">" EXAMPLE RESULT "</span>                                             <span class="c1">// Result of the example</span>
+            <span class="o">]</span>
+        <span class="o">}</span>
+    <span class="o">]</span>
+    <span class="c1">// --------------------------- Output --------------------------------------------</span>
+<span class="k">in</span>
+    Value<span class="o">.</span>ReplaceType<span class="p">(</span>                                                                  <span class="c1">// Replace type of the value</span>
+        <span class="n">output</span><span class="o">,</span>                                                                         <span class="c1">// Function caller</span>
+        Value<span class="o">.</span>ReplaceMetadata<span class="p">(</span>                                                          <span class="c1">// Replace metadata of the function</span>
+            <span class="na">Value.Type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">,</span>                                                         <span class="c1">// Return output type of function</span>
+            <span class="n">documentation</span>                                                               <span class="c1">// Documentation assigment</span>
+        <span class="p">)</span>
+    <span class="p">)</span>
+<span class="c1">// ------------------------------------------------------------------------------------</span></code></pre></figure>
+
+<p>An example of what it might look like:</p>
+<div class="code-header">
+    <button title="Copy code from block" class="copy-code-button cp"></button>
+  </div>
+
+<figure class="highlight"><pre><code class="language-pq" data-lang="pq"><span class="k">let</span>
+    <span class="n">output</span> <span class="o">=</span>
+        <span class="p">(</span><span class="n">generatedToken</span> <span class="nc">as</span> <span class="nb">text</span><span class="p">)</span> <span class="o">=&gt;</span>
+            <span class="k">let</span>
+                <span class="n">apiCall</span> <span class="o">=</span>
+                    Json<span class="o">.</span>Document<span class="p">(</span>
+                        Web<span class="o">.</span>Contents<span class="p">(</span>
+                            <span class="s">"https://api.powerbi.com/v1.0/myorg"</span><span class="o">,</span>
+                            <span class="o">[</span>
+                                RelativePath <span class="o">=</span> <span class="s">"admin/imports"</span><span class="o">,</span>
+                                Headers <span class="o">=</span> <span class="o">[</span>
+                                    #"Content-Type" <span class="o">=</span> <span class="s">"application/json"</span><span class="o">,</span>
+                                    Authorization <span class="o">=</span> <span class="n">generatedToken</span>
+                                <span class="o">]</span>
+                            <span class="o">]</span>
+                        <span class="p">)</span>
+                    <span class="p">)</span>
+            <span class="k">in</span>
+                #table<span class="p">(</span>
+                    <span class="nb">type</span> <span class="nb">table</span> <span class="o">[</span>
+                        <span class="n">id</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+                        <span class="n">importState</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+                        <span class="n">createdDateTime</span> <span class="o">=</span> <span class="nb">datetime</span><span class="o">,</span>
+                        <span class="n">updatedDateTime</span> <span class="o">=</span> <span class="nb">datetime</span><span class="o">,</span>
+                        <span class="n">name</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+                        <span class="n">connectionType</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+                        <span class="n">source</span> <span class="o">=</span> <span class="nb">text</span><span class="o">,</span>
+                        <span class="n">datasets</span> <span class="o">=</span> <span class="nb">list</span><span class="o">,</span>
+                        <span class="n">reports</span> <span class="o">=</span> <span class="nb">list</span><span class="o">,</span>
+                        <span class="n">dataflows</span> <span class="o">=</span> <span class="nb">list</span>
+                    <span class="o">],</span>
+                    List<span class="o">.</span>Transform<span class="p">(</span>
+                        <span class="n">apiCall</span><span class="o">[</span><span class="n">value</span><span class="o">],</span>
+                        <span class="nc">each</span>
+                            <span class="o">{</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">id</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">importState</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">createdDateTime</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">updatedDateTime</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">name</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">connectionType</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">source</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">datasets</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">reports</span><span class="o">]?,</span>
+                                <span class="n">_</span><span class="o">[</span><span class="n">dataflows</span><span class="o">]?</span>
+                            <span class="o">}</span>
+                    <span class="p">)</span>
+                <span class="p">)</span><span class="o">,</span>
+    <span class="n">documentation</span> <span class="o">=</span> <span class="o">[</span>
+        Documentation<span class="o">.</span>Name <span class="o">=</span> <span class="s">" get-Imports.pq "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Description <span class="o">=</span> <span class="s">" Get all imports to tentant "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Source <span class="o">=</span> <span class="s">" &lt;https://www.datameerkat.com&gt; "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Version <span class="o">=</span> <span class="s">" 1.0 "</span><span class="o">,</span>
+        Documentation<span class="o">.</span>Author <span class="o">=</span> <span class="s">" Štěpán Rešl "</span>
+    <span class="o">]</span>
+<span class="k">in</span>
+    Value<span class="o">.</span>ReplaceType<span class="p">(</span>
+        <span class="n">output</span><span class="o">,</span>
+        Value<span class="o">.</span>ReplaceMetadata<span class="p">(</span>
+            <span class="na">Value.Type</span><span class="p">(</span><span class="n">output</span><span class="p">)</span><span class="o">,</span>
+            <span class="n">documentation</span>
+        <span class="p">)</span>
+    <span class="p">)</span></code></pre></figure>
+
+<p>So whenever the function reference is called, <strong>it will be returned, including this documentation</strong>.
+<img src="/images/posts/Documentation options in Power Query/minimalDocumentation.png" alt="Example of custom documentation" loading="lazy" />
+<em>Example of custom documentation</em></p>
+
+<h2 id="documentation-of-queries">Documentation of queries</h2>
+
+<p>Even the questions themselves can be documented or described. This can be done in <strong>two places</strong>, in the query itself and the <strong>table</strong> that the <strong>query</strong> returns. These descriptions are interconnected, and if the description in one changes, it will also change in the other. So it’s up to you which one you decide to use.</p>
+
 <ul>
-  <li>Actual</li>
-  <li>PY</li>
-  <li>YTD</li>
-  <li>Transactions</li>
-  <li>Plan</li>
-  <li>% Fulfillment</li>
+  <li>
+    <p>Via <strong>“Properties”</strong> after clicking on the extended query menu
+<img src="/images/posts/Documentation options in Power Query/descriptionOfQuery.png" alt="Description of Query" loading="lazy" />
+<em>Description of Query</em></p>
+  </li>
+  <li>
+    <p>Via the <strong>“Modeling”</strong> section in Power BI after selecting the table
+<img src="/images/posts/Documentation options in Power Query/descriptionOfTable.png" alt="Description of Table" loading="lazy" />
+<em>Description of Table</em></p>
+  </li>
 </ul>
 
-<p><strong>Location</strong></p>
-<ul>
-  <li>Actual</li>
-  <li>PY</li>
-  <li>Diff</li>
-  <li>Variance</li>
-  <li>YTD</li>
-  <li>Median</li>
-</ul>
+<p>Can be found by <strong>NOT a public API endpoint “conceptualschema”</strong>! But can be found by <strong>DEV Mode of your browser</strong>. (If it supports to tracking network requests)
+<img src="/images/posts/Documentation options in Power Query/apiResponse.png" alt="Description returned by API" loading="lazy" />
+<em>Description returned by API</em></p>
 
-<p>By the same pattern as previously with groups, I prepared one calculation item that should be overriding <strong>[blank]</strong> measure and showing measures that should be visible only for the selected parameter.</p>
+<p><strong>Or by the <a href="https://learn.microsoft.com/power-bi/enterprise/service-admin-metadata-scanning?id=DP-MVP-5003801">Scanner API</a>.</strong>
+<img src="/images/posts/Documentation options in Power Query/apiScannerResponse.png" alt="Scanner API Response" loading="lazy" />
+<em>Scanner API Response</em></p>
 
-<div class="codebox">CalculationGroupItem&nbsp;=<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;[_selectedParameter2]<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDVALUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;'KPI&nbsp;Column'[Id]&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_result</span>&nbsp;=<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ISSELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;[blank]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">1</span>,&nbsp;[#&nbsp;Total&nbsp;Sales],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">2</span>,&nbsp;[PY&nbsp;to&nbsp;date],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">3</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>&nbsp;},&nbsp;[Diff],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">4</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>&nbsp;},&nbsp;[Variance],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">5</span>,&nbsp;[#&nbsp;Total&nbsp;Sales&nbsp;YTD],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">6</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>&nbsp;},&nbsp;[No&nbsp;of&nbsp;Transactions],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>,&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">7</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>&nbsp;},&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;[Plan]<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">8</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>&nbsp;},&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>,&nbsp;[%&nbsp;Plan]<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selCol</span>&nbsp;=&nbsp;<span class="Number" style="color:#EE7F18">9</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SWITCH</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">TRUE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Employee"</span>&nbsp;},&nbsp;<span class="Keyword" style="color:#035aca">BLANK</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>,&nbsp;[Med]<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span>,<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="Keyword" style="color:#035aca">RETURN</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_result</span></div>
-<p><br /></p>
+<h2 id="documentation-of-parameters">Documentation of parameters</h2>
+<p>Parameters can also be described, which is one of the benefits for the dataset administrator. In combination with the parameter name, he does not have to think for a long time about what will happen if that parameter changes. It should help him quickly navigate between the parameters and their subsequent correctness. Setting their description is relatively easy. When creating the parameter, <strong>fill in the “Description” field directly in the Power Query interface.</strong></p>
 
-<p>The result was on a first look working, even after switching parameter outputted measure columns were right.</p>
+<p><img src="/images/posts/Documentation options in Power Query/parametersDescriptionInPQ.png" alt="Settings of description for parameters" loading="lazy" />
+<em>Settings of description for parameters</em></p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/switching.png" alt="Switching between fields - Product Name" loading="lazy" />
-<em>Switching between fields - Product Name</em></p>
+<p>In Power BI Service, this icon <strong>will</strong> then <strong>be displayed</strong> in a <strong>light color under the parameter’s name</strong>. It will help to understand the purpose of the parameter.</p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/location.png" alt="Switching between fields - Location" loading="lazy" />
-<em>Switching between fields - Location</em></p>
+<p><img src="/images/posts/Documentation options in Power Query/parametersDescriptionInPBIS.png" alt="Parameter description returned by API" loading="lazy" />
+<em>Demo of parameter description in Power BI Service</em></p>
 
-<p>Because It was working with a disconnected table and single items group, it should be working with a calculation group where columns would be directly defined as items without that disconnected table. This consideration led me to the final test. For this test, I have taken just the first four KPIs (<em>“Actual, “PY, “Diff, “Variance”</em>) where all fours should be seen for parameters <strong>“Product name”</strong> and <strong>“Location,”</strong> but parameter <strong>“Employee”</strong> should propagate only <em>“Actual”</em> and <em>“PY”</em> KPIs.</p>
+<p>In addition to the direct display in the dataset settings, the parameter is also displayed in the <strong>API responses. (Scanner API)</strong></p>
 
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/calculationItems.png" alt="Calculation group with items created from source measures" loading="lazy" />
-<em>Calculation group with items created from source measures</em></p>
+<p><img src="/images/posts/Documentation options in Power Query/parametersFromAPI.png" alt="Parameter description returned by API" loading="lazy" />
+<em>Parameter description returned by API</em></p>
 
-<p>Ordinal calculation group with its items that I have mentioned previously. For <em>“Actual”</em> and *“PY,” * I used this type of code:</p>
+<p><strong>Sadly, this description is not displayed within Deployment Pipelines when setting up rules to change them when moving artifacts between workspaces. At this point, when the setup does not always have to be done by the author of the dataset, these labels would be handy.</strong></p>
 
-<div class="codebox">Actual&nbsp;=<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_result</span>&nbsp;=<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;<span class="Keyword" style="color:#035aca">ISSELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;[blank]&nbsp;<span class="Parenthesis" style="color:#808080">)</span>,&nbsp;[#&nbsp;Total&nbsp;Sales],&nbsp;<span class="Keyword" style="color:#035aca">SELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span>&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="Keyword" style="color:#035aca">RETURN</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_result</span></div>
-<p><br /></p>
+<h2 id="summary">Summary</h2>
 
-<p>And for <em>“Diff”</em> and <em>“Variance,”</em> this one should be able to handle when to show these measures samely as it was with a disconnected table:</p>
-
-<div class="codebox">Diff&nbsp;=<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;=&nbsp;[_selectedParameter2]<br /><span class="Keyword" style="color:#035aca">VAR</span>&nbsp;<span class="Variable" style="color:#49b0af">_result</span>&nbsp;=<br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">IF</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">ISSELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span>&nbsp;[blank]&nbsp;<span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span>&amp;&amp;&nbsp;<span class="Variable" style="color:#49b0af">_selParameter</span>&nbsp;<span class="Keyword" style="color:#035aca">IN</span>&nbsp;{&nbsp;<span class="StringLiteral" style="color:#D93124">"Product&nbsp;Name"</span>,&nbsp;<span class="StringLiteral" style="color:#D93124">"Location"</span>&nbsp;},<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span>[Diff],<br /><span class="indent8">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Keyword" style="color:#035aca">SELECTEDMEASURE</span><span class="Parenthesis" style="color:#808080">&nbsp;(</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Parenthesis" style="color:#808080">)</span><br /><span class="Keyword" style="color:#035aca">RETURN</span><br /><span class="indent4">&nbsp;&nbsp;&nbsp;&nbsp;</span><span class="Variable" style="color:#49b0af">_result</span></div>
-<p><br /></p>
-
-<p>Result? <strong>It is working!!</strong> So this behavior can be provided with just one field parameter and calculation group.</p>
-
-<p><img src="/images/posts/Field parameters in cooperation with Calculation groups/output.png" alt="Matrixes created by calculcation groups and field parameters that returns dynamic columns based on parameter without disconnected table." loading="lazy" />
-<em>Matrixes created by calculcation groups and field parameters that returns dynamic columns based on parameter without disconnected table</em></p>
-
-<p>From my perspective, this brings new possibilities that can be used to prepare complex report solutions. One page, one slicer, one experience for a user. No necessaries to switch pages. Of course, this can’t be used every time and will have its use cases when you would like to do it this way, but it is excellent to know there is this possibility.</p>
-
-<p>By the end of this article, I would like to thank you for reading it. Do you want to know more about Field parameters and how they work under the hood?
-Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/2022/06/01/how-power-bi-field-parameters-works-under-the-hoods/">How Power BI Field Parameters works under the hoods - FourMoo</a></p>
+<p>Documentation may seem like a waste of time, but it never is. It will always serve at least to you to think about the overall concept and see it through to the end. And if you succeed, it can help you in the future. Whether you want to know what you did a year ago or you want to convince someone that you did it right.</p>
 
     </div>
 
@@ -580,12 +661,12 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
       <ul class="share__list list-reset">
         <li class="share__item">
           <a class="share__link share__twitter"
-            href="https://twitter.com/intent/tweet?text=Field%20parameters%20in%20cooperation%20with%20Calculation%20groups&url=http://localhost:4000/field-parameters-cooperation-calculation-groups"
+            href="https://twitter.com/intent/tweet?text=Documentation%20options%20in%20Power%20Query&url=http://localhost:4000/documentation-options-in-power-query"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on Twitter" rel="nofollow"><i class="ion ion-logo-twitter"></i></a>
         </li>
         <li class="share__item">
-          <a class="share__link share__linkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/field-parameters-cooperation-calculation-groups"
+          <a class="share__link share__linkedIn" href="https://www.linkedin.com/shareArticle?mini=true&url=http://localhost:4000/documentation-options-in-power-query"
             onclick="window.open(this.href, 'pop-up', 'left=20,top=20,width=500,height=500,toolbar=1,resizable=0'); return false;"
             title="Share on LinkedIn" rel="nofollow"><i class="ion ion-logo-linkedin"></i></a>
         </li>
@@ -637,20 +718,20 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
 <div class="container">
   <div class="post__navigation animate">
     
-  
-    
-    <div class="post__next">
-      <div class="next__box">
-        <span class="post__nav post__nav__next">Newer post</span>
-        <h2 class="post__nav__title"><a href="/execute-query-endpoint-of-power-bi-rest-api">Why Should I Be Interested in the ExecuteQueries Endpoint of PBI REST API?</a></h2>
+    <div class="post__prev">
+      <a href="/dataflows-refresh-monitoring" class="prev__image">
+        <img class="lazy" data-src="/images/covers/dataflows-refresh-monitoring.png" alt="Documentation options in Power Query">
+      </a>
+      <div class="prev__box">
+        <span class="post__nav post__nav__prev">Older post</span>
+        <h2 class="post__nav__title"><a href="/dataflows-refresh-monitoring">Dataflows refresh monitoring</a></h2>
         <p class="post__nav__excerpt">
-          As soon as I saw the field parameters, I was very interested in the possibilities of use with calculation groups and their mutual overlap. So I finally got to writing my findings from testing the two features together.
+          Document your code! One day you will thank yourself, or someone else will thank you, who will take over.
         </p>
       </div>
-      <a href="/execute-query-endpoint-of-power-bi-rest-api" class="next__image">
-        <img class="lazy" data-src="/images/covers/execute-query-endpoint-of-power-bi-rest-api.png" alt="Field parameters in cooperation with Calculation groups">
-      </a>
     </div>
+    
+  
     
   </div>
 </div>
@@ -674,7 +755,9 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
                 
                 
                   
-                    <a href="/tags/?tag=dax" class="section__link related-tag"><div>See all <span>dax</span></div> <i class="ion ion-ios-arrow-round-forward"></i></a>
+                    <a href="/tags/?tag=m" class="section__link related-tag"><div>See all <span>m</span></div> <i class="ion ion-ios-arrow-round-forward"></i></a>
+                  
+                
                   
                 
                   
@@ -710,20 +793,6 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
             
 
             
-            
-            
-            
-
-            
-
-            
-            
-            
-            
-
-            
-
-            
 
             <div class="article col col-3 col-d-6 col-m-12">
 
@@ -732,8 +801,8 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
                   
 
                   
-                  <a class="article__image" href="/dynamic-windows-in-calculation-groups">
-                    <img class="lazy" data-src="/images/covers/dynamic-windows-in-calculation-groups.png" alt="Dynamic windows in calculation groups">
+                  <a class="article__image" href="/apis-as-power-bi-datasources">
+                    <img class="lazy" data-src="/images/covers/apis-as-power-bi-datasources.png" alt="APIs as Power BI Datasources">
                   </a>
                   
 
@@ -749,7 +818,7 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/dynamic-windows-in-calculation-groups">Dynamic windows in calculation groups</a>
+                    <a href="/apis-as-power-bi-datasources">APIs as Power BI Datasources</a>
                   </h2>
                 </div>
               </div>
@@ -774,8 +843,8 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
                   
 
                   
-                  <a class="article__image" href="/index-as-a-friend-for-conditional-format-string">
-                    <img class="lazy" data-src="/images/covers/INDEX-as-a-friend-for-conditional-format-string.png" alt="INDEX as a friend for Conditional Format Strings">
+                  <a class="article__image" href="/date-dimensions-in-power-query">
+                    <img class="lazy" data-src="/images/covers/date-dimensions-in-power-query.png" alt="Date dimensions in Power Query">
                   </a>
                   
 
@@ -791,49 +860,7 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/index-as-a-friend-for-conditional-format-string">INDEX as a friend for Conditional Format Strings</a>
-                  </h2>
-                </div>
-              </div>
-
-            </div>
-
-            
-                
-              
-            
-            
-            
-
-            
-
-            
-
-            <div class="article col col-3 col-d-6 col-m-12">
-
-              <div class="article__inner">
-                <div class="article__head">
-                  
-
-                  
-                  <a class="article__image" href="/offset-its-usage-calculation-groups">
-                    <img class="lazy" data-src="/images/covers/offset-its-usage-calculation-groups.png" alt="OFFSET and its usage with Calculation Groups">
-                  </a>
-                  
-
-                  <div class="article__meta">
-                    
-                    
-                    <a href="/about/" class="article__author__image" title="Štěpán Rešl">
-                      <img class="lazy" data-src="/images/steve_profile.jpg" alt="Štěpán Rešl">
-                    </a>
-                    
-                  </div>
-                </div>
-
-                <div class="article__content">
-                  <h2 class="article__title">
-                    <a href="/offset-its-usage-calculation-groups">OFFSET and its usage with Calculation Groups</a>
+                    <a href="/date-dimensions-in-power-query">Date dimensions in Power Query</a>
                   </h2>
                 </div>
               </div>
@@ -864,6 +891,20 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
             
 
             
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
 
             <div class="article col col-3 col-d-6 col-m-12">
 
@@ -872,8 +913,8 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
                   
 
                   
-                  <a class="article__image" href="/multi-color-gradient-dax-power-bi">
-                    <img class="lazy" data-src="/images/covers/multi-color-gradient-dax-power-bi.png" alt="Multi-Color Gradient with DAX in Power BI">
+                  <a class="article__image" href="/power-query-vs-power-bi-rest-api">
+                    <img class="lazy" data-src="/images/covers/power-query-vs-power-bi-rest-api.png" alt="Power Query vs. Power BI Rest API">
                   </a>
                   
 
@@ -889,7 +930,7 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
 
                 <div class="article__content">
                   <h2 class="article__title">
-                    <a href="/multi-color-gradient-dax-power-bi">Multi-Color Gradient with DAX in Power BI</a>
+                    <a href="/power-query-vs-power-bi-rest-api">Power Query vs. Power BI Rest API</a>
                   </h2>
                 </div>
               </div>
@@ -898,7 +939,57 @@ Then I would recommend this wonderful article: <a href="https://www.fourmoo.com/
 
             
                 
-                  
+              
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
+            
+            
+
+            
+
+            
+            
           </div>
         </div>
       </div>

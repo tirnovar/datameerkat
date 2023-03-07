@@ -7,7 +7,7 @@ author: Štěpán # author name
 image: '/images/covers/hierarchies-dynamic-levels-matrix-field-parameters.png' # required to store image in /images/covers
 image_caption: '' # optional
 tags: [dax, field_parameters, hierarchies, conditional_formatting] # tag names should be lowercase
-featured: true # set to true to show on homepage
+featured: false # set to true to show on homepage
 ---
 In a previous article about Field parameters, I spoke about using them in cooperation with Calculation groups ([LINK]({{site.baseurl}}/field-parameters-cooperation-calculation-groups)). I used them to get specific measures for selected dimensions from the dimensions field. After this test, I have come up with one more challenge for field parameters that we need to deal with from time to time. What challenge? Hierarchies with dynamic levels.
 

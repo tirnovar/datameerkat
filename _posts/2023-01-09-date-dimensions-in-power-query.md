@@ -7,7 +7,7 @@ author: Štěpán # author name
 image: '/images/covers/date-dimensions-in-power-query.png' # required to store image in /images/covers
 image_caption: '' # optional
 tags: [m, power_query, date, dimension] # tag names should be lowercase
-featured: true # set to true to show on homepage
+featured: false # set to true to show on homepage
 ---
 The data dimension is one of the most fundamental dimensions needed in reporting. That is because we are primarily interested in results from the point of view of the passage of time.
 
